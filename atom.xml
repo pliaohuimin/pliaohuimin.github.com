@@ -4,7 +4,7 @@
   <title><![CDATA[Liao Octopress Blog]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2013-08-30T13:33:21+08:00</updated>
+  <updated>2013-08-30T17:29:18+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[开始OCTOPRESS]]></title>
+    <link href="http://pliaohuimin.github.io/blog/2013/08/30/kai-shi-octopress/"/>
+    <updated>2013-08-30T17:28:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/2013/08/30/kai-shi-octopress</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
 </feed>
