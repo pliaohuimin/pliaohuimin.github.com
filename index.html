@@ -103,7 +103,354 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/583">初识REDIS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-20T00:00:00+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>上一个游戏项目使用了MEMCACHED作缓存和MYSQL作持久化的数据结构。</div><div>早在上个项目后期，主线就一直想把MEMCACHED替换成REDIS，至于是出于什么样子的考虑，由于个人层次原因，不是很明白。后来由于时间的关系，这件事情也就不了了之了。</div><div>到了这个项目，新的游戏也接近上线，主程还是对这个REDIS念念不忘。这个替换的任务落到了我头上，也刚好让我对REDIS有点皮毛的认识。下面先说说为什么要替换掉MEMCACHED：</div><div>首先，REDIS提供多种数据结构，大部份与STL接口，如SET，STRING，LIST等。这次项目的使用到的HASH结构。&nbsp;&nbsp;&nbsp;</div><div>使用这种结构，可以解决上个项目中，对于每个玩家只有一行记录的表，无法一次性整表读取的问题。使用REDIS 的HASH结构，将数据库名称与表名作为KEY，玩家唯一标识字段设定为FIELD，再将玩家数据作为VALUE存入。通过HVALS即可获取整表记录。</div><div>另外，之前使用MEMCACHED，还得自己维护多一个元数据在缓存中，以使业务获取KEY的信息。而通过REDIS的HASH，简单的HVALS即可达到目的。</div><div>以上就是本人对REDIS皮毛上的认识。本质上更多的区别，还有待深入了解。</div><div>再说说这几天使用的情况：</div><div>此次服务器版本使用的是v2.6。客户端API采用了HIREDIS的C接口。之前有考虑使用C++接口，给主程否了，说不稳定。作为小白，只有乖乖听话，改用HIREDIS。</div><div>起初的版本比较简单，&nbsp;&nbsp;没有考虑到连接REDIS服务器失败后，后续接口的异常情况。在经过无数次DUMP机之后，发现罪魁祸首就是由于连接服务器失败，redisContext中的o_buf并没有初始化，而在执行redisCommand时，需要用到o_buf，导致内存越界。后来将redisCommand进行封装，每次执行里先检查redisContext指针。问题算是解决了，然后，引入了新的问题。</div><div>对redisCommand进行封装时，使用了va_list来处理变长参数，又直接使用redisCommand来执行，还是DUMP机，看了源代码，发现用错函数了，应该使用redisvCommand，替换后，终于不当机了。</div><div>接着是处理各种断连情况。</div><div>第一种情况是，程序启动时，REDIS服务没有启动，这时连接失败。那么在以后每次执行指令时，对于redisContext指针为空的情况，需要加入重连机制，保证当REDIS服务启动后，程序主动进行连接，避免程序需要重启，REDIS机制才会生效的问题。</div><div>第二种情况是，程序启动时，REDIS服务也启动。但是在运行过程中，REDIS服务关闭了。这时，程序也需要对REDIS服务提供重连机制，同样是为了避免一旦REDIS服务器关闭后再启动，也无法使用的问题。</div><div>经测试，处于第二种情况时，REDIS服务关闭后，连接断开。执行redisCommand会返回空指针，由于，程序在每次执行完后，都会对指针进行判断，一旦为空，就会尝试重连。</div><div>在实际测试中，发现REDIS默认有持久化的机制，基于这个项目，并不需要持久化机制，除了增加开销，还是导致数据异常。尝试将配置文件的save配置都注释了，发现还是会有持久会。如何关闭，还有待观察。</div><div>另外一个问题就是，玩家在线，将REDIS服务器关了再重启，这时REDIS缓存为空。之后如果玩家作了某些操作，在从数据库加载数据到缓存前，触发了HSET操作，会导致之后都不会从数据库中加载数据，同样会造成数据异常。解决方法是，在每次SET之前，都会查询当前缓存中，有没有相应KEY的信息，如果没有，先从数据库加载后再执行SET操作。</div><p><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/579">2013年8月17日 1:24:24 晴</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-16T00:00:00+08:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>今天一觉醒来，已经是九点多。非常不喜欢这种感觉，可这种事情总会时不时地蹦出来，吓你一跳。还好没造成多大的不好影响。去到公司刚好大家在开例会，跟大家道了个歉。</div><div>下班的时候，听同事说起他明天要去西冲玩。突然想起去年五一我们三人去徒步的事情。不知道为什么，明明只是去年的事情，想起来，感觉怎么那么遥远。</div><p><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/574">素可泰</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-03T00:00:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>2013/04/07</div><div>此班次的车终点并不是素可泰，一路上不敢熟睡。汽车开开停停，在凌晨四点多，抵达素可泰新城不远处的车站。大半夜的，车站只有几个零散的工作人员和敬业的TUTU车司机。心想，就算打车去到新城，这么晚也不好找住的，大半夜入住还得付多一天的房费，不划算，不如索性在这里呆到五六点，天亮了再慢慢走过去。打开随身携带的KINDLE，看看书，做做功课，一两个钟的时间其实也不是很难熬。出来久了，发现自己也慢慢地淡定多了。天色开始亮起来，一个人慢悠悠地在上走着，走了大半个钟才来到新城。清晨的街道，行人很少，看着太阳一点一点地往上冒，心想着，这就是行者的生活。</div><div>&lt;img border=0 hspace=0 alt=&quot;&quot; align=baseline src=&#8220;http://www.minlh.tk/wp-content/uploads/2013/07/wpid-2e1127b1da8f126a1ff882b0778b8aa6_bf81947f9a3a71970c687a87ea1369b0.png&#8221;&gt;</div><div>原来攻略上说的100BAHT的单人房已经找不着了，至少都要150，挑了一个环境还可以入住。老板有点意思，第一次问他房价时，他说最低150，当他知道我要找100BAHT的房子时，很热心地介绍另一家客栈给我。只可惜那一家也涨价了。所以又折回头去CHECK IN。</div><div>白天的素可泰也是阳光普照。冲凉，补觉，中午出去吃了个午饭又回来避暑。下午4，5点时，才跑出去租了辆单车去旧城探探路。30BAHT租来的单车很破，老板还强调不能骑去旧城，我满口答应着，回头就直奔旧城。在旧城物色好明天要入住的客栈，可惜已经住满，只能明天再来碰碰运气。回途中，经过BIG C，买了一个很奇怪的水果，外表有点像青苹果，里面其实是番石榴。</div><div>&lt;img border=0 hspace=0 alt=&quot;&quot; align=baseline src=&#8220;http://www.minlh.tk/wp-content/uploads/2013/07/wpid-2e1127b1da8f126a1ff882b0778b8aa6_15298df427fcef8f3478af76560b782a.png&#8221;&gt;</div><div>&nbsp;</div><div>逛了逛新城的市场，又采购了20BAHT的红毛丹，回去一数，好样的居然有二三十个。</div><div>&nbsp;</div><div>&nbsp;</div><div>2013/04/08</div><div>担心昨天看好的客栈房子被租满了，起了个“早床”坐着双条车直奔古城。刚好有一空房，果断CHECK IN。租了辆单车，开始逛公园。建筑跟吴哥窟是没得比，印象比较深的就是那些佛的各种姿态。公园不大，骑着单车很快就逛完了。回客栈休息。在外面看《我是歌手》的时候，进来了一个女孩，皮肤很黑，不料居然是个中国人。聊了会天，她明天也打算去清迈，约好了一起搭车过去。今天的阳光很晒，一直在屋里躲到5点左右才敢出去逛。又骑着单车朝公园外围转了一圈。没什么特殊的景点，人很少，整个环境感觉很安静，就一个人，吹着风，迎着夕阳，随意地走在路上，感觉还是很自在的。</div><p><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/570">曼谷北站的等车生活</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-02T00:00:00+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>计划中的早起，明显已经落空了。起来时已经九点多。从河边的住处稍稍向外走，看到有一摊卖小吃的早餐档，当时点了什么，现在已经记不起来，印象中跟中国的小吃有点接近，味道嘛，不难吃，但也不是特别美味，很大众的口味。昨天在网上查到，不远处的河边，就是一个邮局。虽然这个河边小镇的水上市场跟我心目中的有点落差，但是在这里呆上几天，特别是非周末的时候，应该也是个不错的选择。这也是让我有冲动要去寄张明信片的原因。无奈，虽然邮局的门口写着今天是有营业的，可是已经到了营业时间，却依然大门紧锁。跟我一起在门口等的还是一对本地父女，看样子是想寄东西，我稍等片刻后觉得没什么希望，转身走人，当我走在路上的时候，那父女也从后面跟上来，跟我说了声再见，也离开了。</div><p></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/570">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/568">美功铁道市场和安帕瓦</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-26T00:00:00+08:00" pubdate data-updated="true">Apr 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+		<ol>
+			<li>2013/04/05<div>不想在曼谷呆了，确实不喜欢这个城市，标准的大城市，没什么好玩的，出门就得搭车，还塞车，消费高天气又热。我决定去水上市场看看。听说离这里两个小时车程的安帕瓦水上市场比较原始，而且附近有最近网上流传的美功铁道市场，也可以顺道见识一下。</div><div>今天算是比较早起，打算先去CENTRAL WORLD买双鞋子。结果证明，早起不一定是好事，去到那里才发现所以购物中心都是十点才开门，背着大行李包在周围晃悠了一个来小时才能进去。狠下心买了双840BAHT的拖鞋，搭着公车来到胜利纪念碑坐MINI VAN去美功。车站的位置有点难找，不过路在口下，多问几下就行了。汽车的终点站就是安帕瓦，80BAHT。不过我想先去美功市场看看，所以只买到美功，70BAHT。因为早上买鞋的时候商店没开，浪费了一些时间，已经来不及看12点半那趟火车经过的场景。一点多到达美功后，了解到最快的一班火车是3点进站。也好，调整一下，顺便吃个午餐。原来以为火车在这里只是过路，来到这里才发现，过了市场不远处就是火车的终点站了，所以火车经过市场的速度是相当的慢。这个也可以理解，如果速度很快的话，那么在这里买卖东西的人还真会有生命危险，毕竟每天都要经历好几次火车经过的过程。值得一提的是，来这里看火车的，百分之八十都是中国人，中间还看到两个中国旅行团过来。东南亚，真心不缺中国人。</div></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/568">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/566">曼谷逛街</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T00:00:00+08:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+		<ol>
+			<li>2013/04/04<div>早上起来根据昨晚在游记上看到的推荐，在考山路东面的BURGER KING旁边巷子里找到一天140BAHT的单间。环境是差了一点，不过也不怎么在里面呆，考虑在钱的份上，忍了。</div><div>今天纯粹是为了逛街而逛街。我决定尝试坐公车去CENTRAL WORLD。根据网上的信息，我可以做2号公车过去。可是问了一妹子，本来只是想问方向对不对，谁知道她告诉我只能做811路。好吧，听你的。好不容易等来公车，还是空调的，其实我是想做非空调的。空调的要17BAHT，非空调的估计只是7BAHT。折算过来，在曼谷坐公车也不便宜，空调车要接近4块钱RMB。曼谷的公车没报站，站台上也没有写站名，所以在哪下车，你只能靠猜了，或者指望售票员能友善地提醒。看着汽车停了一站又一站，心里完全没底，还好，旁边一泰国人看我手拿着KINDLE东张西望的，问我是不是中国人，原来他是泰籍华裔，有说普通话。他告诉我这辆车没经过CENTRAL WORLD（我猜是快线车吧），只经过水门市场，在那下之后，向前走，在天桥下右转就到了CENTRAL WORLD。谢天谢地，还好碰到好心人，要不要都不知道会搭到哪去。</div></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/566">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/564">进军泰国</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T00:00:00+08:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+		<ol>
+			<li>2013/04/03<div>说好了7点来接，现在都快7点半了，车还没来。昨晚订的是今天8点的汽车，接送的车再不来，怕是要错过班车了。连忙让老板帮忙打个电话问一下情况，是找不着路还是咋的。在订票的时候可是再三确认我客栈的名称并跟我保证说知道在哪。</div><div>过了一会，来了一辆TUTU车，又去附近接了其他乘客一起到上车地点。结果汽车一来我就傻眼了，说好的豪华沙发座位，无线WIFI都不见了，取代它是一辆破烂的中巴，如果你指望在这里面能上WIFI，那就太天真了。就连行李都没地方放，只能堆在座位上。开了两三个钟后，来到了关口。全部人下车，每天发一张金色贴纸，作为身份标识，这，这也太儿戏了吧。自己去窗口办理离境好续，再到泰国境内办理入境手续。然后再往前走，走到哪心里也没底，只能东张西望，看能不能碰上同一辆车的乘客。大中午的顶着太阳走了十几二十分钟，终于跟大队伍碰上。继续等，其它人都上了MINI VAN走了，我们是最后一批。等到一点多才上汽车，午餐都没得吃。泰国的路挺好走的，以为三四点就能到曼谷。走到一半，汽车去加油，附近有个7-11，赶快进去找吃的。身上没有泰铢，还好能用美元，不过汇率有点低，1：27。</div></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/564">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/561">每天尝试一些新的东西，生活才不会那么无趣</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>2013/04/19</div><div>早上是给热醒的。这种小茅屋，这种温度，热醒是在所难免的。昨晚睡得比较晚，今天也没什么特别安排，所以一切都顺其自然。该醒的时候自然会醒的。</div><div>起床之后又躺上外面的吊床上继续上网听音乐，除了热了一点，其它一切都挺好的。</div><div>十二点多才懒懒地出去找吃的。走过每天必经的木桥，就来到饭馆酒吧云集的地方了。不管你愿不愿意，每天都得在这里走一走。因为这座城市的中心，就是由两条东西走向的街道和几条南北走向的街道纵横交错组成的。虽然天气很热，但是要找到一家有空调的饭馆难度是相当大，临街找了一个人气还算不错的店，点了一份鸡肉炒饭，可乐，芒果SHAKE。之所以点两份饮料，是因为我知道这里上菜的速度不会很快，为了不给渴死，点瓶可乐应应急是必须的。果不其然，我把可乐喝完了，饭还没上呢。饭上来的时候，看到了喜欢的芥蓝，也看到了不喜欢的肉饼。这还是我一路吃过来的炒饭中第一次出现肉饼，之前一直都是新鲜的肉。算是比较完美地解决它。</div><p></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/561">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/558">柬埔寨：暹粒</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-14T00:00:00+08:00" pubdate data-updated="true">Apr 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>2013/03/29</div><div>事实证明，我想多了，第二天一大早我就到了暹粒。汽车停在一个停车场，之前没做好功课，也不知道身在何处。一下车就碰到一大堆拉客的司机。我有一个毛病，一看到拉客的司机，心理上就会很排斥。快速逃离停车场后，发现自己找不着东西南北了。硬着头皮走到大路，看样子就是NATIONAL 6 ROAD，这条路是东西走向的，可现在的我是在旧市场的东边还是西边呢，再一次怪自己猪头，订车票的时候没有问清楚车停的位置。事到如今也没有办法，二选一。运气真差，我选错了。走了一段路发现苗头不对，其实走到一半的时候已经有个TUTU司机告诉我走错了，由于有利益关系，所以没有相信他。事实证明世上还是好人比较多。往回走到开始的路口，再往前走一点，就看到了暹粒市区的路标。</div><p></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blogs/558">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -117,6 +464,22 @@
     
       <li class="post">
         <a href="/blog/2013/08/30/kai-shi-octopress/">开始OCTOPRESS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/583">初识REDIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/579">2013年8月17日 1:24:24 晴</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/574">素可泰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/570">曼谷北站的等车生活</a>
       </li>
     
   </ul>

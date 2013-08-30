@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Liao Octopress Blog</title>
+  <meta name="author" content="Mr.Liao">
+
+  
+  <meta name="description" content="民谣吉它： 电吉它： 古典吉它：">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pliaohuimin.github.io/blog/page/7">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Liao Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Liao Octopress Blog</a></h1>
+  
+    <h2>All Life Sucks</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pliaohuimin.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/41">吉他类型</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-04T00:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>民谣吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/minyaojita.gif"></strong></p> <p><strong>电吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/dianjita.gif"></strong></p> <p><strong>古典吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/gudianjita.gif"></strong></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/35">Accustoming Yourself to C++</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2><strong>item01:view c++ as a federation of languages.</strong></h2>
+<p>c++并不是一个带有一组守则的一体语言px是从四个次语言（C,Object-Oriented C++, Template C++,STL）组成的联邦政府，每个次语言都有自己的规约。当你从某个次语言切换到哪一个，遵循那语言的编程守则和策略。</p>
+
+	<ol>
+		<li>item02:Prefer consts,enums, and inlines to #defines.<br />
+<p>这个条款或许改为”宁可以编译器替换预处理器“比较好。因为或许#define 不被视为语言的一部份。那正是它的问题所在。</p><br />
+<p><strong>const:</strong>使用#define定义的常量不在记号表(symbol table)内，出问题时会让你很难追踪排查，包括编译对错误的排查和在调试阶段对问题的排查。</p><br />
+<p>此外，使用const代码#define定义常量，能减少目标码（object code），因为预处理器会盲目地将宏名称替换。</p><br />
+<p>另外，const比#define多了两个用途：</p><br />
+<p>第一是定义常量指针。如:const char* const authorName = “SCOTT MEYERS”。这里值得提醒你的是，string对像通常比其前辈char*-based合宜，所以上述的authorName往往定义成这样更好些：</p><br />
+<p>const std::string authorName(”SCOTT MEYERS”);</p><br />
+<p>第二是class专属常量。#define不重视作用域，也不能提供任何封装性。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>enum hack</strong>：一个属于枚举类型(enumerated type)的数值可权充ints被使用。取一个enum的地址是不合法的。如果你不想让别人获得一个pointer或reference指向你的某个整数常量，enum可以帮助你实现这个约束。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>template inline:</strong>使用它来替换宏定义的函数，可以获得宏带来的效率以及一般函数的所有可预料行为和类型安全性(type safety)。</p><br />
+<p>&nbsp;</p></li>
+		<li>item03:Use const whenever possible<br />
+<p>bitwise constness &amp;&amp; logical constness</p><br />
+<p>mutable</p><br />
+<p>在const和non-const成员函数中避免重复：令non-const调用其const是一个避免代码重复的安全做法。反向做法&#8212;令const版本调用non-const版本以避免重复是不可取的。</p><br />
+<p>将某些东西声明为const可帮助编译器侦测出错误用法。const可被施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。</p><br />
+<p>编译器强制实施bitwise constness，但你编写程序时应该使用&quot;概念上的常量性(conceptual constness)“。</p><br />
+<p>当const 和non-const成员函数有着实质等价的实现时，令non-const版本调用const版本可避免代码重复。</p></li>
+	</ol></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/20">转&#8211;陈婉婷的中印火车对比报告</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-23T00:00:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原文地址：<a href="http://www.zhihu.com/question/20318236/answer/14739823">http://www.zhihu.com/question/20318236/answer/14739823</a></p>
+<p>大家好，本人第一次用知乎发东西，居然是发了那么长的东西。</p>
+<p>这篇报告是我在2011年9月份左右完成的《中印火车情况对比》报告，是我在2011年暑假通AIESEC赴印度50天实习期间的调研结果。由于是一年前写的，可能信息还得没能更新的了，同时参考了网上一些资料，大家将就着看哦=）</p>
+<p>另外，这个报告的组长是我，组员还有其他来自全国优秀高校的童鞋，谢谢他们的努力！<br />
+（想要完整版问我拿）</p>
+<p><img src="http://p1.zhimg.com/d1/21/d1214a29ccfca730006f8338df6ac5e4_m.jpg" alt="" data-rawwidth="1285" data-rawheight="490" /><br />
+“欢迎大家乘坐印度火车，相信它一定会把你们送达目的地，什么时间到就不一定了。”</p>
+<p>相信国人对印度火车的印象大多是脏乱差、不准时、人满为患、安全性低……主要的渠道就是亲身经历过的人介绍或是国际新闻等。作为准备去印度实习的AIESECER来说，既恐惧又期待，恐怖到底印度火车有多恐怖，期待感受投入到这份恐怖当中。</p>
+<p>“印度的火车站没有什么候车室，直接进入站台，没有检票口，分不清那是铁路工作人员、那是旅客，各路人马进进出出，很是混乱。车站内到处都是人，站着、靠着、席地而坐的，有的干脆就直接睡在地上。印度火车晚点是再正常不过的事情， 我们在站台上一等又是三个小时。”</p>
+<p>一 个陌生的国度，未曾接触过的印度交通工具——火车。以火车晚点盛名。一名AIESEC师姐告我，当她与她妈妈去印度时，一班火车居然晚点31小时。在中 国，这种情况估计是一百年也不会发生一次的。同时，印度火车的出事比例也是很高的，在国内早有耳闻频频出事故的印度火车。</p>
+<p>“印度一列载客快车28在孟加拉州脱轨，结果与迎面而来的载货列车相撞。警方认为纳萨尔反政府武装是此次事件幕后黑手，而且事发前几天，约有150名纳萨尔叛军在案发现场一带扎营。 ”</p>
+<p>就 是带着这种恐惧与期待的纠结心情，我们四人每逢出行，首选火车，目的为感受当地文化，感受印度。在这个过程当中，我们对印度火车管理制度，内部环境等等产 生了兴趣，买火车票整个过程充满纠结与乐趣的矛盾。越深入月感受，不禁让我们产生疑惑，印度火车真比中国火车落后许多吗？落后点在哪里吗？好吧，让我们来 个大PK吧。  （看了前辈的评论，觉得不用PK的形式在知乎里大家能更充分理解，所以7月18日更新把PK的简单结论去掉了^_^）</p>
+<p><strong>▲比较 1：中印火车外部对比：</strong></p>
+<p>在中国，火车内外皆分类，乘客可以根据自己日程，舒适度要求购买火车票。火车外部分为11类，如没有自己的四位车次为普通列车，速度较低，而D字头动车组速度较高，目前速度最高的是G字头，高铁。</p>
+<p>中国火车种类：<br />
+1、没有字母的四位车次——普通列车<br />
+<ul><br />
+	<li>1xxx为跨2局以上的普快列车</li><br />
+	<li>5xxx为管内普快列车</li><br />
+	<li>6xxx和7xxx为慢车</li></p>
+</ul>
+<p>2、“T”（特）是特快列车；<br />
+3、“D”（动）是动车组列车；<br />
+4、“S”（深）是广深铁路公司开行的旅客快车；<br />
+5、“G”（高）是泛指运行速度大于200公里的铁路运输种类，大多数指的是客运广深线上的高速列车（时速200公里）； 武广高铁&quot;和谐号&quot;运行时速350公里的&quot;和谐号&quot;高速动车组车次由四位数字组成，冠以&quot;G&quot;字母(即高速列车)开头。<br />
+6、“Z”（直）是特快直达列车（中途停站很少甚至不停站）；<br />
+7、“K”（快）是快速列车；<br />
+8、“Y”（游）是在大城市和旅游城市之间开行的旅游列车；<br />
+9、“L”（临）是在春节、暑假客运繁忙时加开的临时旅客列车；<br />
+10、“X”（行）是专门集中装运某一方向行车、包裹的行包专列，亦属于旅客列车<br />
+11、“N”(内) 是管内快速列车（该车次只在一个铁路局内运行）</p>
+<p><strong>T字头:</strong>特别快速旅客列车,简称特快,这样的列车在行程中一般只经停省会城市 或当地的大型城市.这类列车的车底一般都是25K(蓝皮车),特快列车开始采用25T车底,也有部分特快列车采 用25Z S25K S25B S25Z等车底,全部都是空调列车。</p>
+<p><img src="http://p4.zhimg.com/36/f0/36f087d484e84fa07af46024724345c5_m.jpg" alt="" data-rawwidth="531" data-rawheight="398" /><br />
+<strong>D字头：</strong>在 我国铁路第六次提速之后出现的D字头车是CRH（中国高速铁路）的动车组，现有4个系列，分别是CRH-1、2、3、5。除D字头以外现在还有开行于京津 城际铁路上的C字头列车属于动车组，C是“城”的首字母，城际列车的意思。动车组是个广泛的概念，在我国并不是只有第六次提速之后才有动车组，现在有的动 车组也不是只有CRH的4个系列，动车组也不光是电力机车。DDJ1型动车组、“普天号”内燃动车组、“春城号”电动车组、“北亚号”内燃动车组、“新曙 光号”内燃动车组等都是例子，它们有的已经下马，有的依然在运营。其中哈尔滨局的N1/4次哈尔滨东与牡丹江之间的列车就是“北亚号”内燃动车组（不知道 现在还是不是）。而“蓝箭号”动车组算比较常见的，一直运营在广深线上。</p>
+<p><img src="http://p4.zhimg.com/c7/19/c7190d5431d2f043ee6ebeca8210d09c_m.jpg" alt="" data-rawwidth="466" data-rawheight="349" /><br />
+<strong>K字头：</strong>快速旅客列车,简称快速列车在行程中一般只经停地级行政中心或重要的县级行政中心。这类列车的车底一般是25G(红皮车) ，25B改的空调车也是红皮的,还有少部分是22型和25B型绿皮车，基本都是空调列车。</p>
+<p><img src="http://p1.zhimg.com/d4/09/d4091157380411030963f5beec40a716_m.jpg" alt="" data-rawwidth="475" data-rawheight="317" /><br />
+<strong>Z字头:</strong>直达特别快速旅客列车,简称直特，列车在行程中一站不停或者经停必须站但不办理客运业务,这类列车的车底都是25T,全部都是空调列车。</p>
+<p><img src="http://p2.zhimg.com/ec/68/ec68f455936e2db28593a48ab51222c3_m.jpg" alt="" data-rawwidth="521" data-rawheight="335" /><br />
+<strong>G字头：</strong>高速铁路泛指运行速度大于200公里的铁路运输种类，大多数指的是客运。009年12月26日，中国第一条高速铁路——武广高速铁路正式开通运营，列车设计时速350公里，列车最高时速380公里。</p>
+<p><img src="http://p2.zhimg.com/13/0e/130e385bd01a6b063feebdda90ffb677_m.jpg" alt="" data-rawwidth="516" data-rawheight="384" /></p>
+<p><strong>但在印度</strong>火 车外部的分类不多，外面看起来每一辆火车没什么大区别，都是破旧蓝铁皮车厢，车厢上面一致印刷着sleeper, 1AC, 2AC不同车厢的名字方便出行者寻找座位。例子：无论你乘坐的是1AC一等卧铺好，还是普通sleeper卧铺好，你要上的火车外部都如下图。而火车名字 大多以目的地不同命名。我们可以得知，印度火车区别更多体现在火车内部。</p>
+<p><img src="http://p2.zhimg.com/96/3c/963ce76d6adbf1224cfe5d983db13d3f_m.jpg" alt="" data-rawwidth="494" data-rawheight="370" /><img src="http://p2.zhimg.com/13/2b/132bdacbb1b3a46bd1aadb83e8fba60e_m.jpg" alt="" data-rawwidth="496" data-rawheight="370" /><br />
+从火车外部新旧程度，款式，现代化程度来比较，中国火车外部质量远远高于印度火车。打个不恰当比喻，中国火车像有钱人家出来的穿着光鲜的小姑娘，印度火车就像不修边幅的穷苦人家。<br />
+<strong></strong><br />
+<strong>▲对比 2：中印火车内部对比：</strong></p>
+<p>中国车厢种类一般分为高包（高级包箱软卧）、软卧、硬卧、软座、和硬座，收费不同，迎合不同需要和经济能力的乘客。由于中国的火车内部我们较为熟悉，或者直接从网上就能获取图片，为了不使报告过冗长，我们省略国内火车内部图片。</p>
+<p><strong>1. 高包</strong><br />
+高 包即是二人高级包厢软座，一列高包列车有八个房间。每间房设有独立洗衣间（但是北京西 &#8211; 九龙 T97/98 次 和 上海 &#8211; 九龙 K99/100 没有独立洗手间）。每间房有两张床，一张台，一个衣柜，一个行李柜（在通道天花板上面），一个椅子，一个保险箱。每间房房门可以上锁，门后面有一块镜子。 高包房间有独立灯光，也有独立音响开关掣。<br />
+高包车票一般很贵，票价约为为软卧的 1.5 &#8211; 1.8 倍，视乎距离而定。例如广州 &#8211; 北京西的T15/16次高包，全程收 1305 元人民币。</p>
+<p><strong>2. 软卧</strong><br />
+软卧是四人包厢，一列软卧有九间房间，每间房间有四个卧铺，分为左右两边，每边分上下铺。每间房有一张台，一个行李柜 (在通道天花板上面)。 每间房房门可以上锁，门后面有一块镜子。软卧房间有独立灯光，也有独立音响开关掣。<br />
+软卧车票价钱约为硬卧的 1.4 &#8211; 1.7 倍，视乎距离而定。软卧下铺比上铺贵。</p>
+<p><strong>3. 硬卧</strong><br />
+硬卧是六人间隔，一列硬卧有十一个间隔。每个间隔分左右两边，每边有上中下三铺。每个间隔有一张小台。行李架在通道上方。通道上面设有小权和摺椅，供硬卧旅客使用。<br />
+硬卧车票分三个价钱，上铺最便宜，下铺最贵。硬卧车箱灯光由列车员控制，每晚 9 &#8211; 11 点会关灯。</p>
+<p><strong>4. 软座</strong><br />
+软座是 2 X 2 座位，每张座位有独立台子。行李架在列车两边座位上方，一般软座可坐 78 人。</p>
+<p><strong>5. 硬座</strong><br />
+硬座是 2 X 3 对头座位，每一组 (二人对二人 或 三人对三人) 设有一张台。行李架在列车两边座位上方。一般硬座车可坐 118 人。<br />
+硬座票价最便宜，而且容许设有无座票即站票。</p>
+<p><strong>印度车厢种类</strong>介绍：</p>
+<p><strong>Air-Condition 类：</strong><br />
+AC 级的车厢〈1A.2A.3A〉均为对号座位，非该等级乘客不可随意进入，不会有人睡在你旁边的地板上，厕所会干净一些。AC级皆有提供被单及毯子枕头，不 需睡袋，位子是软的睡起来很舒服，非AC等级的车厢没提供，要自备睡袋。3A同2A/1A设备&amp;服务一样 会发毛毯跟床&amp;被单 ，只差在一面墙是1/2/3张床〈空间大小的问题〉，AC1/2/3的价钱大约是 3:2:1 左右，AC/1=头等，AC/2=商务，AC/3=经济。2A老外多，3A几乎都是有点钱的印度人，算安全。省钱族女生建议选3A的USB（靠边上层）座 位。</p>
+<p><strong>1、1A:First class air-conditioned</strong> 一级车箱，空调，绒布座椅，双层卧铺。<br />
+<img src="http://p1.zhimg.com/4e/e9/4ee9d101a5ab6c8a92e7773208346ecb_m.jpg" alt="" data-rawwidth="210" data-rawheight="279" /><br />
+<strong>2、2A:Air-conditioned 2-tier sleeper </strong>空调，塑胶皮椅，双层卧铺。</p>
+<p>&lt;无图&gt;</p>
+<p><strong>3、3A:Air-conditioned 3-tier sleeper</strong>空调，塑胶皮椅，三层卧铺。每节有72个铺位，分成9个隔间〈隔间之间没有门，没有帘子〉，每个隔间8个铺位，分别是两排相对的上铺〈UB〉、中铺〈MB〉、下铺〈LB〉，以及靠走道还有上铺〈SU〉与下铺〈SL〉，走道边无中铺。<img src="http://p2.zhimg.com/96/87/96873663d15fe1649d60cf7799509bd0_m.jpg" alt="" data-rawwidth="278" data-rawheight="368" /><br />
+<strong>4、CC:AC chair car:AC Executive chair class/Air-conditioned chair-car </strong>空调，无卧铺，有绒布椅（Executive chair class）；和塑胶皮椅两种。<br />
+<img src="http://p4.zhimg.com/c3/f7/c3f7d90985625941aeb2d99538b051ff_m.jpg" alt="" data-rawwidth="358" data-rawheight="267" /><br />
+<strong>非Air-Condition类：</strong></p>
+<p><strong>5、FC:First class </strong>一级车箱，无空调，塑胶皮椅，双层卧铺。</p>
+<p><strong>6、SL:Sleeper class </strong>无 空调，塑胶皮椅，三层卧铺。坐位排列同3A，每节有72个铺位，分成9个隔间〈隔间之间没有门〉，每个隔间8个铺位，分别是两排相对的上铺〈UB〉、中铺 〈MB〉、下铺〈LB〉，以及靠走道还有上铺〈SU〉与下铺〈SL〉〉，走道边无中铺。在我们印度之程中，从斋浦尔出发，到附近城市，从时长4个小时到 11个小时，都有选择sleep class，价格实惠，在火车上只要注意财物，我们还是觉得很安全的。晚上风扇开的很猛，不需要AC也很凉快。图为同一个trainee house的中国人前往Jaisalmer沙漠的火车图，我们选择的是sleeper车厢。</p>
+<p><strong>7、2S:Second class Sitting</strong> 二级车箱，无空调，木椅，双层卧铺；或者塑胶皮椅，无卧铺两种。</p>
+<p>通 过亲身对比与调查访问，我们发现在火车内部条件比较上，中国的硬座与卧铺比印度的硬座与卧铺条件较好，因为印度的硬座与卧铺对象针对于较下层经济不宽松人 民，所以内部设施简陋陈旧，较拥挤，但是胜在价格十分低廉实惠，我们在印度旅游时皆选择sleeper，相当于国内的硬卧，价格相当低廉，无空调有风扇， 也觉得十分满意安全。</p>
+<p>当比较中国的软卧与印度的AC卧铺时，我们得出结论是印度更为优秀。在印度，几乎所有乘坐AC软卧，无论是一等还是 三等的，皆非常满意，赞不绝口。AC就是安全，干净，文明的象征。印度火车AC车厢主要乘客是印度有钱人与外国人，车上有提供食物，枕头，毯子，被单等。 乘客非常有素质，即使你把贵重物品放在床上没有人会拿走。而且AC与非AC之间有车厢隔住，非AC成员不得进去AC车间，使乘客物品人身安全十分有保障， 车厢内井井有条，不拥挤，还有空调，过道上两边车厢皆有帘子可拉上。</p>
+<p><strong>▲比较 3：中印火车价格对比</strong></p>
+<p>我们选择中印两程火车分别作为短途和长途，通过相同距离，相似火车内部条件，比较中印火车的性价比高低。设人民币：卢比=1：7。</p>
+<p>短途：选择我们熟悉的斋浦尔Jaipur到德里Delhi 294km这一程作为参照来对比。我们选择国内两地长度相似的上海到南京300km为对比对象。并重点体现所需时长与价格，从而更好体现两国火车性价比高低。</p>
+<p>类型G-高铁，D-动车，T-特快，K-快速，Z-直特：有冷气<br />
+普通车：无冷气</p>
+<p><strong>G-高铁</strong><br />
+<img src="http://p2.zhimg.com/16/5a/165af239c66e1221cf6d369639af27bd_m.jpg" alt="" data-rawwidth="499" data-rawheight="388" /><img src="http://p1.zhimg.com/87/bd/87bd90129eac9a06208fbbab9334bc0b_m.jpg" alt="" data-rawwidth="499" data-rawheight="414" /></p>
+<p><strong>D-动车</strong><br />
+<img src="http://p3.zhimg.com/bc/52/bc52ac529f4aa294ad1218b364e52453_m.jpg" alt="" data-rawwidth="501" data-rawheight="255" /></p>
+<p><strong>T-特快</strong><img src="http://p3.zhimg.com/6f/21/6f218272013b001d7df97061c96bd343_m.jpg" alt="" data-rawwidth="502" data-rawheight="392" /><img src="http://p3.zhimg.com/20/9f/209fce3b0b7e3ef456db0b862d6f1afc_m.jpg" alt="" data-rawwidth="502" data-rawheight="131" /></p>
+<p><strong>K-快速</strong><br />
+<strong><img src="http://p2.zhimg.com/51/5c/515ceb5390d7bceee81c60781ab1ffff_m.jpg" alt="" data-rawwidth="501" data-rawheight="392" /></strong></p>
+<p>Z-直特<br />
+<strong><img src="http://p1.zhimg.com/47/1c/471cf955b8675a6d2e9e1dd25ace099e_m.jpg" alt="" data-rawwidth="504" data-rawheight="530" /></strong></p>
+<p>普通车<br />
+<strong><img src="http://p1.zhimg.com/d7/70/d770bc1dd5e3fd71d136870fc3b59ee0_m.jpg" alt="" data-rawwidth="502" data-rawheight="255" /></strong></p>
+<p>结论：<strong><br />
+</strong><br />
+<strong>中国所有的火车都比印度的火车要快</strong></p>
+<p><strong>有空调的火车对比：</strong><br />
+<ul><br />
+	<li>除了高铁与D动车组明显贵之外，其他T,K,Z字头的火车硬座与印度硬座价格差不多，但时间至少快了45分钟；</li><br />
+	<li>在T,K,Z字头中，空调硬卧贵了50%，；空调软卧贵了80%；高级空调软卧贵了92%,时间均节省从45分钟到90分钟。可知越高级，印度火车的性价比更高。</li></p>
+</ul>
+<p><strong>无空调的火车对比：</strong><br />
+<ul><br />
+	<li>就时间来看，中国的火车比印度火车快了30分钟；就价格来看，硬座贵了192%，硬卧贵了283%，可想而知性价比非常高</li></p>
+</ul>
+<p>长途：选择我们印度经历其中最长途一程作为参照。<strong>斋浦尔Jaipur到钦奈Chennai,全长2185km. 国内我们选择广州到成都，全程共2202km.</strong><br />
+<strong><br />
+</strong><br />
+<strong><img src="http://p2.zhimg.com/1d/b5/1db562507ed1749843d0ec32e6913e8c_m.jpg" alt="" data-rawwidth="583" data-rawheight="223" /><br />
+</strong><br />
+从中印火车价格我们可以惊讶得出，与其说印度火车便宜得难以置信，不如说中国火车价格提得太高。K字头火车在中国只能算中等价位，D字头动车组与G字头高铁价格远远高于它。</p>
+<p>价格原因导致中国人平时出行难，特别远行选择火车的人不是太多，日常百姓流动性不大，一般对火车购票，火车状况一知半解。而印度火车的价格相对低廉的很，尽管非空调车间的设施的确比中国差多了，但空调车间到时和中国有的一拼甚至更豪华。</p>
+<p>从 国民收入看，各种研究报告对印度收入水平说法不一，我没有深入调查不能给出客观评判，上面的数据是根据汇率换算的，希望了解印度收入状况的前辈可以提供资 料，我再进行补充。但从直观感受看，印度收入差距可能要比中国大一些，特别是贫困线以下人口比例明显比中国要高。较低的票价也让印度人出行绝大多数选择火 车为主要交通工具。令我意外的是，从我们遇到的房东，酒店老板，商店老板，十来岁的小孩，大学生等等都对印度火车有着深刻的了解，跟中国相比，我们火车方 面的常识实在薄弱。</p>
+<p>有人说，中国火车硬件比印度好多了，价格当然贵。但从火车行驶时间来看，中国K字头火车在长途火车中没有比印度火车快速多少。一般情况下，倘若只相差4个小时，车厢内部环境相当，普通收入的人会选近700元的火车还是便宜一半的320元火车呢？</p>
+<p><strong>▲比较4：中印火车票务程序比较</strong></p>
+<p>中 国与印度这两个人口大国，每逢重要节日旅游旺季前夕，火车票必定一票难求。在印度呆了一个半月深感印度的票务制度完善和复杂。而中国春节前期回乡潮火车票 的购买更是困难。某种程度上，票务制度可以体现出政府对火车这交通工具的重视与否。首先让我们来看一下两国票务基本情况。<br />
+<ul><br />
+	<li><strong>中国：提前15天到售票窗口买票，不可网上订票。（备注：现在可以）</strong></li><br />
+	<li><strong>印度：提前90天到售票窗口买票，可以网上订票。 </strong></li></p>
+</ul>
+<p><strong>案例分析：</strong><br />
+本 人于8月19号在斋浦尔火车站订买于8月28号从斋浦尔Jaipur到Chennai的火车票，原本想着都提前10天购票，肯定保障。谁知去到火车站 Reservation Counter发现这种远途票在旅游旺季8月份超级热门。根本买不到火车票，由于火车从Jaipur到Chennai耗时将近 40小时，没票我也得买，怎样要在31号我飞机起飞前到达Chennai机场，死也要死上车啊。只能买到一个叫Waiting list的 票，Waiting list 排到23。所以我付了全额车费定了个Waiting List。</p>
+<p><strong>概念解释：Waiting List是指火车上现有的座位已经售完，Waiting list23表明有22个人在你前面排队等你这等车厢。若已购票的人退票你就有可能得到座位或者购票人数太多，会考虑多加车厢。</strong></p>
+<p>过 了4天后，我上了India Train的官网，输入我的票号，一查，发现Waiting List号码变成7。通过咨询房东与房东儿子，房东儿子告诉 我，我的WL绝对有很大可能得到座位，因为仅仅我的车厢就有23个人，另外加上别的车厢，若超过40人肯定加车厢，有钱不会不赚吧。<img src="http://p4.zhimg.com/77/31/7731729cf89867b570ddec34c2b63d51_m.jpg" alt="" data-rawwidth="708" data-rawheight="170" /><br />
+房东儿子（20岁左右）告诉我，在印度，旺季时的火车票就像玩游戏，你买了一张票不是一劳永逸，还要经常check票。</p>
+<p>离28号还有4天时，我上网查票，惊讶地发现我的WL票居然变成了RAC票。<img src="http://p1.zhimg.com/81/27/8127943cc6944779f15194fe6b3d3e2f_m.jpg" alt="" data-rawwidth="551" data-rawheight="131" /><br />
+<strong>概念解释：RAC是指Reservation Against Cancellation。指你的票不可以被取消。就是说火车上有你的位置了，但是具体位置在哪里要等到上车前几个小时，通过上网，打电话或者到火车站看贴出来的乘客位置才知道。</strong></p>
+<p>我悬着的心就放心了，因为against cancellation，意味着我肯定有位，但是位置在哪，不知道，我不用坐我行李箱40多个小时去Chennai了。</p>
+<p>28号下午五点，我再次查票。发现我车票的状态已经改为Confirmed，同时也得知我的座位号。</p>
+<p><strong>印度火车票名词解释（在印度火车站官网截图获取）：</strong><br />
+<strong><img src="http://p1.zhimg.com/89/18/8918b1e7ace8cb25c9faf169aff1d6b6_m.jpg" alt="" data-rawwidth="555" data-rawheight="221" /><br />
+</strong><br />
+<strong>印度火车票一张：<br />
+</strong><br />
+<strong><img src="http://p4.zhimg.com/33/f8/33f8c7caa53be58c07a8c0f09183ba46_m.jpg" alt="" data-rawwidth="433" data-rawheight="273" /><br />
+</strong><br />
+<strong>中国火车票：<br />
+</strong><br />
+<strong><img src="http://p4.zhimg.com/3d/b9/3db9fb2c23e16cc833801da73f7d1aa5_m.jpg" alt="" data-rawwidth="439" data-rawheight="330" /><br />
+</strong><br />
+印 度火车票购买采取实名制，需要填写名字，性别，年龄，地址等个人信息。有的购买需要你提供身份证明。信息会在火车票鞋面，而乘客名单会打印N份，贴在相应 车厢内，贴在火车站告示牌上，在火车检票员手上。这种实名制虽说不是百分百严禁，好像外国人你乱填名字，只要不出示证件也就没关系。但是印度火车票实名制 购买非常大程度的遏制了黄牛票的出现与泛滥。毕竟你经常去买火车票，经常乱写名字还是还容易被认出来的。</p>
+<p>而在中国购买火车票，虽说实名制提出了也正在普及，但是需要提供身份证购买火车票的时候真不多。买张火车票非常容易，导致了中国火车票黄牛党的大批大批出现。在春节前期，民工一票难求，必须高价想黄牛党买火车票的状况不少。</p>
+<p>印 度火车票查询官方网站首页： 在这首页里，无论是印度本地人还是外国旅客，都可以清清楚楚地查到每一班火车的车次，价格，购票情况，车位剩余情况等等。以 及购票后车票状态查询。对于外国游客来说十分方便，还支持网上信用卡付款。使没时间去Reservation排队的人可以在网上轻易支付购买车票。</p>
+<p>在中国，我们通过google或者百度搜索“火车票订购”出来的没有官方网站，全部是打广告的，或者是代理商，去哪儿网，酷讯之类的。火车票中介也大行其道，更不用说能不能够查到车位剩余情况了。根本没有任何透明度。（目前稍有改善~）<strong><br />
+</strong><br />
+<strong>火车购票制度，显然印方获胜。</strong></p>
+<p>印 度火车票购买采取实名制，需要填写名字，性别，年龄，地址等个人信息。有的购买需要你提供身份证明。信息会在火车票鞋面，而乘客名单会打印N份，贴在相应 车厢内，贴在火车站告示牌上，在火车检票员手上。这种实名制虽说不是百分百严禁，好像外国人你乱填名字，只要不出示证件也就没关系。但是印度火车票实名制 购买非常大程度的遏制了黄牛票的出现与泛滥。毕竟你经常去买火车票，经常乱写名字还是还容易被认出来的。</p>
+<p>而在中国购买火车票，虽说实名制提出了也正在普及，但是需要提供身份证购买火车票的时候真不多。买张火车票非常容易，导致了中国火车票黄牛党的大批大批出现。在春节前期，民工一票难求，必须高价想黄牛党买火车票的状况不少。</p>
+<p>在 印度火车票首页里，无论是印度本地人还是外国旅客，都可以清清楚楚地查到每一班火车的车次，价格，购票情况，车位剩余情况等等。以及购票后车票状态查询。 对于外国游客来说十分方便，还支持网上信用卡付款。使没时间去Reservation排队的人可以在网上轻易支付购买车票。</p>
+<p>在中国，我们通过google或者百度搜索“火车票订购”出来的没有官方网站，全部是打广告的，或者是代理商，去哪儿网，酷讯之类的。火车票中介也大行其道，更不用说能不能够查到车位剩余情况了。根本没有任何透明度。</p>
+<p>火车购票制度，显然印方获胜。</p>
+<p><strong>▲比较5：中印火车覆盖范围影响比较</strong><br />
+<strong><br />
+</strong><br />
+<strong>全国铁路客运线路图：</strong><br />
+<strong><img src="http://p2.zhimg.com/50/e3/50e304950a2b8a463ed5b4c561ab6cb6_m.jpg" alt="" data-rawwidth="543" data-rawheight="386" /><br />
+印度铁路图：</strong><br />
+<strong><img src="http://p1.zhimg.com/49/43/49439a7ec02aff53053e5634749cb457_m.jpg" alt="" data-rawwidth="554" data-rawheight="465" /><br />
+</strong><br />
+从铁路图可以看出：在中国，由于地形、经济发展水平的影响，铁路分布非常不均。东部，经济发达，铁路网也非常稠密；而相比之下，西部的铁路则稀疏得“脉络清晰”。</p>
+<p>印度就没有这样的问题，无论是在发达的南部，还是在落后的北部；无论是在人口稠密的西部，还是在人口“稀疏”的东部，印度的铁路网看上去都是那么均匀。</p>
+<p>《国 家地理》杂志曾经用“伟大的印度铁路”来形容它的壮观。火车无愧于印度的“大动脉”。不得不说，印度这个国家太依赖铁路了。去印度旅游的背包客，尤其离不 开印度的铁路！有一组数据可以说明问题，2006年印度为63327公里，而与2009年的中国相比，中国铁路营业里程达到77965.9公里。从铁路总 里程数看，中国绝对是占优的，但是考虑到印度的国土面积只是中国的近1/3，你就可以想象印度这个国家的铁路网已经有多么完善。</p>
+<p>6853个车站，日发车量达1.5万列，日运送旅客1300多万，货物130万吨：这就是印度铁路网！可以毫不夸张地说一句，全世界没有一个国家像印度一样，铁路在一个国家的地位是如此重要。</p>
+<p><strong>▲比较6：中印火车安全性比较</strong></p>
+<p>看到了印度经典吓人的人口涌动爬上火车的情景，估计大家毫不犹豫地质疑印度火车的安全性，然后通过在印度实地考察与网上大量资料阅读，发现中印两国的火车安全性却很难分析哪个较高。以下是一些新闻报道。</p>
+<p><strong>中方：</strong><br />
+<ul><br />
+	<li>2006 年4月11日9时32分，南昌铁路局南昌机务段DF11319号机车担当的青岛开往广州东的T159次列车，行至广铁集团管内京九下行线林寨站至东水站 间，在信号故障情况下，司机个人认为防护区间没有列车，盲目行车，以48公里的较快时速，撞上正在停靠的武昌开往汕头的1017次列车，导致1017次列 车最后4节车厢脱轨。当时，T159次第二司机在睡觉，没有执行在故障情况下必须双司机值乘的规定。事故造成2名铁路职工当场死亡，18名旅客受伤，构成 重大事故.</li><br />
+	<li>2007年2月28日2时05分，由乌鲁木齐开往新疆南部城市阿克苏的5807次列车运行至南疆铁路珍 珠泉至红山渠站间42公里+300米处时，因瞬间大风造成该次列车机后9至19位车辆脱轨，造成3名旅客死亡，2名旅客重伤，32名旅客轻伤，南疆铁路被 迫中断行车。</li><br />
+	<li>2008年1月23日晚上8点48分，北京开往青岛四方的动车组D59次列车运行至胶济线安丘至昌邑间时，发生重大路外交通事故，造成18人死亡，9人受伤。</li><br />
+	<li>2008年4月28日凌晨4时41分，北京开往青岛的T195次列车运行到胶济铁路周村至王村之间时脱线，与上行的烟台至徐州5034次列车相撞。</li><br />
+	<li>2009年5月23日上海开往桂林K859次旅客列车在江西境内脱轨已造成19人死亡71人受伤。</li><br />
+	<li>7•23 甬温线特别重大铁路交通事故。2011年7月23日晚上20点30分左右，甬温线永嘉站至温州南站间，北京南至福州D301次列车与杭州至福州南 D3115次列车发生追尾事故，目前事故原因尚未彻底查明。截至7月29日，事故已造成40人死亡（有数名外籍人士），200多人受伤。</li></p>
+</ul>
+<p><strong>印方：</strong><br />
+印度火车事故的高产在此不再一一举例，下面列出印度近几年的火车事故综述：<br />
+<ul><br />
+	<li>2003－2004年度：320起火车事故</li><br />
+	<li>2004－2005年度：超过200起火车意外事故，4起蓄意破坏事故</li><br />
+	<li>2008－2009年度：177起火车事故</li><br />
+	<li>2008－2009年度：超过200人死于火车意外事故，13起蓄意破坏事故</li><br />
+	<li>2009－2010年度：超过200人死于火车意外事故，1起蓄意破坏事故</li></p>
+</ul>
+<p>通过数据得出分析：</p>
+<p>可 以通过上述的对比发现，中国因为掌握着先进的铁路，火车制造技术为中国的火车硬件设施的提供了有力的保障。并且随着技术的不断强化中国的火车事故现在在不 断减少，虽说最近的动车相撞引起了不少轰动，但是此次相撞充满着疑问我们不能通过此次事件对中国的火车安全就抱有怀疑。</p>
+<p>印度方面 虽然最近几年火车事故的总数一直在趋于下降，但是由于国家政局的动荡每年都会有不少铁路意外是人为破坏引起的。近几年印度政府已经投入了36亿铁路安全基 金虽然在铁路行车安全上起到了很大作用，但是印度火车的人为意外多，晚点多，太拥挤，卫生条件差依然是印度铁路挥之不去的噩梦。</p>
+<p>中 国火车和印度的火车相比速度有明显优势，但是高速度也会带双重影响。印度的一般火车的速度和中国告诉公路上的汽车速度相当，但是中国的高铁速度最快可以达 到300km／h以上。我们可想而知在相同的事故条件下，中国的每次火车事故的死亡人数将远远大于印度火车事故。所以在速度方面虽然印度的实效会低但是在 安全性反面占得先机，这估计也是印度火车不关门的原因之一。</p>
+<p><strong>总结:</strong> 通过以上几方面比较,我们能够得到一个中肯的结果，印度于中国火车很难一较高低。未去印度的实习生，或者在印度实习时火车上遭遇不好经历的你们，或许觉得我们有些牵强，这样都可以用来比较？<strong>但是我们很负责任地告诉你们，这些都是我们查阅许多资料，访问中印人民调查出来的结果。搭过多次印度火车之后，我们十分想为国人对印度火车印象平反，希望我们不要带着有色眼镜去对待印度火车，对待印度</strong>。犹记得临去印度前，南都人物推出了一期：“印度，陌生的邻居”的长篇报道，大家可以去看一下。</p>
+<p>以上文字7月18日进行了更新。</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/15">植物分类</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-22T00:00:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.minlh.tk/wp-content/uploads/2012/07/01300000411079129171226967660.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="01300000411079129171226967660" border="0" alt="01300000411079129171226967660" src="http://www.minlh.tk/wp-content/uploads/2012/07/01300000411079129171226967660_thumb.jpg" width="569" height="470"></a></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/13">使用WINDOWS LIVE WRITER离线发布测试</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-22T00:00:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本文为使用WINDOWS <span class="caps">LIVE</span> WRITER离线发布测试。</p> <p>使用这种方法很简单，只消在网上下载安装好WINDOWS <span class="caps">LIVE</span> WRITER这个软件，在WORDPRESS设置好</p> <p><span class="caps">XML</span>-<span class="caps">RPC</span><br><span class="caps">XML</span>-<span class="caps">RPC</span> Enable the WordPress, Movable Type, MetaWeblog and Blogger <span class="caps">XML</span>-<span class="caps">RPC</span> publishing protocols. <p>这一项。 <p>在启动WINDOWS <span class="caps">LIVE</span> WRITER软件时选择WORDPRESS，填写网址，后台管理用户名，密码就OK了。</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/8">免费一级域名+免费虚拟空间+WORDPRESS打造全新个人BLOG</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-21T00:00:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>总算是把这事情处理了。</p>
+<p>之所以有这个博客，原因很简单：无意间看到大学一个师兄用WORDPRESS做了一个自己的BLOG，就有了自己也做一个BLOG的冲动。之前也用过一些二级域名加上提供好的模板建立起来的博客，总觉得缺少一些东西，就是自己对这些东西的一个掌控力，你不知道网站什么时候会改变它的经营策略，也只能按照它提供好的几个模块做一些小的调整，后台DIY的空间不大。</p>
+<p>有了这个冲动之后，马上上网了解一下一级域名的申请情况，发现大部分域名都是需要收费的。还好，在<a href="dot.tk">dot.tk</a>找到了这个以.tk结尾的域名，如果域名长度大于3，都是免费了。好吧，虽然没听过这个后缀，不过好歹也算是一级的，重点是免费的，该知足了。</p>
+<p>申请完域名，接下来就是寻找免费的虚拟空间。因为考虑到使用WORDPRESS，如果所找的虚拟空间必须支持PHP脚本和MYSQL数据库。之前找到了<a href="0fees.net">0fees.net</a>，发现这个网站不支持后缀为.tk域名的绑定。后来就找到了<a href="http://www.freewebhostingarea.com/">http://www.freewebhostingarea.com/</a>，发现刚好满足需求。不过它只支持NAMESERVER解析，不支持A RECORD。没关系，把它提供的解析域名往<a href="dot.tk">dot.tk</a>的配置一写，也就搞定了。当然，生效需要一定的时间，我的实际情况是不超过半天。</p>
+<p>其实这个虚拟空间是支持自动安装WORDPRESS的，但是我没有使用这个功能。直接下载软件包，往ftp服务器上传，把WORDPRESS目录下的所有文件往根目录一移，工作基本就完成了。打开你绑定的域名，按照页面的提示，一步步往下走，中间需要填写的信息都能在虚拟空间的个人信息里找到。填写完毕后，整个工作就告一段落了。</p>
+<p>另外，如果WORDPRESS安装的不是在根目录，还需要一个叫“Third Party Host Fix”的工具来协助安装主题时寻找到合适的目录。</p>
+<p>一些相关的指导也可参照<a href="http://www.cnpetweb.com/a/xinxizhongxin/lanmu9/2011/1003/16761.html">http://www.cnpetweb.com/a/xinxizhongxin/lanmu9/2011/1003/16761.html</a></p>
+<p>接下来呢，你的个人博客生涯可以真正开始了:)</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/1">Hello World!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-21T00:00:00+08:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span class="caps">HAHA</span>,this is my blog</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/96">Temporary-Post-Used-For-Style-Detection-Title-1222088526</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2000-01-01T00:00:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2000</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Temporary-Post-Used-For-Style-Detection-Content-1222088526</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/94">Temporary-Post-Used-For-Style-Detection-Title-2104823695</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2000-01-01T00:00:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2000</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Temporary-Post-Used-For-Style-Detection-Content-2104823695</p></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/6/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/30/kai-shi-octopress/">开始OCTOPRESS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/583">初识REDIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/579">2013年8月17日 1:24:24 晴</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/574">素可泰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/570">曼谷北站的等车生活</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Mr.Liao -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

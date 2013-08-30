@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Accustoming Yourself to C++ - Liao Octopress Blog</title>
+  <meta name="author" content="Mr.Liao">
+
+  
+  <meta name="description" content="item01:view c++ as a federation of languages.
+c++并不是一个带有一组守则的一体语言px是从四个次语言（C,Object-Oriented C++, Template C++,STL）组成的联邦政府，每个次语言都有自己的规约。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pliaohuimin.github.io/blogs/35">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Liao Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Liao Octopress Blog</a></h1>
+  
+    <h2>All Life Sucks</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pliaohuimin.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Accustoming Yourself to C++</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2><strong>item01:view c++ as a federation of languages.</strong></h2>
+<p>c++并不是一个带有一组守则的一体语言px是从四个次语言（C,Object-Oriented C++, Template C++,STL）组成的联邦政府，每个次语言都有自己的规约。当你从某个次语言切换到哪一个，遵循那语言的编程守则和策略。</p>
+
+	<ol>
+		<li>item02:Prefer consts,enums, and inlines to #defines.<br />
+<p>这个条款或许改为”宁可以编译器替换预处理器“比较好。因为或许#define 不被视为语言的一部份。那正是它的问题所在。</p><br />
+<p><strong>const:</strong>使用#define定义的常量不在记号表(symbol table)内，出问题时会让你很难追踪排查，包括编译对错误的排查和在调试阶段对问题的排查。</p><br />
+<p>此外，使用const代码#define定义常量，能减少目标码（object code），因为预处理器会盲目地将宏名称替换。</p><br />
+<p>另外，const比#define多了两个用途：</p><br />
+<p>第一是定义常量指针。如:const char* const authorName = “SCOTT MEYERS”。这里值得提醒你的是，string对像通常比其前辈char*-based合宜，所以上述的authorName往往定义成这样更好些：</p><br />
+<p>const std::string authorName(”SCOTT MEYERS”);</p><br />
+<p>第二是class专属常量。#define不重视作用域，也不能提供任何封装性。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>enum hack</strong>：一个属于枚举类型(enumerated type)的数值可权充ints被使用。取一个enum的地址是不合法的。如果你不想让别人获得一个pointer或reference指向你的某个整数常量，enum可以帮助你实现这个约束。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>template inline:</strong>使用它来替换宏定义的函数，可以获得宏带来的效率以及一般函数的所有可预料行为和类型安全性(type safety)。</p><br />
+<p>&nbsp;</p></li>
+		<li>item03:Use const whenever possible<br />
+<p>bitwise constness &amp;&amp; logical constness</p><br />
+<p>mutable</p><br />
+<p>在const和non-const成员函数中避免重复：令non-const调用其const是一个避免代码重复的安全做法。反向做法&#8212;令const版本调用non-const版本以避免重复是不可取的。</p><br />
+<p>将某些东西声明为const可帮助编译器侦测出错误用法。const可被施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。</p><br />
+<p>编译器强制实施bitwise constness，但你编写程序时应该使用&quot;概念上的常量性(conceptual constness)“。</p><br />
+<p>当const 和non-const成员函数有着实质等价的实现时，令non-const版本调用const版本可避免代码重复。</p></li>
+	</ol></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Mr.Liao</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pliaohuimin.github.io/blogs/35" data-via="" data-counturl="http://pliaohuimin.github.io/blogs/35" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blogs/20" title="Previous Post: 转--陈婉婷的中印火车对比报告">&laquo; 转--陈婉婷的中印火车对比报告</a>
+      
+      
+        <a class="basic-alignment right" href="/blogs/41" title="Next Post: 吉他类型">吉他类型 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/30/kai-shi-octopress/">开始OCTOPRESS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/583">初识REDIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/579">2013年8月17日 1:24:24 晴</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/574">素可泰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/570">曼谷北站的等车生活</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Mr.Liao -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

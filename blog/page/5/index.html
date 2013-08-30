@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Liao Octopress Blog</title>
+  <meta name="author" content="Mr.Liao">
+
+  
+  <meta name="description" content="前置条件： 部署前需要安装软件 Apache 需要软件包：httpd-2.2.20.tar.gz 步骤 Setp 1: tar xzvf httpd-2.2.20.tar.gz Step 2: cd httpd-2.2.20 Step 3: ./configure Step 4: make &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pliaohuimin.github.io/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Liao Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Liao Octopress Blog</a></h1>
+  
+    <h2>All Life Sucks</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pliaohuimin.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/131">部署系统参考</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T00:00:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3><a name="_Toc342068115">前置条件：</a></h3> <h4><a name="_Toc342068116">部署前需要安装软件</a></h4> <h5><a name="_Toc342068117">Apache</a></h5> <p>需要软件包：httpd-2.2.20.tar.gz <p><b>步骤</b> <p>Setp 1: tar xzvf httpd-2.2.20.tar.gz <p>Step 2: cd httpd-2.2.20 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068118">Mysql-server</a></h5> <p>Step 1: yum install mysql-server <p>Done <h5><a name="_Toc342068119">Libevent</a></h5> <p>需要软件包：libevent-2.0.19-stable.tar.gz <p><b>步骤</b> <p>Step 1: tar xzvf libevent-2.0.19-stable.tar.gz <p>Step 2: cd libevent-2.0.19-stable <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068120">Libmemcached</a></h5> <p>需要软件包：libmemcached-1.0.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libmemcached-1.0.4.tar.gz <p>Step 2: cd libmemcached-1.0.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068121">Memcached</a></h5> <p>需要软件包：memcached-1.4.13.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf memcached-1.4.13.tar.gz <p>Step 2: cd memcached-1.4.13 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068122">Libxml</a></h5> <p>需要软件包：libxml2-2.7.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libxml2-2.7.4.tar.gz <p>Step 2: cd libxml2-2.7.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068123"><span class="caps">PHP</span></a>：</h5> <p>需要软件包：php-5.2.17.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf php-5.2.17.tar.gz <p>Step 2: cd php-5.2.17 <p>Step 3: ./configure &#8212;prefix=/usr/local/php5 &#8212;with-apxs2=/usr/local/apache2/bin/apxs &#8212;with-config-file-path=/usr/local/lib &#8212;enable-track-vars &#8212;with-xml &#8212;with-MySQL <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068124">其它库文件：</a></h5> <p>需要软件包：lib_extra.tar.gz <p><b>步骤：</b> <p>Step 1: mkdir lib_extra <p>Step 2: cd lib_extra <p>Step 3: tar xzvf ../lib_extra.tar.gz <p>Step 4: cp * /usr/local/lib/ <p>Step 5: cd /usr/local/lib/ <p>Step 6: ln -s libbsoncpp.so.0.0.1 libbsoncpp.so.0 <p>Step 7: ln -s libboost_thread.so.1.48.0 libboost_thread.so.2 <p>done <h5><a name="_Toc342068125">Sandbox</a></h5> <p>需要软件包： sandbox.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf soft/sandbox.tar.gz <p>done <h4><a name="_Toc342068126">相关设置和测试：</a></h4> <h5><a name="_Toc342068127">Apache</a></h5> <p>开启apache服务： <p>/usr/local/apache2/bin/httpd start <p>开放80端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 80 -j <span class="caps">ACCEPT</span> <p>测试： <p>在浏览器打开： <p><a href="http://localhost">http://localhost</a> <p>看到It Works字样表示安装成功。 <h5><a name="_Toc342068128">Mysql:</a></h5> <p><b>启动mysqld</b><b>服务</b>： <p>Service mysqld start <p><b>测试：</b> <p>Mysql –u root <p>出现下列字样表示可正常使用： <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the current input statement. <p>mysql&gt; <p><b></b> <p><b>创建新数据库</b> <p>在mysql&gt;提示符后面输入： <p>create database zhetian; <p><b>设置root</b><b>用户密码：</b> <p>程序创建数据库脚本要求用户需要密码登录，默认使用root用户，密码为root <p>下面为root用户设置密码root的shell指令： <p>mysqladmin –u root passward “root” <h5><a name="_Toc342068129">其它库文件：</a></h5> <p><b>设置环境：</b> <p>Step 1: vi ~/.bash_profile <p>Step 2: <p>添加以下脚本： <p>LD_LIBRARY_PATH=/usr/local/lib/ <p><span class="caps">PATH</span>=$<span class="caps">PATH</span>:$<span class="caps">HOME</span>/bin:/usr/local/monogodb/bin: <p>export <span class="caps">PATH</span> <p>export LD_LIBRARY_PATH <p>step 3: <p>回到shell环境: <p>:w <p>Step 4: <p>. .bash_profile <h5><a name="_Toc342068130">Sandbox</a></h5> <p>开启843沙箱端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 843 -j <span class="caps">ACCEPT</span> <p>启动程序： <p>./sbserver ../conf/sbserver <h3><a name="_Toc342068131">部署程序</a></h3> <h4><a name="_Toc342068132">后端服务：</a></h4> <p>需要软件包：ztzserver_alphax.xx.xx_build112801.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf ztzserver_alphax.xx.xx_build112801.tar.gz <p>Step 2: cd server_mysql <p>Step 3:  <p>创建数据库 <p>sh create_database.sh <p>Step 4: <p>修改各程序相应的配置文件，主要修改里面的IP和端口配置。具体修改在这里就不详说了。 <p>Step 5: <p>修改启动脚本restart_servers.sh: <p>如果是使用root用户执行该脚本，需要在memcached执行一行后面添加: -u root <p>如果是使用其它用户，则无需修改，直接跳过此步骤 <p>Step 6: <p>执行启动脚本restart_servers.sh: <p>Sh restart_servers.sh <p>Step 7: <p>开启相关服务端口，主要是登录服务器对外端口和宙斯服务器对外端口，如18100,18810： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18810 -j <span class="caps">ACCEPT</span> <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18100 -j <span class="caps">ACCEPT</span> <h4><a name="_Toc342068133">前端服务：</a></h4> <p>需要软件包：ztzclient_1130.tar.gz <p><b>步骤：</b> <p>Step 1: 使用cd指令切换当前目录到apache的根目录，默认为/usr/local/apache2/htdocs <p>Step 2: 创建目录存放前端资源，目录名可自定。如： <p>mkdir ztzclient <p>Step 3: cd ztzclient <p>Step 4: 拷贝ztzclient_1130.tar.gz到当前目录 <p>Step 5: tar xzvf ztzclient_1130.tar.gz <p>step 6: 修改httpd.conf <p>l 打开httpd.conf文件： vi /usr/local/apache2/conf/httpd.conf <p>l 找到标签： &lt;Directory /&gt; <p>l 将内部Options FollowSymLinks， Deny from all屏蔽，屏蔽后内容如下： <p>&lt;Directory /&gt; <p>#Options FollowSymLinks <p>AllowOverride None <p>Order deny,allow <p>#Deny from all <p>&lt;/Directory&gt; <h4><a name="_Toc342068134">php</a>支持：</h4> <p><b>步骤：</b> <p>step 1: 创建新系统用户。apache要求php脚本必须存放在非root用户目录下。以下指定创建用户名为ztz，密码为ztz的用户： <p>useradd ztz –pztz <p>step 2: 打开httpd.conf配置文件。vi /usr/local/apache2/conf/httpd.conf <p>step 3: 修改用户信息 <p>查找下列信息： User daemon，Group daemon，将其中的daemon改成刚新创建的用户。 <p>step 4:  <p>查找下列信息：DocumentRoot &#8220;/usr/local/apache2/htdocs&#8221; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 5: <p>查找到下列信息：&lt;Directory &#8220;/usr/local/apache2/htdocs&#8221;&gt; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 6: <p>查找到下列信息：Options Indexes FollowSymLinks <p>将其用#屏蔽。效果如下： <p>#Options Indexes FollowSymLinks <p>并在下面一行添加： <p>Options FollowSymLinks MultiViews <p>step 7: <p>查找到下列信息：&lt;IfModule dir_module&gt; <p>将下列信息： <p>DirectoryIndex index.html <p>替换成： <p>DirectoryIndex index.html index.shtml index.cgi index.php index.phtml index.php <p>step 8: <p>查找到下列标签：&lt;IfModule mime_module&gt; <p>在该标签里面的 AddType application/x-gzip .gz .tgz下，添加下面两行代码： <p>AddType application/x-httpd-php .php .php3 .phtml .inc <p>AddType application/x-httpd-php-source .phps <h4><a name="_Toc342068135">php sockets </a>支持：</h4> <p>需要文件：php.ini <p><b>步骤：</b> <p>step 1: 使用cd命令将当前目录切换到进入PHP源代码目录下的ext/sockets目录，如： <p>cd /root/soft/ php-5.2.17/ext/sockets <p>step 2: 执行php安装目录bin目录下的phpize指令。如： <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span><br />
+</pre></td><td class='code'><pre><code class=''>&lt;span class='line'&gt;/usr/&lt;/span&gt;</code></pre></td><p></tr></table></div></figure></notextile>local<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/php5/bin/phpize</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 3:</span></code></pre></td></tr></table></div></figure></div></notextile> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./configure --with-php-config=/usr/local/php5/bin/php-config</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 4: make</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 5: make install</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 6:</span></code></pre></td></tr></table></div></figure></div></notextile><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>找出sockets.so动态库所在目录。一般在/usr/local/php5/lib/php/extensions/下。将查找到的完整路径替换到（如果找不到extension对应的位置，可直接在default_socket_timeout信息下一行添加）php.ini中对应位置。</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>如将</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>extension="/usr/local/php5/lib/php/extensions/no-debug-zts-20090626/sockets.so"</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>替换成</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>extension="/usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/sockets.so"</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <h4><a name="_Toc342068136"><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>php mysql</span></code></pre></td></tr></table></div></figure></div></notextile></a><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>支持：</span></code></pre></td></tr></table></div></figure></div></notextile><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile></h4> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><b>步骤：</b> <p>step 1:  <p>使用cd命令将当前目录切换到进入PHP源代码目录下的ext/mysql目录，如： <p>cd /root/soft/php-5.2.17/ext/mysql <p>step 2:  <p>执行php安装目录bin目录下的phpize指令。如： <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/usr/</span></code></pre></td></tr></table></div></figure></div></notextile>local<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/php5/bin/phpize</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 3:</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./configure --with-php-config=/usr/local/php5/bin/php-config</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 4:</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 5:</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make install</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>step 6:</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>找出sockets.so动态库所在目录。一般在/usr/local/php5/lib/php/extensions/下。将查找到的完整路径替换到（如果找不到extension对应的位置，可直接在default_socket_timeout信息下一行添加）php.ini中对应的目录。</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>如将</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>extension="/usr/local/php5/lib/php/extensions/no-debug-zts-20090626/mysql.so"</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>替换成</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>extension="/usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/mysql.so"</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b>step 3&lt;/b></span></code></pre></td></tr></table></div></figure></div></notextile><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b>报错解决方法：&lt;/b></span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>报错1：</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>当执行step 3时，可能会报错：</span></code></pre></td></tr></table></div></figure></div></notextile> <p>configure: error: Cannot find MySQL header files under /date/mysql.<br>Note that the MySQL client library is not bundled anymore! <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>解决方法是安装mysql-devel。</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yum install mysql-devel</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>报错2：</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"></pre></td><td class='code'><pre><code class=''></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>再次执行。如果遇到如下报错：</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>configure: error: Try adding --with-zlib-dir=&lt;DIR&gt;. Please check config.log for more information.</span></code></pre></td></tr></table></div></figure></div></notextile> <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>可尝试用以下方法解决：</span></code></pre></td></tr></table></div></figure></div></notextile> <p>1. cd /usr/lib <p>2. mv mysql/ mysql.bak/ <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>3.</span></code></pre></td></tr></table></div></figure></div></notextile><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ln -s /usr/lib64/mysql /usr/lib/mysql</span></code></pre></td></tr></table></div></figure></div></notextile></p></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/128">Configure: Error: Cannot Find MySQL Header Files Under Yes.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T00:00:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>直接安装mysql-devel</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/126">x86_64下编译php出现错误(Try Adding &#8211;with-zlib-)解决(转）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T00:00:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>下面文字转自：<a title="http://blog.chinaunix.net/uid-6984-id-2071531.html" href="http://blog.chinaunix.net/uid-6984-id-2071531.html">http://blog.chinaunix.net/uid-6984-id-2071531.html</a></p> <p>&nbsp;</p> <p>config.log中同时有/usr/bin/ld: cannot find <del>lmysqlclient错误 <p>系统版本如下<br>[root@opencms php-5.2.6]# uname -a<br>Linux opencms 2.6.18-92.el5 #1 <span class="caps">SMP</span> Tue Apr 29 13:16:15 <span class="caps">EDT</span> 2008 x86_64 x86_64 x86_64 <span class="caps">GNU</span>/Linux <p>安装php-5.2.6的时候，编译选项如下：<br>[root@opencms php-5.2.6]#./configure &quot;</del>-prefix=/usr/local/php&quot; &#8220;&#8212;with-apxs2=/usr/local/apache/bin/apxs&#8221; &#8220;&#8212;with-config-file-path=/usr/local/php/etc&#8221; &#8220;&#8212;with-mysql&#8221; <p>报以下错误 <p>configure: error: Try adding &#8212;with-zlib-dir=  <dir>. Please check config.log for more information.</dir> <p>查看config.log，发现里面有下面提示： <p>configure:60044: gcc -o conftest -I/usr/include -g -O2 -Wl,-rpath,/usr/lib/mysql -L/usr/lib/mysql -L/usr/lib conftest.c -lmysqlclient -lz -l resolv -lm -ldl -lnsl -lxml2 -lz -lm -lxml2 -lz -lm 1&gt;&amp;5 /usr/bin/ld: cannot find -lmysqlclient collect2: ld returned 1 exit status configure: failed program was: #line 60033 &#8220;configure&#8221; #include &#8220;confdefs.h&#8221; /* Override any gcc2 internal prototype to avoid an error. <strong>/ /</strong> We use char because int might match the return type of a gcc2 builtin and then its argument prototype would still apply. <strong>/ char mysql_errno(); int main() { mysql_errno() ; return 0; } <p>由于本系统时x86_64的，在/usr下有lib和lib64两个目录，现在提示是在/usr/lib/mysql下找mysql</strong>文件，感觉不太对劲，于是<br>[root@opencms php-5.2.6]# cd /usr/lib<br>[root@opencms lib]# mv mysql/ mysql.bak/<br>[root@opencms lib]# ln -s /usr/lib64/mysql /usr/lib/mysql<br>重新编译php，一些正常。 <p>不知道为什么会在两个目录下都出现mysql目录，用以下命令查看的时候发现了问题所在<br>[root@opencms lib]# rpm -qa | grep mysql<br>mysql-5.0.45-7.el5<br>libdbi-dbd-mysql-0.8.1a-1.2.2<br>mysql-devel-5.0.45-7.el5<br>mysql-5.0.45-7.el5<br>mysql-server-5.0.45-7.el5<br>mysql-connector-odbc-3.51.12-2.2<br>原来是同一个package出现了两次，版本也都是一样的，我估计是安装系统的人把32位和64位的mysql都安装了一遍。。。 <p>于是执行卸载<br>[root@opencms lib]# rpm -e mysql<br>error: &#8220;mysql&#8221; specifies multiple packages<br>卸载不掉 <p>通过rpm &#8212;help发现–allmatches应该可以解决这个问题：<br>–allmatches<br>Remove all versions of the package which match PACKAGE_NAME. Normally an error is issued if PACKAGE_NAME matches<br>multiple packages.<br>rpm -e &#8212;allmatches mysql-5.0.45-7.el5<br>卸载的时候又出现包依赖，最后使用<br>rpm -e -nodeps &#8212;allmatches mysql-5.0.45-7.el5<br>全部卸载完毕后重新安装x86_64的mysql，就只在/usr/lib64下出现mysql目录了。<br>可这时问题又出现了，报以下错误：<br>configure: error: Cannot find libmysqlclient under /usr.<br>Note that the MySQL client library is not bundled anymore!<br>应该还是php编译的时候默认去找/usr/lib/mysql这个目录，重复刚才的步骤：<br>[root@opencms lib]# ln -s /usr/lib64/mysql /usr/lib/mysql<br>重新编译php，问题解决！</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/124">Foobar播放ape格式音乐</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-25T00:00:00+08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>之前安装的foobar2000 v1.1.7不支持ape格式的音乐播放。发现需要安装插件（components）才行。</p> <p>到官网<a title="http://www.foobar2000.org/components/view/foo_input_monkey" href="http://www.foobar2000.org/components/view/foo_input_monkey">http://www.foobar2000.org/components/view/foo_input_monkey</a>下载相关插件：foo_input_monkey.fb2k-component。</p> <p>将下载后的文件的文件名后缀改成rar格式，直接解压，可得到foo_input_monkey.dll文件。将这个文件拷到foobar2000安装目录的components目录下。</p> <p>打开foobar2000，选择file-&gt;preference，弹出面板后后选择components，点击右下角的install，到foobar2000安装目录的components目录下选中foo_input_monkey.dll，点击打开。</p> <p>再点击右下角的apply。会弹出是否重启foobar的面板，点击是重启后即可直接播放ape文件了。</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/122">LIST</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-20T00:00:00+08:00" pubdate data-updated="true">Nov 20<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>NO1:黄埔古港</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/113">旅行摄影（穷游版）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-25T00:00:00+08:00" pubdate data-updated="true">Oct 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>来自：<a href="http://www.qyer.com/">http://www.qyer.com/</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 穷游网/穷游锦囊/旅行摄影</p> <p>&nbsp;</p> <ol>
+	<li>光圈和景深 <p>&nbsp;</p> <p><a href="http://www.minlh.tk/wp-content/uploads/2012/10/e8d4ce2da4da.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="光圈与景深描述" border="0" alt="光圈与景深描述" src="http://www.minlh.tk/wp-content/uploads/2012/10/thumb.jpg" width="569" height="264"></a></p> <p><a href="http://www.minlh.tk/wp-content/uploads/2012/10/2e977ee0849d.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="光圈与景深图示" border="0" alt="光圈与景深图示" src="http://www.minlh.tk/wp-content/uploads/2012/10/thumb1.jpg" width="569" height="296"></a></p> # 广角和长焦 <p><a href="http://www.minlh.tk/wp-content/uploads/2012/10/e5033dacd22d.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="广角和长焦" border="0" alt="广角和长焦" src="http://www.minlh.tk/wp-content/uploads/2012/10/thumb2.jpg" width="569" height="161"></a></p> <p>&nbsp;</p> # 快门和ISO <p><a href="http://www.minlh.tk/wp-content/uploads/2012/10/ISO.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="快门和ISO" border="0" alt="快门和ISO" src="http://www.minlh.tk/wp-content/uploads/2012/10/ISO_thumb.jpg" width="569" height="329"></a></p></li>
+</ol></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/107">栈区，堆区，全局区，文字常量区，程序代码区 详解</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-24T00:00:00+08:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>转自网站：<a href="http://blog.csdn.net/happylife1527/article/details/7879370">http://blog.csdn.net/happylife1527/article/details/7879370</a></p> <p>&nbsp;</p> <p>一个由C/C++编译的程序占用的内存分为以下几个部分 <p>1、栈区（stack）— 由编译器自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 <p>2、堆区（heap） — 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收 。注意它与数据结构中的堆是两回事，分配方式倒是类似于链表，呵呵。 <p>3、全局区（静态区）（static）—，全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。 &#8211; 程序结束后有系统释放 <p>4、文字常量区 —常量字符串就是放在这里的。 程序结束后由系统释放 <p>5、程序代码区—存放函数体的二进制代码。 <p>二、例子程序 <p>这是一个前辈写的，非常详细 <p>//main.cpp <p>int a = 0; 全局初始化区 <p>char *p1; 全局未初始化区 <p>main() <p>{ <p>int b; 栈 <p>char s[] = &#8220;abc&#8221;; 栈 <p>char *p2; 栈 <p>char *p3 = &#8220;123456&#8221;; 123456在常量区，p3在栈上。 <p>static int c =0； 全局（静态）初始化区 <p>p1 = (char *)malloc(10); <p>p2 = (char *)malloc(20); <p>分配得来得10和20字节的区域就在堆区。 <p>strcpy(p1, &#8220;123456&#8221;); 123456放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。 <p>} <p>二、堆和栈的理论知识 <p>2.1申请方式 <p>stack: <p>由系统自动分配。 例如，声明在函数中一个局部变量 int b; 系统自动在栈中为b开辟空间 <p>heap: <p>需要程序员自己申请，并指明大小，在c中malloc函数 <p>如p1 = (char *)malloc(10); <p>在C++中用new运算符 <p>如p2 = (char *)malloc(10); <p>但是注意p1、p2本身是在栈中的。 <p>2.2 <p>申请后系统的响应 <p>栈：只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出。 <p>堆：首先应该知道操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时， 会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。 <p>2.3申请大小的限制 <p>栈：在Windows下,栈是向低地址扩展的数据结构，是一块连续的内存的区域。这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS下，栈的大小是2M（也有的说是1M，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。 <p>堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。 <p>2.4申请效率的比较： <p>栈由系统自动分配，速度较快。但程序员是无法控制的。 <p>堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便. <p>另外，在WINDOWS下，最好的方式是用VirtualAlloc分配内存，他不是在堆，也不是在栈是直接在进程的地址空间中保留一快内存，虽然用起来最不方便。但是速度快，也最灵活。 <p>2.5堆和栈中的存储内容 <p>栈： 在函数调用时，第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可执行语句）的地址，然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。注意静态变量是不入栈的。 <p>当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。 <p>堆：一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容有程序员安排。 <p>2.6存取效率的比较 <p>char s1[] = &#8220;aaaaaaaaaaaaaaa&#8221;; <p>char *s2 = &#8220;bbbbbbbbbbbbbbbbb&#8221;; <p>aaaaaaaaaaa是在运行时刻赋值的； <p>而bbbbbbbbbbb是在编译时就确定的； <p>但是，在以后的存取中，在栈上的数组比指针所指向的字符串(例如堆)快。 <p>比如： <p>#include <p>void main() <p>{ <p>char a = 1; <p>char c[] = &#8220;1234567890&#8221;; <p>char *p =&#8220;1234567890&#8221;; <p>a = c<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>; <p>a = p<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>; <p>return; <p>} <p>对应的汇编代码 <p>10: a = c<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>; <p>00401067 8A 4D F1 mov cl,byte ptr [ebp-0Fh] <p>0040106A 88 4D FC mov byte ptr [ebp-4],cl <p>11: a = p<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>; <p>0040106D 8B 55 EC mov edx,dword ptr [ebp-14h] <p>00401070 8A 42 01 mov al,byte ptr [edx+1] <p>00401073 88 45 FC mov byte ptr [ebp-4],al <p>第一种在读取时直接就把字符串中的元素读到寄存器cl中，而第二种则要先把指针值读到edx中，在根据edx读取字符，显然慢了。 <p>2.7小结： <p>堆和栈的区别可以用如下的比喻来看出： <p>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。 <p>使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。 <p>1、内存分配方面： <p>&nbsp;&nbsp;&nbsp; 堆：一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收 。注意它与数据结构中的堆是两回事，分配方式是类似于链表。可能用到的关键字如下：new、malloc、delete、free等等。 <p>&nbsp;&nbsp;&nbsp; 栈：由编译器(Compiler)自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 <p>2、申请方式方面： <p>&nbsp;&nbsp;&nbsp; 堆：需要程序员自己申请，并指明大小。在c中malloc函数如p1 = (char *)malloc(10)；在C++中用new运算符，但是注意p1、p2本身是在栈中的。因为他们还是可以认为是局部变量。 <p>&nbsp;&nbsp;&nbsp; 栈：由系统自动分配。 例如，声明在函数中一个局部变量 int b；系统自动在栈中为b开辟空间。 <p>3、系统响应方面： <p>&nbsp;&nbsp;&nbsp; 堆：操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样代码中的delete语句才能正确的释放本内存空间。另外由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。 <p>&nbsp;&nbsp;&nbsp; 栈：只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出。 <p>4、大小限制方面： <p>堆：是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。 <p>&nbsp;&nbsp;&nbsp; 栈：在Windows下, 栈是向低地址扩展的数据结构，是一块连续的内存的区域。这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在WINDOWS下，栈的大小是固定的（是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。 <p>5、效率方面： <p>&nbsp;&nbsp;&nbsp; 堆：是由new分配的内存，一般速度比较慢，而且容易产生内存碎片，不过用起来最方便，另外，在WINDOWS下，最好的方式是用VirtualAlloc分配内存，他不是在堆，也不是在栈是直接在进程的地址空间中保留一快内存，虽然用起来最不方便。但是速度快，也最灵活。 <p>&nbsp;&nbsp;&nbsp; 栈：由系统自动分配，速度较快。但程序员是无法控制的。 <p>6、存放内容方面： <p>堆：一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容有程序员安排。 <p>栈：在函数调用时第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可执行语句）的地址然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈，然后是函数中的局部变量。 注意: 静态变量是不入栈的。当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。 <p>7、存取效率方面： <p>堆：char *s1 = &#8220;Hellow Word&#8221;；是在编译时就确定的； <p>栈：char s1[] = &#8220;Hellow Word&#8221;； 是在运行时赋值的；用数组比用指针速度要快一些，因为指针在底层汇编中需要用edx寄存器中转一下，而数组在栈上直接读取。 <p>在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。 栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清楚的变量的存储区。里面的变量通常是局部变量、函数参数等。 堆，就是那些由new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。 自由存储区，就是那些由malloc等分配的内存块，他和堆是十分相似的，不过它是用free来结束自己的生命的。 全局/静态存储区，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区。 常量存储区，这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改（当然，你要通过非正当手段也可以修改，而且方法很多）</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/92">Vim缩进设置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T00:00:00+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>参考网站：<a href="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE" title="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE">http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE</a></p><p>常用设置</p><p>缩进设置最常用的是：</p><p>:filetype indent on</p><p>它将开启针对文件具体类型的缩进。</p><p>下面的选项需要在命令模式下用set设置的选项的含义。使用方法如：</p><p>set ci # 开启cindent</p><p>set noet # 关闭expandtab</p><p>set sw=4 # shiftwidth=4</p><p>上述设置可以写到~/.vimrc中：</p><p>filetype indent on</p><p>set ci</p><p>set noet</p><p>set sw=4</p><p></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/90">去掉SHELL的提示音和VI的提示音</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-20T00:00:00+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>SHELL：</p>
+<p>用root用户打开/etc/inputrc，将下面的一行注释：</p>
+<p>#set bell-style none</p>
+<p>在下面添加多一行：<br />
+set bell-style off</p>
+<p>重新打开终端，即可生效。</p>
+<p>&nbsp;</p>
+<p>VI：</p>
+<p>打开~/.vimrc（如果打不到该文件，可以自己创建一个），往里面添加多一行：</p>
+<p>set vb t_vb=<br />
+下次使用vi时即可生效。</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/87">(转）linux下多线程 之 Pthread_detach(pthread_self())</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-14T00:00:00+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.csdn.net/Lethe1989/article/details/5191165">转自：http://blog.csdn.net/Lethe1989/article/details/5191165</a></p> <p>多线程稍微看了下还能接受没想象中的难，写了个示例程序运行修改运行修改几遍后也大致明白了。<br>写个碰到的问题，记录下自己的技术之路点滴<br>pthread_detach(pthread_self())<br>linux线程执行和windows不同，pthread有两种状态joinable状态和unjoinable状态，<br>如果线程是joinable状态，当线程函数自己返回退出时或pthread_exit时都不会释放线程所占用堆栈和线程描述符（总计8K多）。只有当你调用了pthread_join之后这些资源才会被释放。<br>若是unjoinable状态的线程，这些资源在线程函数退出时或pthread_exit时自动会被释放。<br>unjoinable属性可以在pthread_create时指定，或在线程创建后在线程中pthread_detach自己, 如：pthread_detach(pthread_self())，将状态改为unjoinable状态，确保资源的释放。或者将线程置为 joinable,然后适时调用pthread_join.<br>摘自&nbsp; http://kb.cnblogs.com/a/1285801/ <p>其实简单的说就是在线程函数头加上 pthread_detach(pthread_self())的话，线程状态改变，在函数尾部直接 pthread_exit线程就会自动退出。省去了给线程擦屁股的麻烦</p></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/30/kai-shi-octopress/">开始OCTOPRESS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/583">初识REDIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/579">2013年8月17日 1:24:24 晴</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/574">素可泰</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blogs/570">曼谷北站的等车生活</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Mr.Liao -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
