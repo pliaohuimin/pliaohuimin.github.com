@@ -1,0 +1,9 @@
+---
+layout: post
+title: '植物分类'
+date: 2012-7-22
+wordpress_id: 15
+permalink: /blogs/15
+comments: true
+---
+<p><a href="http://www.minlh.tk/wp-content/uploads/2012/07/01300000411079129171226967660.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="01300000411079129171226967660" border="0" alt="01300000411079129171226967660" src="http://www.minlh.tk/wp-content/uploads/2012/07/01300000411079129171226967660_thumb.jpg" width="569" height="470"></a></p>

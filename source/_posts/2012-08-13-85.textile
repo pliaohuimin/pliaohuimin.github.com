@@ -1,0 +1,9 @@
+---
+layout: post
+title: '认识和弦以及右手的练习'
+date: 2012-8-13
+wordpress_id: 85
+permalink: /blogs/85
+comments: true
+---
+<p>参考网站：<a href="http://v.youku.com/v_show/id_XMzE0NjUzNjAw.html">http://v.youku.com/v_show/id_XMzE0NjUzNjAw.html</a></p> <p>C和弦与Am和弦的指法：</p> <p><a href="http://www.minlh.tk/wp-content/uploads/2012/08/image7.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/wp-content/uploads/2012/08/image_thumb7.png" width="530" height="276"></a></p> <p>C和弦与Am和弦的切换：只有中指在换弦。</p> <p>P：大拇指</p> <p>I：食指</p> <p>M：中指</p> <p>A：无名指</p> <p>右手指法：5323 | 1323</p>

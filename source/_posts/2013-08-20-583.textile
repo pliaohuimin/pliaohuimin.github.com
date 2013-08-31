@@ -1,0 +1,9 @@
+---
+layout: post
+title: '初识REDIS'
+date: 2013-8-20
+wordpress_id: 583
+permalink: /blogs/583
+comments: true
+---
+<div>上一个游戏项目使用了MEMCACHED作缓存和MYSQL作持久化的数据结构。</div><div>早在上个项目后期，主线就一直想把MEMCACHED替换成REDIS，至于是出于什么样子的考虑，由于个人层次原因，不是很明白。后来由于时间的关系，这件事情也就不了了之了。</div><div>到了这个项目，新的游戏也接近上线，主程还是对这个REDIS念念不忘。这个替换的任务落到了我头上，也刚好让我对REDIS有点皮毛的认识。下面先说说为什么要替换掉MEMCACHED：</div><div>首先，REDIS提供多种数据结构，大部份与STL接口，如SET，STRING，LIST等。这次项目的使用到的HASH结构。&nbsp;&nbsp;&nbsp;</div><div>使用这种结构，可以解决上个项目中，对于每个玩家只有一行记录的表，无法一次性整表读取的问题。使用REDIS 的HASH结构，将数据库名称与表名作为KEY，玩家唯一标识字段设定为FIELD，再将玩家数据作为VALUE存入。通过HVALS即可获取整表记录。</div><div>另外，之前使用MEMCACHED，还得自己维护多一个元数据在缓存中，以使业务获取KEY的信息。而通过REDIS的HASH，简单的HVALS即可达到目的。</div><div>以上就是本人对REDIS皮毛上的认识。本质上更多的区别，还有待深入了解。</div><div>再说说这几天使用的情况：</div><div>此次服务器版本使用的是v2.6。客户端API采用了HIREDIS的C接口。之前有考虑使用C++接口，给主程否了，说不稳定。作为小白，只有乖乖听话，改用HIREDIS。</div><div>起初的版本比较简单，&nbsp;&nbsp;没有考虑到连接REDIS服务器失败后，后续接口的异常情况。在经过无数次DUMP机之后，发现罪魁祸首就是由于连接服务器失败，redisContext中的o_buf并没有初始化，而在执行redisCommand时，需要用到o_buf，导致内存越界。后来将redisCommand进行封装，每次执行里先检查redisContext指针。问题算是解决了，然后，引入了新的问题。</div><div>对redisCommand进行封装时，使用了va_list来处理变长参数，又直接使用redisCommand来执行，还是DUMP机，看了源代码，发现用错函数了，应该使用redisvCommand，替换后，终于不当机了。</div><div>接着是处理各种断连情况。</div><div>第一种情况是，程序启动时，REDIS服务没有启动，这时连接失败。那么在以后每次执行指令时，对于redisContext指针为空的情况，需要加入重连机制，保证当REDIS服务启动后，程序主动进行连接，避免程序需要重启，REDIS机制才会生效的问题。</div><div>第二种情况是，程序启动时，REDIS服务也启动。但是在运行过程中，REDIS服务关闭了。这时，程序也需要对REDIS服务提供重连机制，同样是为了避免一旦REDIS服务器关闭后再启动，也无法使用的问题。</div><div>经测试，处于第二种情况时，REDIS服务关闭后，连接断开。执行redisCommand会返回空指针，由于，程序在每次执行完后，都会对指针进行判断，一旦为空，就会尝试重连。</div><div>在实际测试中，发现REDIS默认有持久化的机制，基于这个项目，并不需要持久化机制，除了增加开销，还是导致数据异常。尝试将配置文件的save配置都注释了，发现还是会有持久会。如何关闭，还有待观察。</div><div>另外一个问题就是，玩家在线，将REDIS服务器关了再重启，这时REDIS缓存为空。之后如果玩家作了某些操作，在从数据库加载数据到缓存前，触发了HSET操作，会导致之后都不会从数据库中加载数据，同样会造成数据异常。解决方法是，在每次SET之前，都会查询当前缓存中，有没有相应KEY的信息，如果没有，先从数据库加载后再执行SET操作。</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br />

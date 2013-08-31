@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'vim缩进设置'
+date: 2012-8-21
+wordpress_id: 92
+permalink: /blogs/92
+comments: true
+---
+<p>参考网站：<a href="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE" title="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE">http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE</a></p><p>常用设置</p><p>缩进设置最常用的是：</p><p>:filetype indent on</p><p>它将开启针对文件具体类型的缩进。</p><p>下面的选项需要在命令模式下用set设置的选项的含义。使用方法如：</p><p>set ci # 开启cindent</p><p>set noet # 关闭expandtab</p><p>set sw=4 # shiftwidth=4</p><p>上述设置可以写到~/.vimrc中：</p><p>filetype indent on</p><p>set ci</p><p>set noet</p><p>set sw=4</p><p></p>

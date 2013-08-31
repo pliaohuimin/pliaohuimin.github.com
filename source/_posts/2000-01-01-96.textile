@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'Temporary-Post-Used-For-Style-Detection-Title-1222088526'
+date: 2000-1-1
+wordpress_id: 96
+permalink: /blogs/96
+comments: true
+---
+Temporary-Post-Used-For-Style-Detection-Content-1222088526
