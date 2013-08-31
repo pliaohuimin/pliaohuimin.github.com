@@ -17,13 +17,13 @@ comments: true
 <div></div>
 <div>下面放几张海边酒店的图片</div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3619878.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3619878.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3634058.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3634058.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3643777.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3643777.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3656991.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3656991.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div></div>
@@ -34,7 +34,7 @@ comments: true
 <div>昨天走累了，想着今天睡到自然醒。谁知道才九点多就醒了。说实在的，这样的天气睡在木屋子里，确实有点闷。我还是比较喜欢呆着下面的吊床上。一觉醒来立马跑去海边游泳。</div>
 <div></div>
 <div>美奈海边</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2688380.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2688380.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div>接着吃完午餐就搭上新咖啡的大巴开始美奈的半日游。下面各位看官还是看图吧。</div>
@@ -43,68 +43,68 @@ comments: true
 <div>呃，这景点没什么看头，就是很多的渔船停在海上，空气中伴随着死海鲜的恶臭味，真不明白为什么会被列为一景点。一下车就看到几个小孩子跑过来推销东西，对于这种事情，我的态度都是拒之千里之后，小某倒是和其中一个小孩玩了起来。</div>
 <div></div>
 <div>渔村</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2733995.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2733995.jpg" alt="" /></div>
 <div></div>
 <div>这种船总让我想起少年PI</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2781373.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2781373.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2806114.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2806114.jpg" alt="" /></div>
 <div></div>
 <div>小某和海边卖东西的小男孩</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2842697.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2842697.jpg" alt="" /></div>
 <div></div>
 ### 白沙丘
 <div>这个是本人比较喜欢的一个景点，距离出发地还是挺远的，大概有30多公里。本来还打算第二天骑单车过来看日出，看了这距离就彻底打消了这念头。想不到在这种海滨城市，还存在这种沙漠地貌。事实上，美奈这个城市，一边是海，另一边却是一片荒芜。很神奇吧。</div>
 <div></div>
 <div>远看白沙丘</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2991724.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2991724.jpg" alt="" /></div>
 <div></div>
 <div>车窗外扬起的尘埃</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3149613.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3149613.jpg" alt="" /></div>
 <div></div>
 <div>白沙丘入口处的驼鸟</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3182108.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3182108.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div>入口处的猴子</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3689735.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3689735.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3200313.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3200313.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3242402.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3242402.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3285817.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3285817.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3724009.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3724009.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3749733.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3749733.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3765957.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3765957.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3789607.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3789607.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div></div>
 <div>红沙丘</div>
 <div>从白沙丘往回走，来到了红沙丘。实际感觉比白沙丘差，不过回头看看照片，好像更好看。</div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3335176.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3335176.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3351587.jpg" alt="" /></div>
-<div></div>
-<div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3363163.jpg" alt="" /></div>
-<div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3376563.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3351587.jpg" alt="" /></div>
 <div></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3388404.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3363163.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3401851.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3376563.jpg" alt="" /></div>
+<div></div>
+<div></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3388404.jpg" alt="" /></div>
+<div></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3401851.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div>半日游就包括了上面三个景点，回来后在海边拍的日落，可惜云太多了</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3553687.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3553687.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div>决定搭明天晚上1：30AM的汽车去西贡，这样一来可以省一晚的住宿费用。新咖啡这一班车太贵了，要200多K 越南盾，买了另一家的票，7刀。到时车会到我们住的地方去接。</div>
@@ -114,57 +114,57 @@ comments: true
 <div>早上起来时小某说她想去确认一下车票。因为昨天买票时听到老板有提到SITTING BUS，我们担心是座位的车，不是卧铺。结果老板不在，只剩下一个6岁左右的小女孩，她居然也会讲简单的英语，自愧不如。她打了电话叫她父母过来，我们先去对面吃了早餐，吃完她父母也回来了。我们确认了确实是SLEEPING BUS才放心。接着我们又问了等车的问题，因为是凌晨一点多，我们想问下能不能在这里等车，可老板说这里10点多就关门了，不过我们可以在隔壁等，如果我们在那里吃晚餐的话。</div>
 <div></div>
 <div>在回客栈的路上，我们买了水果，让老板帮我们切开，吃到肚子撑，午饭都没吃就饱了。</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5547442.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5547442.jpg" alt="" /></div>
 <div></div>
 <div>接着回客栈CHECK OUT，问了下老板能不能下午继续在这里呆着，老板说不行，不过可以交多半天的房费，在这里呆到半到半夜。想了想这样也蛮好的，就答应了。</div>
 <div>在客栈呆到4点左右才出门，下午的安排是去邮局寄明信片和仙女溪。邮局就在市场的东面，不过很不好找，也没什么门牌指示。</div>
 <div>其实这是我第一次寄明信片，连格式都不知道怎么写，还好有小某在旁指导，要不要还想没信心。到了需要写字的时候才发现自己的字真的拿不出手。不清楚寄明信片需要什么样子的地址，是不是跟快递一样写个详细地址就行了，很担心能不能寄到。</div>
 <div></div>
 <div>美奈的市场</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5240822.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5240822.jpg" alt="" /></div>
 <div></div>
 <div>明信片</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5447554.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5447554.jpg" alt="" /></div>
 <div></div>
 <div>寄完明信片继续往东边走，路过一个学校，学生正在上课</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5613555.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5613555.jpg" alt="" /></div>
 <div></div>
 <div>经过一条桥之后就可以看到fairy stream的入口</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5650574.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5650574.jpg" alt="" /></div>
 <div></div>
 <div>一哥们在玩水上滑板</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5723286.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5723286.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5804313.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5804313.jpg" alt="" /></div>
 <div></div>
 <div></div>
 <div>旁边的沙丘</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5822019.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5822019.jpg" alt="" /></div>
 <div></div>
 <div>往上爬</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5841613.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5841613.jpg" alt="" /></div>
 <div></div>
 <div>上面风景</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5870988.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5870988.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5883062.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5883062.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5898865.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5898865.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5919457.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5919457.jpg" alt="" /></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5929894.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5929894.jpg" alt="" /></div>
 <div></div>
 <div></div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5946430.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5946430.jpg" alt="" /></div>
 <div></div>
 <div>从仙女溪回来，发现我们两个人身上都没钱了。美奈还真少ATM，这几天我就看到了一下，而且还是需要收取手续费的，建议各位去美奈的要提前备足资金。</div>
 <div></div>
 <div>晚餐</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6070934.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6070934.jpg" alt="" /></div>
 <div></div>
 <div>我们的客栈</div>
-<div><img src="http://www.minlh.tk/wp-content/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6087283.jpg" alt="" /></div>
+<div><img src="http://www.minlh.tk/source/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6087283.jpg" alt="" /></div>
 <div></div>
 <div>
 <div>晚上的任务很简单，等着时间到上车。关于上车地点，我们有点纠结了。之前买车票时是说好在客栈上车，后面去确认时老板又说可以在隔壁上车，还打了个电话，不知道跟那边说了什么。我们也没最后确认在哪上车。所以心里也很没底。最后我们决定就在客栈门口等，反正汽车要先经过客栈。结果时间到了还没看到车来，客栈老板也说了可能会晚点，这下心里更没底了。看前面停了一辆大巴，急忙跑过去问。说了去西贡的，两个人。那应该就是我们了。可当我们拿出收据时，他又说不对。我们也搞不清楚情况。想打电话给订票的老板，又觉得有点晚了，还是再等等看吧。我让小某在订票的店门口等着，我回到客栈那边等，这样两边都顾到了。我还没回到客栈，就接到小某的电话，说刚才那个人又过来找了，想再看看收据。又得跑回去，结果一看，叫我们上车了。这下我们也不理是什么原因了，就算是坐错车也不理了，只要能去西贡就行。</div>
