@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger History]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2013-09-01T03:38:36+08:00</updated>
+  <updated>2013-09-01T04:02:11+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[从wordpress迁移到octopress]]></title>
+    <link href="http://pliaohuimin.github.io/blog/2013/09/01/from-wp2octopress/"/>
+    <updated>2013-09-01T03:54:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/2013/09/01/from-wp2octopress</id>
+    <content type="html"><![CDATA[<p>为什么要迁移：
+并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。
+迁移步骤：</p>
+
+<p>准备工作
+step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户tep 2:在LINUX上安装好GIT
+step 3:在LINUX上安装好ruby
+curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
+source /home/liao/.rvm/scripts/rvm
+如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</p>
+
+<p>安装好OCTOPRESS
+step 4:克隆octopress项目
+git clone git://github.com/imathis/octopress.git
+step 5:安装OCTOPRESS
+gem install bundler
+bundle install
+step 6:安装主题
+rake install</p>
+
+<p>部署到GITHUB
+step 7:rake setup_github_pages
+期间会要求你输入项目地址，请输入:git@github.com:username.github.com
+期中username为你在github的用户名。  <br/>
+step 8:生成代码
+rake generate
+step 9:部署到github上
+rake deploy
+期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy
+step 10:备份相关文件到source分支
+git add
+git commit -m &lsquo;your message
+git push origin source
+如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
+git branch source
+git checkout source</p>
+
+<p>关于域名的绑定
+如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk
+然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
+
+<p>关于文章的迁移
+使用wordpress后台管理工具，将数据导出成xml格式
+安装必要工具：
+gem install hpricot
+gem install ya2yaml
+使用XDITE提供的工具
+<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a>
+执行直接執行 ruby xxx.rb xxx.xml
+名
+st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
+
+<p>关于文章中图片的迁移
+将wp-content/uploads目录下载，上传到source目录即可。
+图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[开始OCTOPRESS]]></title>
@@ -465,14 +528,6 @@
     <updated>2013-03-19T00:00:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blogs/236</id>
     <content type="html"><![CDATA[<div>2013/03/14</div><div>在车上勉强度过了一夜。一觉醒来从车窗外望去可以看到蓝蓝的海岸线，心情还是不错的。</div><div><div>吸取了上次的教训，这次做了比较充分的功课，知道新咖啡附近就有很多旅馆，在附近找了一个200，000VND的HOTEL住下了。环境是不错，阳台,热水器，电视，空调都配齐了。这一路下来，每一天都在超预算。住宿这一块是占了大头。</div><div>听说芽庄是一个比较适合骑摩托车的地方。就在酒店对面租了辆摩托车，有点小贵，7刀呢，再加上3L油，又花去了215，000VND。骑上摩托车没多远，就看到有一家卖粉的店，进去把早餐解决了。虽然越南的粉不是很合个人口味，但胜在价格不高。大部分吃的时候，都还会配上一小盘青菜，蘸着酱料吃，不过味道就不敢恭唯了，只会意思意思地吃上一两份，后来听说里面主要的配菜是鱼腥草。</div><p><!--more--><div>&nbsp;</div><div>下图是早餐和我租的摩托车</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_a2280113c452821f38f7a140c21d20c0.jpg"></div></div><div>&nbsp;</div><div>吃完早餐就骑车到处兜风，反正时间有的是。沿着海边大道走了一大段。</div><div>&nbsp;</div><div>这是在海边看到的一个小公园</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_49b30a25874af5e897ade1137a93e7b9.jpg"></div></div><div>&nbsp;</div><div>在海边呆了一小会，想着去婆加那寺去看看，谁知道走远了。问了一个大叔才知道得往回走。那大叔还问我是哪里人，我说CHINA，说了几遍大叔才听懂。在往回走的路上我就在想，我发音是不是发错了，后面的音到底是发a还是e啊？好吧，我英语确实不行，这是真心话。</div><div>后来手机地图上发现了那个地方，到了才发现，原来这地方很好找，过完桥就可以看到。可是之前走是的另一条桥，所以没看到，错过了。</div><div>花了21，000VND的门票和2，000VND的停车费，上去看看。那些古老建筑就算了，不懂欣赏。当作休息和看看江边的景色还不错。之前听说附近有海鲜一条街，不过到的时候还不知道，没有去逛。下次有机会一定要去吃上一餐才行。</div><div>看完PO <span class="caps">NAGRA</span> <span class="caps">CHAM</span> TEMPLE，快到中午了。想着吃个午餐再去逛龙山寺吧。在路边找了家饮料店坐下，吃了杯15，000的饮料，用手机上微信问问附近的人有没有什么好介绍。结果被告知可以去NHA <span class="caps">TRANG</span> CENTER吃KFC的大鸡腿，还让我去看越南字幕，汉语版的西游。好吧，就去KFC，顺便参观他们的购物中心，电影还是免了，这电影之前都已经看过了，话说如果不是看过了，还真想去试试。吃完大鸡腿，也困了，回旅馆休息，一觉醒来已经快四点了，骑着摩托车去看看龙山寺，坑点的景点不收费，停车居然被收了10，000VND。</div><div>回程时路过芽庄的教堂，之前微信上联系的人建议我去看看，不过找不到停车的地，在外面拍了张照也走了。看着摩托车油还多着呢，又沿着海岸线往南边走去，在路边看到路边摊有人在卖着螺，一问价钱，15，000有七八个，觉得还行。叫了一份尝尝。味道还不错。回程走到一半时，又意犹未尽地到另一摊子叫了一份，这回按个算，一个2，000VND，还算便宜。</div><div>&nbsp;</div><div>路边摊</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_752da1147bb6f79dc7a9b66d7b579af2.jpg"></div></div><div>&nbsp;</div><div>&nbsp;</div><div>螺肉</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_bc410bec8a35ebbf87bfdb365dde367c.jpg"></div></div><div>&nbsp;</div><div>&nbsp;</div><div>吃完东西顺便去SINH TOURIST看看车票情况。本打算订后天的车，明天在海边走走，谁知道一到那看到有中午的车，就想着，早上在海边玩玩，中午去大叻也不错。一问，下午的没票了，只有早上的。也不知咋地，头脑一热，居然就订了早上的票，结果第二天就悲催了，这个后面再说。回去把摩托车给还了。把押在那身份证要回来。老板还很认真地叫我教他念上面的字“居民居住证&quot;，真是好学啊。看来是学着以后好跟国人沟通。</div><div>还完摩托车回对面HOTEL休息。呆到晚上8点多才出去找吃的，本想着海边应该有很多海鲜大排档，谁知道一家都没找着。在一条购物街随便吃了几个菜，又花了170，000VND，唉，每次都想省，可是一出门就花很多。</div><div>吃完散步回去，上上网，收拾东西。一弄又是一点多。睡觉，明天早上是8点的车呢，希望能早起。</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[越南第二天之顺化]]></title>
-    <link href="http://pliaohuimin.github.io/blogs/230"/>
-    <updated>2013-03-16T00:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blogs/230</id>
-    <content type="html"><![CDATA[<div>2013/03/12 上午</div><div>&nbsp;</div><div>早上7点多的时候到的顺化。</div><div>一下车，感觉比河内好多了，至少没有河内那么多摩托车，人也比较少。</div><div>一到顺化马上在SINH TOURIST买了中午一点到岘港的车票。顺化也没安排什么行程，就是去附近的旧皇宫看看。</div><div>在SINH TOURIST隔壁吃早餐的时候顺便向老板问路。沿着老板指的方向往北走，经过一座桥再往左手边走，就可以看到皇宫的路标了。我在看到第一个路标后就拐进去了，后来发现其实应该再往前走的。前面才是正门，在这里拐弯虽然进了城门，但根本就看不到皇宫。自从拐弯以后，就一直有个当地的人力车司机跟着，缠着让我坐他的车。2个小时100，000VND，带着我到皇宫周边转，但不包进皇宫。在表明了想自己走路后，他还不死心地跟了老远，有够烦人的，弄得都没什么心思认路。结果皇宫是在进城门后的左边，我走到右边去了。后来发现不大对劲，才开始往左边走。终于看到皇宫的外墙了。这时刚好经过一家小店，店门口坐着一个老人，很热情地叫我过去。刚好也走累了，便过去叫了杯咖啡喝，跟老人用简单的英语聊着。接着那老头又从店里拿出两块糖，说是只有顺化才有的特产，一看，很普通的糖，而且是我不怎么喜欢吃的那种，勉强吃了一块。看时间也差不多了，买单走人。喝了一杯咖啡和一块糖，老板收30，000VND，其实也不能算贵。可是当我拿出50，000VND给老板时，老板他不找钱了，直接拿出一袋东西，里面装了6小块刚才那种糖，说是当20，000VND抵了。算了，看他年纪也大了，就不跟他计较。不过心里感觉还是不怎么好。</div><p><!--more--><div>绕到正门买门票进去皇宫，这80，000VND的门票还真不怎么值。特别是对生活在中国的人来说，这些建筑都是中国建筑的缩小版，没什么看头，而且很多建筑都已经倒了，正长着荒草呢。意思意思地瞄了一下就走人了。</div><div>回到SINH TOURIST才十一点多，继续在隔壁吃个午餐，顺便给电脑手机充充电。慢慢等着一点钟的车。经过第一天的迷路事件，这下我可不敢再算好时间再过去搭车了。</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
   </entry>
   
 </feed>

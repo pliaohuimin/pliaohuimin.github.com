@@ -9,8 +9,10 @@
   <meta name="author" content="Mr.Liao">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="为什么要迁移：
+并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。
+迁移步骤： 准备工作
+step 1: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,96 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/01/from-wp2octopress/">从wordpress迁移到octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-01T03:54:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>为什么要迁移：
+并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。
+迁移步骤：</p>
+
+<p>准备工作
+step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户tep 2:在LINUX上安装好GIT
+step 3:在LINUX上安装好ruby
+curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
+source /home/liao/.rvm/scripts/rvm
+如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</p>
+
+<p>安装好OCTOPRESS
+step 4:克隆octopress项目
+git clone git://github.com/imathis/octopress.git
+step 5:安装OCTOPRESS
+gem install bundler
+bundle install
+step 6:安装主题
+rake install</p>
+
+<p>部署到GITHUB
+step 7:rake setup_github_pages
+期间会要求你输入项目地址，请输入:git@github.com:username.github.com
+期中username为你在github的用户名。  <br/>
+step 8:生成代码
+rake generate
+step 9:部署到github上
+rake deploy
+期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy
+step 10:备份相关文件到source分支
+git add
+git commit -m &lsquo;your message
+git push origin source
+如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
+git branch source
+git checkout source</p>
+
+<p>关于域名的绑定
+如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk
+然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
+
+<p>关于文章的迁移
+使用wordpress后台管理工具，将数据导出成xml格式
+安装必要工具：
+gem install hpricot
+gem install ya2yaml
+使用XDITE提供的工具
+<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a>
+执行直接執行 ruby xxx.rb xxx.xml
+名
+st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
+
+<p>关于文章中图片的迁移
+将wp-content/uploads目录下载，上传到source目录即可。
+图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -403,45 +495,6 @@
   
     <footer>
       <a rel="full-article" href="/blogs/561">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/558">柬埔寨：暹粒</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-14T00:00:00+08:00" pubdate data-updated="true">Apr 14<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div>2013/03/29</div><div>事实证明，我想多了，第二天一大早我就到了暹粒。汽车停在一个停车场，之前没做好功课，也不知道身在何处。一下车就碰到一大堆拉客的司机。我有一个毛病，一看到拉客的司机，心理上就会很排斥。快速逃离停车场后，发现自己找不着东西南北了。硬着头皮走到大路，看样子就是NATIONAL 6 ROAD，这条路是东西走向的，可现在的我是在旧市场的东边还是西边呢，再一次怪自己猪头，订车票的时候没有问清楚车停的位置。事到如今也没有办法，二选一。运气真差，我选错了。走了一段路发现苗头不对，其实走到一半的时候已经有个TUTU司机告诉我走错了，由于有利益关系，所以没有相信他。事实证明世上还是好人比较多。往回走到开始的路口，再往前走一点，就看到了暹粒市区的路标。</div><p></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blogs/558">Read on &rarr;</a>
     </footer>
   
 
