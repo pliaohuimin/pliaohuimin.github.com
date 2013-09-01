@@ -45,7 +45,7 @@ git branch source
 git checkout source
 
 ###关于域名的绑定###
-如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk
+如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk  
 然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245
 
 ###关于文章的迁移###
