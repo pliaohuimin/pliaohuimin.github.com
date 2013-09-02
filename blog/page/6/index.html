@@ -9,7 +9,15 @@
   <meta name="author" content="Mr.Liao">
 
   
-  <meta name="description" content="转自：http://blog.csdn.net/Lethe1989/article/details/5191165 多线程稍微看了下还能接受没想象中的难，写了个示例程序运行修改运行修改几遍后也大致明白了。写个碰到的问题，记录下自己的技术之路点滴pthread_detach(pthread_self &hellip;">
+  <meta name="description" content="SHELL：
+用root用户打开/etc/inputrc，将下面的一行注释：
+#set bell-style none
+在下面添加多一行：
+set bell-style off
+重新打开终端，即可生效。
+&nbsp;
+VI：
+打开~/.vimrc（如果打不到该文件，可以自己创建一个）， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +73,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blogs/90">去掉SHELL的提示音和VI的提示音</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-20T00:00:00+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>SHELL：</p>
+<p>用root用户打开/etc/inputrc，将下面的一行注释：</p>
+<p>#set bell-style none</p>
+<p>在下面添加多一行：<br />
+set bell-style off</p>
+<p>重新打开终端，即可生效。</p>
+<p>&nbsp;</p>
+<p>VI：</p>
+<p>打开~/.vimrc（如果打不到该文件，可以自己创建一个），往里面添加多一行：</p>
+<p>set vb t_vb=<br />
+下次使用vi时即可生效。</p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -375,41 +428,6 @@
 
 
   <div class="entry-content"><p>参考网站：</p> <p><a href="http://www.luyouqiwo.com/110/2012/0705/8871.html">http://www.luyouqiwo.com/110/2012/0705/8871.html</a></p> <p><a href="http://www.x-berry.com/traffic-statistics">http://www.x-berry.com/traffic-statistics</a></p> <p>在<a href="http://cnzz.com/">http://cnzz.com/</a>上注册账号，填写个人网站信息。将产生一些脚本，选择你喜欢的类型，拷贝相关代码。</p> <p>登录到你的WORDPRESS后台，选择APPERENCE-&gt;<span class="caps">EDITOR</span>-&gt;<span class="caps">FOOTER</span>.PHP，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb.png" width="181" height="211"></a></p> <p>将拷贝的脚本粘贴到&lt;/body&gt;之前，保存即可。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image1.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb1.png" width="236" height="98"></a></p> <p>如果找不到保存按键</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image2.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb2.png" width="244" height="67"></a></p> <p>而是没有修改权限的提示</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image3.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb3.png" width="244" height="38"></a>，</p> <p>可直接在你发布代码的主机上修改相关文件的代码也是可行的，或者修改相关文件的权限。</p> <p>再次登录你的网站，可发现在页面最下面出现你添加的统计字样，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image4.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb4.png" width="139" height="48"></a></p> <p>点击它可查看统计数据。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image5.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb5.png" width="244" height="56"></a></p> <p>查看统计数据输入的密码可在cnzz账户上设置。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image6.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb6.png" width="244" height="109"></a></p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blogs/46">左手练习</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-04T00:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote> <p>url:<a href="http://my.ku6.com/watch?v=bmEAvrzqmMrg6Gwb#share">http://my.ku6.com/watch?v=bmEAvrzqmMrg6Gwb#share</a></p><p></blockquote> <p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4</p> <p>食指 中指 无名指 小指</p> <p>手指垂直指板,靠近品丝,大拇指在琴劲后面的正中间,大拇指与中指相对,手腕向前推,成90度.大拇指不要太用劲。</p> <p>按下去了就不要再动。</p></p></div>
   
   
 
