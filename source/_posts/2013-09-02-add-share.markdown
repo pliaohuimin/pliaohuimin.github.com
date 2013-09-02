@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "add_share"
+title: "octopress小工具"
 date: 2013-09-02 21:00
 comments: true
 categories: 
 ---
+###添加一键共享###
 我目前使用的是bshare。  
 在_config.yml中增加bshare: true。在“source/_includes/post”下的sharing.html中增加如下代码：  
     
     <a class="bshareDiv" href="http://www.bshare.cn/share">Sharing</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&style=999&img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&w=147&h=21"></script>
 上述的代码由bshare产生，可以自己选择所需的外观。这样，在每一篇文章的最下方会出现一个分享的小工具。  
+
+###添加DISQUC评论###
+首先需要在Disqus注册一个账号，登录后添加站点信息，将填写的short_name写到_config.yml中，并将_config.yml中的disqus_show_comment_count设置为true.如下：
+    # Disqus Comments
+    disqus_short_name: liao   # liao为添加站点信息时的Site Shortname
+    disqus_show_comment_count: true
+
