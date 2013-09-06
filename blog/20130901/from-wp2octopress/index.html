@@ -93,79 +93,127 @@
   </header>
 
 
-<div class="entry-content"><h2>为什么要迁移：</h2>
+<div class="entry-content"><h3>为什么要迁移：</h3>
 
-<blockquote><p>并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。</p></blockquote>
+<p>并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。</p>
 
-<h2>迁移步骤：</h2>
+<p>迁移步骤：</p>
 
-<h3>准备工作</h3>
+<h4>准备工作</h4>
 
 <ul>
-<li>step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户</li>
-<li>step 2:在LINUX上安装好GIT</li>
-<li>step 3:在LINUX上安装好ruby
-curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
-source /home/liao/.rvm/scripts/rvm
-如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</li>
+<li><p>step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户名
+tep 2:在LINUX上安装好GIT</p></li>
+<li><p>step 3:在LINUX上安装好ruby</p></li>
 </ul>
 
 
-<h3>安装好OCTOPRESS</h3>
+<p>curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby</p>
+
+<p>source /home/liao/.rvm/scripts/rvm</p>
+
+<p>如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</p>
+
+<h4>安装好OCTOPRESS</h4>
 
 <ul>
-<li>step 4:克隆octopress项目
-git clone git://github.com/imathis/octopress.git</li>
-<li>step 5:安装OCTOPRESS
-gem install bundler
-bundle install</li>
-<li>step 6:安装主题
-rake install</li>
+<li>step 4:克隆octopress项目</li>
 </ul>
 
 
-<h3>部署到GITHUB</h3>
+<p>git clone git://github.com/imathis/octopress.git</p>
 
 <ul>
-<li>step 7:rake setup_github_pages
-期间会要求你输入项目地址，请输入:git@github.com:username.github.com
-期中username为你在github的用户名。</li>
-<li>step 8:生成代码
-rake generate</li>
-<li>step 9:部署到github上
-rake deploy
-期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy</li>
-<li>step 10:备份相关文件到source分支
-git add
-git commit -m &lsquo;your message
-git push origin source
-如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
-git branch source
-git checkout source</li>
+<li>step 5:安装OCTOPRESS</li>
 </ul>
 
 
-<h3>关于域名的绑定</h3>
+<p>gem install bundler</p>
 
-<p>如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk<br/>
+<p>bundle install</p>
+
+<ul>
+<li>step 6:安装主题</li>
+</ul>
+
+
+<p>rake install</p>
+
+<h4>部署到GITHUB</h4>
+
+<ul>
+<li>step 7:rake setup_github_pages</li>
+</ul>
+
+
+<p>期间会要求你输入项目地址，请输入:git@github.com:username.github.com</p>
+
+<p>期中username为你在github的用户名。</p>
+
+<ul>
+<li>step 8:生成代码</li>
+</ul>
+
+
+<p>rake generate</p>
+
+<ul>
+<li><p>step 9:部署到github上</p>
+
+<p>  rake deploy</p></li>
+</ul>
+
+
+<p>期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy</p>
+
+<ul>
+<li><p>step 10:备份相关文件到source分支</p>
+
+<p>  git add
+  git commit -m &lsquo;your message
+  git push origin source
+如果报错，可以尝试先执行下列命令，再一次执行上面的命令。</p>
+
+<p>  git branch source
+  git checkout source</p></li>
+</ul>
+
+
+<h4>关于域名的绑定</h4>
+
+<p>如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk
 然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
 
-<h3>关于文章的迁移</h3>
+<h4>关于文章的迁移</h4>
 
-<p>使用wordpress后台管理工具，将数据导出成xml格式
-安装必要工具：
-gem install hpricot
+<p>使用wordpress后台管理工具，将数据导出成xml格式</p>
+
+<p>安装必要工具：</p>
+
+<pre><code>gem install hpricot
+
 gem install ya2yaml
-使用XDITE提供的工具
-<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a></p>
+</code></pre>
 
-<p>执行直接執行 ruby xxx.rb xxx.xml 名
-st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
+<p>使用XDITE提供的工具</p>
 
-<h3>关于文章中图片的迁移</h3>
+<p><a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a></p>
 
-<p>将wp-content/uploads目录下载，上传到source目录即可。
-图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
+<p>具体脚本如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  printf("hello");</span></code></pre></td></tr></table></div></figure>
+
+
+<p>执行直接執行 ruby xxx.rb xxx.xml</p>
+
+<p>st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
+
+<h4>关于文章中图片的迁移</h4>
+
+<p>将wp-content/uploads目录下载，上传到source目录即可。</p>
+
+<p>图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
 </div>
 
 
