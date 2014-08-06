@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger History]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-08-06T14:26:21+08:00</updated>
+  <updated>2014-08-06T14:35:42+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -72,48 +72,37 @@
 
 <p>gem sources -r <a href="http://rubygems.org/">http://rubygems.org/</a></p>
 
-<p>gem sources -l</p></blockquote></li>
-</ol>
+<p>gem sources -l</p></blockquote>
 
+<p> 修改Octopress目录下的Gemfile文件，将第一行的<a href="http://rubygems.org/">http://rubygems.org/</a> 修改为<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
 
-<p>修改Octopress目录下的Gemfile文件，将第一行的<a href="http://rubygems.org/">http://rubygems.org/</a> 修改为<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
+<p> 在命令提示符中进入到Octopress目录，输入下面命令进行依赖项的安装</p>
 
-<p>在命令提示符中进入到Octopress目录，输入下面命令进行依赖项的安装</p>
+<blockquote><p>gem install bundler</p>
 
-<pre><code>&gt;gem install bundler
-
-&gt;bundle install
-</code></pre>
-
-<ol>
+<p>bundle install</p></blockquote></li>
 <li><p>在Octopress中添加文章
-使用下面命令可以在Octopress中添加文章</p>
+ 使用下面命令可以在Octopress中添加文章</p>
 
-<blockquote><p>rake new_post[&lsquo;post name&rsquo;]</p></blockquote></li>
+<blockquote><p>rake new_post[&lsquo;post name&rsquo;]</p></blockquote>
+
+<p> 注意，rake new_post[&lsquo;my first octopress blog&rsquo;]中的my first octopress blog 并不是博客标题，而是和生成的文件名以及url地址有关，该名称不支持中文。博客标题可以在生成的markdown文件中修改。生成的markdown文件在octopress/source/_posts目录中。</p>
+
+<p> 编辑markdown文件，将标题可以修改为中文标题，还可以设置分类等信息以及编写正文部分</p>
+
+<p> 每次执行了添加博客的命令，或是修改了现有博客的内容后，都要执行下面命令进行重新生成静态网页</p>
+
+<blockquote><p>rake generate</p></blockquote></li>
+<li><p>发布到外网
+创建<em>deploy目录,将上一层的.git目录拷贝到</em>deploy下。将主干checkout出来。只需要操作一下，以后可以直接部署。</p>
+
+<blockquote><p>git checkout master</p></blockquote>
+
+下面指令帮你把生成的静态网页更新到主干master上去。
+
+<blockquote><p>rake deploy</p></blockquote></li>
 </ol>
 
-
-<p>注意，rake new_post[&lsquo;my first octopress blog&rsquo;]中的my first octopress blog 并不是博客标题，而是和生成的文件名以及url地址有关，该名称不支持中文。博客标题可以在生成的markdown文件中修改。生成的markdown文件在octopress/source/_posts目录中。</p>
-
-<p>编辑markdown文件，将标题可以修改为中文标题，还可以设置分类等信息以及编写正文部分</p>
-
-<p>每次执行了添加博客的命令，或是修改了现有博客的内容后，都要执行下面命令进行重新生成静态网页</p>
-
-<pre><code>&gt;rake generate
-</code></pre>
-
-<ol>
-<li>发布到外网
-创建<em>deploy目录,将上一层的.git目录拷贝到</em>deploy下。将主干checkout出来。只需要操作一下，以后可以直接部署。
-
-<blockquote><p>git checkout master</p></blockquote></li>
-</ol>
-
-
-<p>部署，下面指令帮你把生成的静态网页更新到主干master上去。</p>
-
-<pre><code>&gt;rake deploy
-</code></pre>
 
 <p>done
 输入rake preview，可以直接localhost:4000来进行预览</p>
