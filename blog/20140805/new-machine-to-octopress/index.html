@@ -102,47 +102,33 @@
 <li><p>从github上面克隆代码到本机特定目录。</p>
 
 <blockquote><p>git clone -b source git@github.com:pliaohuimin/pliaohuimin.github.com.git</p></blockquote></li>
-<li><p>安装<a href="http://rubyinstaller.org/downloads/">RUBY</a> 1.9.3。记得勾选“Add Ruby executables to your PATH”，将Ruby的执行路径加入到环境变量中，如果忘记勾选，也可以手动        设置</p></li>
-<li><p>安装<a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a>，将其解压到D:/DevKit，有两点需要注意：</p></li>
-</ol>
+<li><p>安装<a href="http://rubyinstaller.org/downloads/">RUBY</a> 1.9.3。记得勾选“Add Ruby executables to your PATH”，将Ruby的执行路径加入到环境变量中，如果忘记勾选，也可以手动设置</p></li>
+<li><p>安装<a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a>，将其解压到D:/DevKit，有两点需要注意：</p>
 
+<p>  解压目录中没有有中文和空格；</p>
 
-<p> 解压目录中没有有中文和空格；</p>
+<p>  必须先安装Ruby，而且Ruby需要是RubyInstallser安装。</p>
 
-<p> 必须先安装Ruby，而且Ruby需要是RubyInstallser安装。</p>
+<p>  解压DevKit后，在命令行输入以下命令来进行安装：</p>
 
-<p> 解压DevKit后，在命令行输入以下命令来进行安装：</p>
+<blockquote><p>d:</p>
 
-<pre><code>&gt;d:    
+<p>cd DevKit</p>
 
-&gt;cd DevKit
+<p>ruby dk.rb init</p>
 
-&gt;ruby dk.rb init 
-
-&gt;ruby dk.rb install
-</code></pre>
-
-<ol>
+<p>ruby dk.rb install</p></blockquote></li>
 <li><p>安装Python</p></li>
-<li><p>安装<a href="https://pypi.python.org/pypi/setuptools">easy_install</a>,</p></li>
-</ol>
+<li><p>安装<a href="https://pypi.python.org/pypi/setuptools">easy_install</a>,</p>
 
+<p> For Windows 7 and earlier, download ez_setup.py using your favorite web browser or other technique and &ldquo;run&rdquo; that file.</p></li>
+<li><p>安装pygments</p>
 
-<p>For Windows 7 and earlier, download ez_setup.py using your favorite web browser or other technique and &ldquo;run&rdquo; that file.</p>
+<p> easy_install会安装在Python安装目录的Scripts目录中，例如我的Python目录是C:\Python27，所以需要将C:\Python27\Scripts目录加入到环境变量中才能在命令提示符中使用easy_install命令。</p>
 
-<ol>
-<li>安装pygments</li>
-</ol>
+<p> 在命令提示符中输入如下命令就可以安装Pygments了。</p>
 
-
-<p>easy_install会安装在Python安装目录的Scripts目录中，例如我的Python目录是C:\Python27，所以需要将C:\Python27\Scripts目录加入到环境变量中才能在命令提示符中使用easy_install命令。</p>
-
-<p>在命令提示符中输入如下命令就可以安装Pygments了。</p>
-
-<pre><code>&gt;easy_install pygments
-</code></pre>
-
-<ol>
+<blockquote><p>easy_install pygments</p></blockquote></li>
 <li><p>然后需要安装Octopress的依赖项，安装依赖项需要用到Ruby的gem，使用下面的命令可以更换gem的更新源，使用国内的淘宝镜像速度相对快点。</p>
 
 <blockquote><p>gem sources -a <a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
