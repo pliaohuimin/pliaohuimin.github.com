@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger History]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-08-08T14:07:49+08:00</updated>
+  <updated>2014-08-08T14:20:53+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -14,12 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[new_domain]]></title>
+    <title type="html"><![CDATA[申请了新域名]]></title>
     <link href="http://pliaohuimin.github.io/blog/20140808/new-domain/"/>
     <updated>2014-08-08T14:01:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20140808/new-domain</id>
-    <content type="html"><![CDATA[<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a>
-之前用的是.tk免费域名，但总觉得打开页面很卡，不知道跟域名是否有关,还是使用github的原因。
+    <content type="html"><![CDATA[<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a></p>
+
+<p>之前用的是.tk免费域名，但总觉得打开页面很卡，不知道跟域名是否有关,还是使用github的原因。
 可是打开github时也不觉得特别卡，考虑一下，觉得还是买个.com的域名比较靠谱些，反正也不算太贵。</p>
 ]]></content>
   </entry>
