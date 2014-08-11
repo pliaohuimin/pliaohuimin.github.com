@@ -5,6 +5,7 @@ date: 2012-7-21
 wordpress_id: 8
 permalink: /blogs/8
 comments: true
+categories: WebBuilding
 ---
 总算是把这事情处理了。
 

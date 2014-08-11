@@ -3,7 +3,7 @@ layout: post
 title: "在新机器上使用octopress写文章"
 date: 2014-08-05 18:57
 comments: true
-categories: 
+categories: WebBuilding
 ---
 [主要参考来源][]
 
