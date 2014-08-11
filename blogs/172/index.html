@@ -1,203 +1,125 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>算法技巧 - Min's Lounger History</title>
-  <meta name="author" content="Mr.Liao">
+<!DOCTYPE HTML>
 
-  
-  <meta name="description" content="随机排列在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。这样在算法循环n次后，所有n个位置上的元素都被重新安排了。也就是说， &hellip;">
-  
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>算法技巧 - Min's Lounger History</title>
+	<meta name="author" content="Mr.Liao">
+
+	
+	<meta name="description" content="算法技巧 随机排列在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。这样在算法循环n次后，所有n个位置上的元素都被重新安排了。 &hellip;">
+	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://pliaohuimin.github.io/blogs/172">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Min's Lounger History" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+	<link href="/atom.xml" rel="alternate" title="Min's Lounger History" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://pliaohuimin.github.io/blogs/172">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Min's Lounger History</a></h1>
-  
-    <h2>All Life Sucks,all we can do is let it suck less</h2>
-  
-</hgroup>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:pliaohuimin.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/categories/travelling">Travelling</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">算法技巧</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-07T00:00:00+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2013</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content">
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">算法技巧</h1>
+	<div class="entry-content" itemprop="articleBody">
 	<ol>
 		<li>随机排列<div><span>在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。这样在算法循环n次后，所有n个位置上的元素都被重新安排了。也就是说，该算法产生了一个新的排列。</span></div><div><span></span>&nbsp;</div><div><span>伪代码如下：</span></div><div><span><ol>  <li><span><span><span class="caps">RANDOM</span>-<acronym title="A,&amp;nbsp;n"><span class="caps">PERMUTATION</span></acronym>&nbsp;&nbsp;&nbsp;&nbsp;//A[1..n]是一个包含n个元素的数组   &nbsp;</span></span></li>  <li><span>for&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>1</span><span>&nbsp;to&nbsp;n&nbsp;do&nbsp;   &nbsp;</span></li>  <li><span>swap   A[i]&nbsp;&nbsp;A[<acronym title="i,n"><span class="caps">RANDOM</span></acronym>]&nbsp;&nbsp;&nbsp;&nbsp;//<acronym title="i,n"><span class="caps">RANDOM</span></acronym>产生一个介于i和n之间的随机数&nbsp;</span></li></ol></span></div><br /><br /><div><a title="为知笔记" href="http://www.wiz.cn/">通过 为知笔记 发布</a></div><br /><br /></li>
 	</ol></div>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Mr.Liao</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-07T00:00:00+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2013</time>
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-  <a class="bshareDiv" href="http://www.bshare.cn/share">Sharing</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&style=999&img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&w=147&h=21"></script>
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blogs/167" title="Previous Post: 2012-12-29--2013-01-03广州，凤凰，张家界游玩路线及交通费用">&laquo; 2012-12-29--2013-01-03广州，凤凰，张家界游玩路线及交通费用</a>
-      
-      
-        <a class="basic-alignment right" href="/blogs/176" title="Next Post: [转]石英砂岩、丹霞、喀斯特三种地貌的比较">[转]石英砂岩、丹霞、喀斯特三种地貌的比较 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/20140808/new-domain/">申请了新域名</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20140805/new-machine-to-octopress/">在新机器上使用octopress写文章</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130902/add-share/">Octopress小工具</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130902/octopress-archive/">赞一个OCTOPRESS的ARCHIVE展示</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130901/from-wp2octopress/">从wordpress迁移到octopress</a>
-      </li>
-    
-  </ul>
 </section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Mr.Liao
 
 
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Mr.Liao -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
 
 <script type="text/javascript">
       var disqus_shortname = 'minlh';
@@ -214,7 +136,6 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 

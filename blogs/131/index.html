@@ -1,100 +1,91 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>部署系统参考 - Min's Lounger History</title>
-  <meta name="author" content="Mr.Liao">
+<!DOCTYPE HTML>
 
-  
-  <meta name="description" content="前置条件： 部署前需要安装软件 Apache 需要软件包：httpd-2.2.20.tar.gz 步骤 Setp 1: tar xzvf httpd-2.2.20.tar.gz Step 2: cd httpd-2.2.20 Step 3: ./configure Step 4: make &hellip;">
-  
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>部署系统参考 - Min's Lounger History</title>
+	<meta name="author" content="Mr.Liao">
+
+	
+	<meta name="description" content="部署系统参考 前置条件： 部署前需要安装软件 Apache 需要软件包：httpd-2.2.20.tar.gz 步骤 Setp 1: tar xzvf httpd-2.2.20.tar.gz Step 2: cd httpd-2.2.20 Step 3: ./configure Step 4: &hellip;">
+	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://pliaohuimin.github.io/blogs/131">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Min's Lounger History" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+	<link href="/atom.xml" rel="alternate" title="Min's Lounger History" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://pliaohuimin.github.io/blogs/131">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Min's Lounger History</a></h1>
-  
-    <h2>All Life Sucks,all we can do is let it suck less</h2>
-  
-</hgroup>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:pliaohuimin.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/categories/travelling">Travelling</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">部署系统参考</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-30T00:00:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><h3><a name="_Toc342068115">前置条件：</a></h3> <h4><a name="_Toc342068116">部署前需要安装软件</a></h4> <h5><a name="_Toc342068117">Apache</a></h5> <p>需要软件包：httpd-2.2.20.tar.gz <p><b>步骤</b> <p>Setp 1: tar xzvf httpd-2.2.20.tar.gz <p>Step 2: cd httpd-2.2.20 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068118">Mysql-server</a></h5> <p>Step 1: yum install mysql-server <p>Done <h5><a name="_Toc342068119">Libevent</a></h5> <p>需要软件包：libevent-2.0.19-stable.tar.gz <p><b>步骤</b> <p>Step 1: tar xzvf libevent-2.0.19-stable.tar.gz <p>Step 2: cd libevent-2.0.19-stable <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068120">Libmemcached</a></h5> <p>需要软件包：libmemcached-1.0.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libmemcached-1.0.4.tar.gz <p>Step 2: cd libmemcached-1.0.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068121">Memcached</a></h5> <p>需要软件包：memcached-1.4.13.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf memcached-1.4.13.tar.gz <p>Step 2: cd memcached-1.4.13 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068122">Libxml</a></h5> <p>需要软件包：libxml2-2.7.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libxml2-2.7.4.tar.gz <p>Step 2: cd libxml2-2.7.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068123"><span class="caps">PHP</span></a>：</h5> <p>需要软件包：php-5.2.17.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf php-5.2.17.tar.gz <p>Step 2: cd php-5.2.17 <p>Step 3: ./configure &#8212;prefix=/usr/local/php5 &#8212;with-apxs2=/usr/local/apache2/bin/apxs &#8212;with-config-file-path=/usr/local/lib &#8212;enable-track-vars &#8212;with-xml &#8212;with-MySQL <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068124">其它库文件：</a></h5> <p>需要软件包：lib_extra.tar.gz <p><b>步骤：</b> <p>Step 1: mkdir lib_extra <p>Step 2: cd lib_extra <p>Step 3: tar xzvf ../lib_extra.tar.gz <p>Step 4: cp * /usr/local/lib/ <p>Step 5: cd /usr/local/lib/ <p>Step 6: ln -s libbsoncpp.so.0.0.1 libbsoncpp.so.0 <p>Step 7: ln -s libboost_thread.so.1.48.0 libboost_thread.so.2 <p>done <h5><a name="_Toc342068125">Sandbox</a></h5> <p>需要软件包： sandbox.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf soft/sandbox.tar.gz <p>done <h4><a name="_Toc342068126">相关设置和测试：</a></h4> <h5><a name="_Toc342068127">Apache</a></h5> <p>开启apache服务： <p>/usr/local/apache2/bin/httpd start <p>开放80端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 80 -j <span class="caps">ACCEPT</span> <p>测试： <p>在浏览器打开： <p><a href="http://localhost">http://localhost</a> <p>看到It Works字样表示安装成功。 <h5><a name="_Toc342068128">Mysql:</a></h5> <p><b>启动mysqld</b><b>服务</b>： <p>Service mysqld start <p><b>测试：</b> <p>Mysql –u root <p>出现下列字样表示可正常使用： <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the current input statement. <p>mysql&gt; <p><b></b> <p><b>创建新数据库</b> <p>在mysql&gt;提示符后面输入： <p>create database zhetian; <p><b>设置root</b><b>用户密码：</b> <p>程序创建数据库脚本要求用户需要密码登录，默认使用root用户，密码为root <p>下面为root用户设置密码root的shell指令： <p>mysqladmin –u root passward “root” <h5><a name="_Toc342068129">其它库文件：</a></h5> <p><b>设置环境：</b> <p>Step 1: vi ~/.bash_profile <p>Step 2: <p>添加以下脚本： <p>LD_LIBRARY_PATH=/usr/local/lib/ <p><span class="caps">PATH</span>=$<span class="caps">PATH</span>:$<span class="caps">HOME</span>/bin:/usr/local/monogodb/bin: <p>export <span class="caps">PATH</span> <p>export LD_LIBRARY_PATH <p>step 3: <p>回到shell环境: <p>:w <p>Step 4: <p>. .bash_profile <h5><a name="_Toc342068130">Sandbox</a></h5> <p>开启843沙箱端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 843 -j <span class="caps">ACCEPT</span> <p>启动程序： <p>./sbserver ../conf/sbserver <h3><a name="_Toc342068131">部署程序</a></h3> <h4><a name="_Toc342068132">后端服务：</a></h4> <p>需要软件包：ztzserver_alphax.xx.xx_build112801.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf ztzserver_alphax.xx.xx_build112801.tar.gz <p>Step 2: cd server_mysql <p>Step 3:  <p>创建数据库 <p>sh create_database.sh <p>Step 4: <p>修改各程序相应的配置文件，主要修改里面的IP和端口配置。具体修改在这里就不详说了。 <p>Step 5: <p>修改启动脚本restart_servers.sh: <p>如果是使用root用户执行该脚本，需要在memcached执行一行后面添加: -u root <p>如果是使用其它用户，则无需修改，直接跳过此步骤 <p>Step 6: <p>执行启动脚本restart_servers.sh: <p>Sh restart_servers.sh <p>Step 7: <p>开启相关服务端口，主要是登录服务器对外端口和宙斯服务器对外端口，如18100,18810： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18810 -j <span class="caps">ACCEPT</span> <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18100 -j <span class="caps">ACCEPT</span> <h4><a name="_Toc342068133">前端服务：</a></h4> <p>需要软件包：ztzclient_1130.tar.gz <p><b>步骤：</b> <p>Step 1: 使用cd指令切换当前目录到apache的根目录，默认为/usr/local/apache2/htdocs <p>Step 2: 创建目录存放前端资源，目录名可自定。如： <p>mkdir ztzclient <p>Step 3: cd ztzclient <p>Step 4: 拷贝ztzclient_1130.tar.gz到当前目录 <p>Step 5: tar xzvf ztzclient_1130.tar.gz <p>step 6: 修改httpd.conf <p>l 打开httpd.conf文件： vi /usr/local/apache2/conf/httpd.conf <p>l 找到标签： &lt;Directory /&gt; <p>l 将内部Options FollowSymLinks， Deny from all屏蔽，屏蔽后内容如下： <p>&lt;Directory /&gt; <p>#Options FollowSymLinks <p>AllowOverride None <p>Order deny,allow <p>#Deny from all <p>&lt;/Directory&gt; <h4><a name="_Toc342068134">php</a>支持：</h4> <p><b>步骤：</b> <p>step 1: 创建新系统用户。apache要求php脚本必须存放在非root用户目录下。以下指定创建用户名为ztz，密码为ztz的用户： <p>useradd ztz –pztz <p>step 2: 打开httpd.conf配置文件。vi /usr/local/apache2/conf/httpd.conf <p>step 3: 修改用户信息 <p>查找下列信息： User daemon，Group daemon，将其中的daemon改成刚新创建的用户。 <p>step 4:  <p>查找下列信息：DocumentRoot &#8220;/usr/local/apache2/htdocs&#8221; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 5: <p>查找到下列信息：&lt;Directory &#8220;/usr/local/apache2/htdocs&#8221;&gt; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 6: <p>查找到下列信息：Options Indexes FollowSymLinks <p>将其用#屏蔽。效果如下： <p>#Options Indexes FollowSymLinks <p>并在下面一行添加： <p>Options FollowSymLinks MultiViews <p>step 7: <p>查找到下列信息：&lt;IfModule dir_module&gt; <p>将下列信息： <p>DirectoryIndex index.html <p>替换成： <p>DirectoryIndex index.html index.shtml index.cgi index.php index.phtml index.php <p>step 8: <p>查找到下列标签：&lt;IfModule mime_module&gt; <p>在该标签里面的 AddType application/x-gzip .gz .tgz下，添加下面两行代码： <p>AddType application/x-httpd-php .php .php3 .phtml .inc <p>AddType application/x-httpd-php-source .phps <h4><a name="_Toc342068135">php sockets </a>支持：</h4> <p>需要文件：php.ini <p><b>步骤：</b> <p>step 1: 使用cd命令将当前目录切换到进入PHP源代码目录下的ext/sockets目录，如： <p>cd /root/soft/ php-5.2.17/ext/sockets <p>step 2: 执行php安装目录bin目录下的phpize指令。如： <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">部署系统参考</h1>
+	<div class="entry-content" itemprop="articleBody"><h3><a name="_Toc342068115">前置条件：</a></h3> <h4><a name="_Toc342068116">部署前需要安装软件</a></h4> <h5><a name="_Toc342068117">Apache</a></h5> <p>需要软件包：httpd-2.2.20.tar.gz <p><b>步骤</b> <p>Setp 1: tar xzvf httpd-2.2.20.tar.gz <p>Step 2: cd httpd-2.2.20 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068118">Mysql-server</a></h5> <p>Step 1: yum install mysql-server <p>Done <h5><a name="_Toc342068119">Libevent</a></h5> <p>需要软件包：libevent-2.0.19-stable.tar.gz <p><b>步骤</b> <p>Step 1: tar xzvf libevent-2.0.19-stable.tar.gz <p>Step 2: cd libevent-2.0.19-stable <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068120">Libmemcached</a></h5> <p>需要软件包：libmemcached-1.0.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libmemcached-1.0.4.tar.gz <p>Step 2: cd libmemcached-1.0.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068121">Memcached</a></h5> <p>需要软件包：memcached-1.4.13.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf memcached-1.4.13.tar.gz <p>Step 2: cd memcached-1.4.13 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068122">Libxml</a></h5> <p>需要软件包：libxml2-2.7.4.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf libxml2-2.7.4.tar.gz <p>Step 2: cd libxml2-2.7.4 <p>Step 3: ./configure <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068123"><span class="caps">PHP</span></a>：</h5> <p>需要软件包：php-5.2.17.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf php-5.2.17.tar.gz <p>Step 2: cd php-5.2.17 <p>Step 3: ./configure &#8212;prefix=/usr/local/php5 &#8212;with-apxs2=/usr/local/apache2/bin/apxs &#8212;with-config-file-path=/usr/local/lib &#8212;enable-track-vars &#8212;with-xml &#8212;with-MySQL <p>Step 4: make <p>Step 5: make install <p>done <h5><a name="_Toc342068124">其它库文件：</a></h5> <p>需要软件包：lib_extra.tar.gz <p><b>步骤：</b> <p>Step 1: mkdir lib_extra <p>Step 2: cd lib_extra <p>Step 3: tar xzvf ../lib_extra.tar.gz <p>Step 4: cp * /usr/local/lib/ <p>Step 5: cd /usr/local/lib/ <p>Step 6: ln -s libbsoncpp.so.0.0.1 libbsoncpp.so.0 <p>Step 7: ln -s libboost_thread.so.1.48.0 libboost_thread.so.2 <p>done <h5><a name="_Toc342068125">Sandbox</a></h5> <p>需要软件包： sandbox.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf soft/sandbox.tar.gz <p>done <h4><a name="_Toc342068126">相关设置和测试：</a></h4> <h5><a name="_Toc342068127">Apache</a></h5> <p>开启apache服务： <p>/usr/local/apache2/bin/httpd start <p>开放80端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 80 -j <span class="caps">ACCEPT</span> <p>测试： <p>在浏览器打开： <p><a href="http://localhost">http://localhost</a> <p>看到It Works字样表示安装成功。 <h5><a name="_Toc342068128">Mysql:</a></h5> <p><b>启动mysqld</b><b>服务</b>： <p>Service mysqld start <p><b>测试：</b> <p>Mysql –u root <p>出现下列字样表示可正常使用： <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the current input statement. <p>mysql&gt; <p><b></b> <p><b>创建新数据库</b> <p>在mysql&gt;提示符后面输入： <p>create database zhetian; <p><b>设置root</b><b>用户密码：</b> <p>程序创建数据库脚本要求用户需要密码登录，默认使用root用户，密码为root <p>下面为root用户设置密码root的shell指令： <p>mysqladmin –u root passward “root” <h5><a name="_Toc342068129">其它库文件：</a></h5> <p><b>设置环境：</b> <p>Step 1: vi ~/.bash_profile <p>Step 2: <p>添加以下脚本： <p>LD_LIBRARY_PATH=/usr/local/lib/ <p><span class="caps">PATH</span>=$<span class="caps">PATH</span>:$<span class="caps">HOME</span>/bin:/usr/local/monogodb/bin: <p>export <span class="caps">PATH</span> <p>export LD_LIBRARY_PATH <p>step 3: <p>回到shell环境: <p>:w <p>Step 4: <p>. .bash_profile <h5><a name="_Toc342068130">Sandbox</a></h5> <p>开启843沙箱端口： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 843 -j <span class="caps">ACCEPT</span> <p>启动程序： <p>./sbserver ../conf/sbserver <h3><a name="_Toc342068131">部署程序</a></h3> <h4><a name="_Toc342068132">后端服务：</a></h4> <p>需要软件包：ztzserver_alphax.xx.xx_build112801.tar.gz <p><b>步骤：</b> <p>Step 1: tar xzvf ztzserver_alphax.xx.xx_build112801.tar.gz <p>Step 2: cd server_mysql <p>Step 3:  <p>创建数据库 <p>sh create_database.sh <p>Step 4: <p>修改各程序相应的配置文件，主要修改里面的IP和端口配置。具体修改在这里就不详说了。 <p>Step 5: <p>修改启动脚本restart_servers.sh: <p>如果是使用root用户执行该脚本，需要在memcached执行一行后面添加: -u root <p>如果是使用其它用户，则无需修改，直接跳过此步骤 <p>Step 6: <p>执行启动脚本restart_servers.sh: <p>Sh restart_servers.sh <p>Step 7: <p>开启相关服务端口，主要是登录服务器对外端口和宙斯服务器对外端口，如18100,18810： <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18810 -j <span class="caps">ACCEPT</span> <p>iptables -I <span class="caps">INPUT</span> -p tcp &#8212;dport 18100 -j <span class="caps">ACCEPT</span> <h4><a name="_Toc342068133">前端服务：</a></h4> <p>需要软件包：ztzclient_1130.tar.gz <p><b>步骤：</b> <p>Step 1: 使用cd指令切换当前目录到apache的根目录，默认为/usr/local/apache2/htdocs <p>Step 2: 创建目录存放前端资源，目录名可自定。如： <p>mkdir ztzclient <p>Step 3: cd ztzclient <p>Step 4: 拷贝ztzclient_1130.tar.gz到当前目录 <p>Step 5: tar xzvf ztzclient_1130.tar.gz <p>step 6: 修改httpd.conf <p>l 打开httpd.conf文件： vi /usr/local/apache2/conf/httpd.conf <p>l 找到标签： &lt;Directory /&gt; <p>l 将内部Options FollowSymLinks， Deny from all屏蔽，屏蔽后内容如下： <p>&lt;Directory /&gt; <p>#Options FollowSymLinks <p>AllowOverride None <p>Order deny,allow <p>#Deny from all <p>&lt;/Directory&gt; <h4><a name="_Toc342068134">php</a>支持：</h4> <p><b>步骤：</b> <p>step 1: 创建新系统用户。apache要求php脚本必须存放在非root用户目录下。以下指定创建用户名为ztz，密码为ztz的用户： <p>useradd ztz –pztz <p>step 2: 打开httpd.conf配置文件。vi /usr/local/apache2/conf/httpd.conf <p>step 3: 修改用户信息 <p>查找下列信息： User daemon，Group daemon，将其中的daemon改成刚新创建的用户。 <p>step 4:  <p>查找下列信息：DocumentRoot &#8220;/usr/local/apache2/htdocs&#8221; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 5: <p>查找到下列信息：&lt;Directory &#8220;/usr/local/apache2/htdocs&#8221;&gt; <p>将其中的/usr/local/apache2/htdocs替换成php脚本存放的目录。如/home/ztz/www <p>step 6: <p>查找到下列信息：Options Indexes FollowSymLinks <p>将其用#屏蔽。效果如下： <p>#Options Indexes FollowSymLinks <p>并在下面一行添加： <p>Options FollowSymLinks MultiViews <p>step 7: <p>查找到下列信息：&lt;IfModule dir_module&gt; <p>将下列信息： <p>DirectoryIndex index.html <p>替换成： <p>DirectoryIndex index.html index.shtml index.cgi index.php index.phtml index.php <p>step 8: <p>查找到下列标签：&lt;IfModule mime_module&gt; <p>在该标签里面的 AddType application/x-gzip .gz .tgz下，添加下面两行代码： <p>AddType application/x-httpd-php .php .php3 .phtml .inc <p>AddType application/x-httpd-php-source .phps <h4><a name="_Toc342068135">php sockets </a>支持：</h4> <p>需要文件：php.ini <p><b>步骤：</b> <p>step 1: 使用cd命令将当前目录切换到进入PHP源代码目录下的ext/sockets目录，如： <p>cd /root/soft/ php-5.2.17/ext/sockets <p>step 2: 执行php安装目录bin目录下的phpize指令。如： <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <div class='bogus-wrapper'><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span><br />
 </pre></td><td class='code'><pre><code class=''>&lt;span class='line'&gt;/usr/&lt;/span&gt;</code></pre></td><p></tr></table></div></figure></notextile>local<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -138,105 +129,36 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>3.</span></code></pre></td></tr></table></div></figure></div></notextile><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>ln -s /usr/lib64/mysql /usr/lib/mysql</span></code></pre></td></tr></table></div></figure></div></notextile></p></p></div>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Mr.Liao</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-30T00:00:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-  <a class="bshareDiv" href="http://www.bshare.cn/share">Sharing</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&style=999&img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&w=147&h=21"></script>
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blogs/128" title="Previous Post: configure: error: Cannot find MySQL header files under yes.">&laquo; configure: error: Cannot find MySQL header files under yes.</a>
-      
-      
-        <a class="basic-alignment right" href="/blogs/133" title="Next Post: Permission denied (publickey,gssapi-with-mic).">Permission denied (publickey,gssapi-with-mic). &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/20140808/new-domain/">申请了新域名</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20140805/new-machine-to-octopress/">在新机器上使用octopress写文章</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130902/add-share/">Octopress小工具</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130902/octopress-archive/">赞一个OCTOPRESS的ARCHIVE展示</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130901/from-wp2octopress/">从wordpress迁移到octopress</a>
-      </li>
-    
-  </ul>
 </section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Mr.Liao
 
 
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Mr.Liao -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
 
 <script type="text/javascript">
       var disqus_shortname = 'minlh';
@@ -253,7 +175,6 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
 
 
 
