@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'typedef struct的前置声明'
+date: 2012-8-11
+wordpress_id: 71
+permalink: /blogs/71
+comments: true
+---
+<p>参照网站：<a href="http://dreamume.blog.163.com/blog/static/184923719201236115353586/">http://dreamume.blog.163.com/blog/static/184923719201236115353586/</a></p> <p>如果有typedef struct，则需要把这句拷贝作为前置声明。<br>有些typedef struct语句可能在某些库头文件中，很难找，如果遇到这种情况，可以假定一个错误的定义，然后通过gcc的编译提示找到该句。<br>例如：<br>typedef struct STruncData SPlainData;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*&nbsp; STruncData是随意写的 */<br>则gcc编译会提示找到两处不同的SPainData定义，这样就找出了正确的那个，拷贝出来直接使用即可。 <p><strong>注：没有测试过，待验证。</strong></p>

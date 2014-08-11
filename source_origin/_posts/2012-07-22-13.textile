@@ -1,0 +1,10 @@
+---
+layout: post
+title: '使用WINDOWS LIVE WRITER离线发布测试'
+date: 2012-7-22
+wordpress_id: 13
+permalink: /blogs/13
+comments: true
+categories: WebBuilding
+---
+<p>本文为使用WINDOWS LIVE WRITER离线发布测试。</p> <p>使用这种方法很简单，只消在网上下载安装好WINDOWS LIVE WRITER这个软件，在WORDPRESS设置好</p> <p>XML-RPC<br>XML-RPC Enable the WordPress, Movable Type, MetaWeblog and Blogger XML-RPC publishing protocols. <p>这一项。 <p>在启动WINDOWS LIVE WRITER软件时选择WORDPRESS，填写网址，后台管理用户名，密码就OK了。</p>

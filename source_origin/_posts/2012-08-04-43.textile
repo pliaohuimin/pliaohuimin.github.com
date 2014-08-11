@@ -1,0 +1,9 @@
+---
+layout: post
+title: '基本乐理知识'
+date: 2012-8-4
+wordpress_id: 43
+permalink: /blogs/43
+comments: true
+---
+<p>url:<a href="http://my.ku6.com/watch?v=NbK3FrboMm5Vj33W#share">http://my.ku6.com/watch?v=NbK3FrboMm5Vj33W#share</a></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i</p> <p>唱名：do（全） re（全） mi（半） fa（全）  sou（全）  la（全）  si（半）do</p> <p>音名：CDEFGABC</p> <p>同一根弦，相邻为半，相隔为全</p> <p>各空弦发音：从第一弦到第六弦分别为：E（mi)B(do)G(sou)D(re)A(la)E(mi)</p>

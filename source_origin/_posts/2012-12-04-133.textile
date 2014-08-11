@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'Permission denied (publickey,gssapi-with-mic).'
+date: 2012-12-4
+wordpress_id: 133
+permalink: /blogs/133
+comments: true
+---
+<p>公钥无密码登录设置过程中，ssh-copy-id 命令执行报错。网上说的几种方法都不行。想起步骤中拷贝公钥到目标机器的命令，本身就需要密码验证。而目标机器是不支持密码登录的。导致该步骤失败。</p> <p>&nbsp;</p> <p>解决方法：直接把~/.ssh/id_rsa.pub的内容给有权限登录目标机器的人员，让他们添加到authorized_keys文件中即可。</p>

@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'foobar播放ape格式音乐'
+date: 2012-11-25
+wordpress_id: 124
+permalink: /blogs/124
+comments: true
+---
+<p>之前安装的foobar2000 v1.1.7不支持ape格式的音乐播放。发现需要安装插件（components）才行。</p> <p>到官网<a title="http://www.foobar2000.org/components/view/foo_input_monkey" href="http://www.foobar2000.org/components/view/foo_input_monkey">http://www.foobar2000.org/components/view/foo_input_monkey</a>下载相关插件：foo_input_monkey.fb2k-component。</p> <p>将下载后的文件的文件名后缀改成rar格式，直接解压，可得到foo_input_monkey.dll文件。将这个文件拷到foobar2000安装目录的components目录下。</p> <p>打开foobar2000，选择file-&gt;preference，弹出面板后后选择components，点击右下角的install，到foobar2000安装目录的components目录下选中foo_input_monkey.dll，点击打开。</p> <p>再点击右下角的apply。会弹出是否重启foobar的面板，点击是重启后即可直接播放ape文件了。</p>

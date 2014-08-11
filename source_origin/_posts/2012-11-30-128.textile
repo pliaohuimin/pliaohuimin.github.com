@@ -1,0 +1,9 @@
+---
+layout: post
+title: 'configure: error: Cannot find MySQL header files under yes.'
+date: 2012-11-30
+wordpress_id: 128
+permalink: /blogs/128
+comments: true
+---
+<p>直接安装mysql-devel</p>

@@ -1,0 +1,9 @@
+---
+layout: post
+title: '算法技巧'
+date: 2013-1-7
+wordpress_id: 172
+permalink: /blogs/172
+comments: true
+---
+## 随机排列<div><span>在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。这样在算法循环n次后，所有n个位置上的元素都被重新安排了。也就是说，该算法产生了一个新的排列。</span></div><div><span></span>&nbsp;</div><div><span>伪代码如下：</span></div><div><span><ol>  <li><span><span>RANDOM-PERMUTATION(A,&nbsp;n)&nbsp;&nbsp;&nbsp;&nbsp;//A[1..n]是一个包含n个元素的数组   &nbsp;</span></span></li>  <li><span>for&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>1</span><span>&nbsp;to&nbsp;n&nbsp;do&nbsp;   &nbsp;</span></li>  <li><span>swap   A[i]&nbsp;&nbsp;A[RANDOM(i,n)]&nbsp;&nbsp;&nbsp;&nbsp;//RANDOM(i,n)产生一个介于i和n之间的随机数&nbsp;</span></li></ol></span></div><br /><br /><div><a title="为知笔记" href="http://www.wiz.cn/">通过 为知笔记 发布</a></div><br /><br />

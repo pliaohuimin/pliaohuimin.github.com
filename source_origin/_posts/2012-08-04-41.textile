@@ -1,0 +1,9 @@
+---
+layout: post
+title: '吉他类型'
+date: 2012-8-4
+wordpress_id: 41
+permalink: /blogs/41
+comments: true
+---
+<p><strong>民谣吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/minyaojita.gif"></strong></p> <p><strong>电吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/dianjita.gif"></strong></p> <p><strong>古典吉它：<img alt="吉他类型详解" src="http://www.sunjita.com/class/jtzx7rt/images/gudianjita.gif"></strong></p>

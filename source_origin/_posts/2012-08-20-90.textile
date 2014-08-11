@@ -1,0 +1,27 @@
+---
+layout: post
+title: '去掉SHELL的提示音和VI的提示音'
+date: 2012-8-20
+wordpress_id: 90
+permalink: /blogs/90
+comments: true
+---
+SHELL：
+
+用root用户打开/etc/inputrc，将下面的一行注释：
+
+#set bell-style none
+
+在下面添加多一行：
+set bell-style off
+
+重新打开终端，即可生效。
+
+&nbsp;
+
+VI：
+
+打开~/.vimrc（如果打不到该文件，可以自己创建一个），往里面添加多一行：
+
+set vb t_vb=
+下次使用vi时即可生效。
