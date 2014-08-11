@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-08-11T16:18:49+08:00</updated>
+  <updated>2014-08-11T16:23:07+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -18,8 +18,9 @@
     <link href="http://pliaohuimin.github.io/blog/20140811/add-profilepic/"/>
     <updated>2014-08-11T15:57:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20140811/add-profilepic</id>
-    <content type="html"><![CDATA[<p>新安装了<a href="https://github.com/shashankmehta/greyshade">greyshade</a>主题。
-好奇于其他使用这个主题的其它博客，有头像的展示。一直找不到在哪设置。
+    <content type="html"><![CDATA[<p>新安装了<a href="https://github.com/shashankmehta/greyshade">greyshade</a>主题。</p>
+
+<p>好奇于其他使用这个主题的其它博客，有头像的展示。一直找不到在哪设置。
 原来还有<a href="http://en.gravatar.com/">gravatar</a>这种东西，通过邮箱来显示头像。只要设置好邮箱，并在gravatar服务上注册相应邮箱，上传头像就可以了。</p>
 ]]></content>
   </entry>
