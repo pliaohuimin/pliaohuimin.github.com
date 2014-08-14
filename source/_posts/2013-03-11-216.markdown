@@ -5,6 +5,7 @@ date: 2013-3-11
 wordpress_id: 216
 permalink: /blogs/216
 comments: true
+categories: Travellling
 ---
 2013-03-11 晚上
 现在正躺在前往顺化的SINH TOURIST  OPEN BUS中。回想着生前第一次出国的第一天生活。简单地概括就是：累。

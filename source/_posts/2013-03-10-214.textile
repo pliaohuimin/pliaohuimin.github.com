@@ -5,5 +5,6 @@ date: 2013-3-10
 wordpress_id: 214
 permalink: /blogs/214
 comments: true
+categories: Travellling
 ---
 <div>没有自己去领事馆签证，在淘宝上找了一家南宁的旅行社代签，到南宁后自取，也可以让它快递回去，很快很简单。</div><div>所需材料：</div><div>1：签证人护照</div><div>2：签证人2寸白底照片</div><div>&nbsp;</div><div>签证时间：</div><div>旅行社当天收到护照，第二天下午5点钟左右就出签证。</div><div>&nbsp;</div><!--more--><div>签证有效期：</div><div>一个月，可指定生效日期。</div><div>&nbsp;</div><div>费用：</div><div>淘宝费用：395RMB</div><div>顺丰快递：22RMB（跨省）</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br />

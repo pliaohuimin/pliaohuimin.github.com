@@ -4,6 +4,7 @@ title: "从wordpress迁移到octopress"
 date: 2013-09-01 03:54
 comments: true
 categories: 
+categories: WebBuilding
 ---
 ##为什么要迁移：##
 >并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。

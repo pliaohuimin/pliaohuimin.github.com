@@ -4,6 +4,7 @@ title: "申请了新域名"
 date: 2014-08-08 14:01
 comments: true
 categories: 
+categories: WebBuilding
 ---
 今天下定决心买了域名：http://www.minlh.com/
 

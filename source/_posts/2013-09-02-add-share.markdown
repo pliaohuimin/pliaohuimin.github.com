@@ -4,6 +4,7 @@ title: "octopress小工具"
 date: 2013-09-02 21:00
 comments: true
 categories: 
+categories: WebBuilding
 ---
 ###添加一键共享###
 我目前使用的是bshare。  

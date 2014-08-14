@@ -5,6 +5,7 @@ date: 2013-4-1
 wordpress_id: 375
 permalink: /blogs/375
 comments: true
+categories: Travellling
 ---
 <div>2013/03/21</div>
 <div>第二天醒来，我们两个人就各奔东西了，我参加完三日游后直接去柬埔寨，小某听完课之后是直接飞吉隆坡去马来西亚玩。</div>
