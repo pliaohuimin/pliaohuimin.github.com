@@ -4,7 +4,7 @@
   <title><![CDATA[Category: WebBuilding | Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/blog/categories/webbuilding/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-08-12T10:06:47+08:00</updated>
+  <updated>2014-08-14T14:15:13+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -22,6 +22,18 @@
 
 <p>好奇于其他使用这个主题的其它博客，有头像的展示。一直找不到在哪设置。
 原来还有<a href="http://en.gravatar.com/">gravatar</a>这种东西，通过邮箱来显示头像。只要设置好邮箱，并在gravatar服务上注册相应邮箱，上传头像就可以了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[申请了新域名]]></title>
+    <link href="http://pliaohuimin.github.io/blog/20140808/new-domain/"/>
+    <updated>2014-08-08T14:01:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/20140808/new-domain</id>
+    <content type="html"><![CDATA[<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a></p>
+
+<p>之前用的是.tk免费域名，但总觉得打开页面很卡，不知道跟域名是否有关,还是使用github的原因。
+可是打开github时也不觉得特别卡，考虑一下，觉得还是买个.com的域名比较靠谱些，反正也不算太贵。</p>
 ]]></content>
   </entry>
   
@@ -154,49 +166,38 @@ Liquid Exception: incompatible character encodings: UTF-8 and GBK in index.html<
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[WORDPRESS网站流量统计]]></title>
-    <link href="http://pliaohuimin.github.io/blogs/49"/>
-    <updated>2012-08-10T00:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blogs/49</id>
-    <content type="html"><![CDATA[<p>参考网站：</p>
+    <title type="html"><![CDATA[octopress小工具]]></title>
+    <link href="http://pliaohuimin.github.io/blog/20130902/add-share/"/>
+    <updated>2013-09-02T21:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/20130902/add-share</id>
+    <content type="html"><![CDATA[<h3>添加一键共享</h3>
 
+<p>我目前使用的是bshare。<br/>
+在<em>config.yml中增加bshare: true。在“source/</em>includes/post”下的sharing.html中增加如下代码：</p>
 
-<p> <p><a href="http://www.luyouqiwo.com/110/2012/0705/8871.html"><a href="http://www.luyouqiwo.com/110/2012/0705/8871.html">http://www.luyouqiwo.com/110/2012/0705/8871.html</a></a></p> <p><a href="http://www.x-berry.com/traffic-statistics"><a href="http://www.x-berry.com/traffic-statistics">http://www.x-berry.com/traffic-statistics</a></a></p> <p>在<a href="http://cnzz.com/"><a href="http://cnzz.com/">http://cnzz.com/</a></a>上注册账号，填写个人网站信息。将产生一些脚本，选择你喜欢的类型，拷贝相关代码。</p> <p>登录到你的WORDPRESS后台，选择APPERENCE-&gt;EDITOR-&gt;FOOTER.PHP，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb.png" width="181" height="211"></a></p> <p>将拷贝的脚本粘贴到&lt;/body&gt;之前，保存即可。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image1.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb1.png" width="236" height="98"></a></p> <p>如果找不到保存按键</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image2.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb2.png" width="244" height="67"></a></p> <p>而是没有修改权限的提示</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image3.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb3.png" width="244" height="38"></a>，</p> <p>可直接在你发布代码的主机上修改相关文件的代码也是可行的，或者修改相关文件的权限。</p> <p>再次登录你的网站，可发现在页面最下面出现你添加的统计字样，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image4.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb4.png" width="139" height="48"></a></p> <p>点击它可查看统计数据。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image5.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb5.png" width="244" height="56"></a></p> <p>查看统计数据输入的密码可在cnzz账户上设置。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image6.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb6.png" width="244" height="109"></a></p></p>
+<pre><code>&lt;a class="bshareDiv" href="http://www.bshare.cn/share"&gt;Sharing&lt;/a&gt;&lt;script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&amp;style=999&amp;img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&amp;w=147&amp;h=21"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>上述的代码由bshare产生，可以自己选择所需的外观。这样，在每一篇文章的最下方会出现一个分享的小工具。</p>
+
+<h3>添加DISQUC评论</h3>
+
+<p>首先需要在Disqus注册一个账号，登录后添加站点信息，将填写的short_name写到<em>config.yml中，并将</em>config.yml中的disqus_show_comment_count设置为true.如下：</p>
+
+<pre><code># Disqus Comments
+disqus_short_name: liao   # liao为添加站点信息时的Site Shortname
+disqus_show_comment_count: true
+</code></pre>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[使用WINDOWS LIVE WRITER离线发布测试]]></title>
-    <link href="http://pliaohuimin.github.io/blogs/13"/>
-    <updated>2012-07-22T00:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blogs/13</id>
-    <content type="html"><![CDATA[<p>本文为使用WINDOWS LIVE WRITER离线发布测试。</p>
-
-
-<p> <p>使用这种方法很简单，只消在网上下载安装好WINDOWS LIVE WRITER这个软件，在WORDPRESS设置好</p> <p>XML-RPC<br>XML-RPC Enable the WordPress, Movable Type, MetaWeblog and Blogger XML-RPC publishing protocols. <p>这一项。 <p>在启动WINDOWS LIVE WRITER软件时选择WORDPRESS，填写网址，后台管理用户名，密码就OK了。</p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[免费一级域名+免费虚拟空间+WORDPRESS打造全新个人BLOG]]></title>
-    <link href="http://pliaohuimin.github.io/blogs/8"/>
-    <updated>2012-07-21T00:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blogs/8</id>
-    <content type="html"><![CDATA[<p>总算是把这事情处理了。</p>
-
-<p>之所以有这个博客，原因很简单：无意间看到大学一个师兄用WORDPRESS做了一个自己的BLOG，就有了自己也做一个BLOG的冲动。之前也用过一些二级域名加上提供好的模板建立起来的博客，总觉得缺少一些东西，就是自己对这些东西的一个掌控力，你不知道网站什么时候会改变它的经营策略，也只能按照它提供好的几个模块做一些小的调整，后台DIY的空间不大。</p>
-
-<p>有了这个冲动之后，马上上网了解一下一级域名的申请情况，发现大部分域名都是需要收费的。还好，在<a href="dot.tk">dot.tk</a>找到了这个以.tk结尾的域名，如果域名长度大于3，都是免费了。好吧，虽然没听过这个后缀，不过好歹也算是一级的，重点是免费的，该知足了。</p>
-
-<p>申请完域名，接下来就是寻找免费的虚拟空间。因为考虑到使用WORDPRESS，如果所找的虚拟空间必须支持PHP脚本和MYSQL数据库。之前找到了<a href="0fees.net">0fees.net</a>，发现这个网站不支持后缀为.tk域名的绑定。后来就找到了<a href="http://www.freewebhostingarea.com/"><a href="http://www.freewebhostingarea.com/">http://www.freewebhostingarea.com/</a></a>，发现刚好满足需求。不过它只支持NAMESERVER解析，不支持A RECORD。没关系，把它提供的解析域名往<a href="dot.tk">dot.tk</a>的配置一写，也就搞定了。当然，生效需要一定的时间，我的实际情况是不超过半天。</p>
-
-<p>其实这个虚拟空间是支持自动安装WORDPRESS的，但是我没有使用这个功能。直接下载软件包，往ftp服务器上传，把WORDPRESS目录下的所有文件往根目录一移，工作基本就完成了。打开你绑定的域名，按照页面的提示，一步步往下走，中间需要填写的信息都能在虚拟空间的个人信息里找到。填写完毕后，整个工作就告一段落了。</p>
-
-<p>另外，如果WORDPRESS安装的不是在根目录，还需要一个叫“Third Party Host Fix”的工具来协助安装主题时寻找到合适的目录。</p>
-
-<p>一些相关的指导也可参照<a href="http://www.cnpetweb.com/a/xinxizhongxin/lanmu9/2011/1003/16761.html"><a href="http://www.cnpetweb.com/a/xinxizhongxin/lanmu9/2011/1003/16761.html">http://www.cnpetweb.com/a/xinxizhongxin/lanmu9/2011/1003/16761.html</a></a></p>
-
-<p>接下来呢，你的个人博客生涯可以真正开始了:)</p>
+    <title type="html"><![CDATA[赞一个OCTOPRESS的ARCHIVE展示]]></title>
+    <link href="http://pliaohuimin.github.io/blog/20130902/octopress-archive/"/>
+    <updated>2013-09-02T16:05:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/20130902/octopress-archive</id>
+    <content type="html"><![CDATA[<p>感觉挺好的，对于之前发布过的文章，简洁，一目了然。<br/>
+之前还在琢磨着要不要给这些文章分目录，现在看来要重新考虑一下分目录的必要性。</p>
 ]]></content>
   </entry>
   
