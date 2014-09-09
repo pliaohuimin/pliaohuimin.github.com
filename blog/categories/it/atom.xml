@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IT | Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-09-09T14:27:26+08:00</updated>
+  <updated>2014-09-09T14:28:03+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -29,47 +29,47 @@
 <h4>配置文件的相应设置 ，这里已经有个模板Doxyfile(test文件夹下)，可以根据需要更改相应设置</h4>
 
 <ul>
-<li>项目名称，将作为于所生成的程序文档首页标题
+<li>项目名称，将作为于所生成的程序文档首页标题<br/>
 PROJECT_NAME           = Test</li>
-<li>文档版本号，可对应于项目版本号，譬如 svn、cvs 所生成的项目版本号
+<li>文档版本号，可对应于项目版本号，譬如 svn、cvs 所生成的项目版本号<br/>
 PROJECT_NUMBER       = 1.0.0</li>
-<li>程序文档输出目录
+<li>程序文档输出目录<br/>
 OUTPUT_DIRECTORY    =  doc/</li>
-<li>程序文档语言环境
+<li>程序文档语言环境<br/>
 OUTPUT_LANGUAGE    = Chinese</li>
-<li>如果是制作 C 程序文档，该选项必须设为 YES，否则默认生成 C++ 文档格式
+<li>如果是制作 C 程序文档，该选项必须设为 YES，否则默认生成 C++ 文档格式<br/>
 OPTIMIZE_OUTPUT_FOR_C  = YES</li>
-<li>对于使用 typedef 定义的结构体、枚举、联合等数据类型，只按照 typedef 定义的类型名进行文档化
+<li>对于使用 typedef 定义的结构体、枚举、联合等数据类型，只按照 typedef 定义的类型名进行文档化<br/>
 TYPEDEF_HIDES_STRUCT   = YES</li>
-<li>在 C++ 程序文档中，该值可以设置为 NO，而在 C 程序文档中，由于 C 语言没有所谓的域/名字空间这样的概念，所以此处设置为 YES
+<li>在 C++ 程序文档中，该值可以设置为 NO，而在 C 程序文档中，由于 C 语言没有所谓的域/名字空间这样的概念，所以此处设置为 YES<br/>
 HIDE_SCOPE_NAMES        = YES</li>
-<li>让 doxygen 静悄悄地为你生成文档，只有出现警告或错误时，才在终端输出提示信息
+<li>让 doxygen 静悄悄地为你生成文档，只有出现警告或错误时，才在终端输出提示信息<br/>
 QUIET   = YES</li>
-<li>只对头文件中的文档化信息生成程序文档
+<li>只对头文件中的文档化信息生成程序文档<br/>
 FILE_PATTERNS          = *.h</li>
-<li>递归遍历当前目录的子目录，寻找被文档化的程序源文件
+<li>递归遍历当前目录的子目录，寻找被文档化的程序源文件<br/>
 RECURSIVE              = YES</li>
-<li>示例程序目录
+<li>示例程序目录<br/>
 EXAMPLE_PATH           = example/</li>
-<li>示例程序的头文档 (.h 文件) 与实现文档 (.c 文件) 都作为程序文档化对象
+<li>示例程序的头文档 (.h 文件) 与实现文档 (.c 文件) 都作为程序文档化对象<br/>
 EXAMPLE_PATTERNS       = <em>.c </em>.h</li>
-<li>递归遍历示例程序目录的子目录，寻找被文档化的程序源文件
+<li>递归遍历示例程序目录的子目录，寻找被文档化的程序源文件<br/>
 EXAMPLE_RECURSIVE      = YES</li>
-<li>允许程序文档中显示本文档化的函数相互调用关系
+<li>允许程序文档中显示本文档化的函数相互调用关系<br/>
 REFERENCED_BY_RELATION = YES
 REFERENCES_RELATION    = YES
 REFERENCES_LINK_SOURCE = YES</li>
-<li>不生成 latex 格式的程序文档
+<li>不生成 latex 格式的程序文档<br/>
 GENERATE_LATEX         = NO</li>
-<li>在程序文档中允许以图例形式显示函数调用关系，前提是你已经安装了 graphviz 软件包
+<li>在程序文档中允许以图例形式显示函数调用关系，前提是你已经安装了 graphviz 软件包<br/>
 HAVE_DOT               = YES
 CALL_GRAPH            = YES
 CALLER_GRAPH        = YES</li>
-<li>让doxygen从配置文件所在的文件夹开始，递归地搜索所有的子目录及源文件
+<li>让doxygen从配置文件所在的文件夹开始，递归地搜索所有的子目录及源文件<br/>
 RECURSIVE = YES</li>
-<li>在最后生成的文档中，把所有的源代码包含在其中
+<li>在最后生成的文档中，把所有的源代码包含在其中<br/>
 SOURCE BROWSER = YES</li>
-<li>这会在HTML文档中，添加一个侧边栏，并以树状结构显示包、类、接口等的关系
+<li>这会在HTML文档中，添加一个侧边栏，并以树状结构显示包、类、接口等的关系<br/>
 GENERATE TREEVIEW ＝ ALL</li>
 </ul>
 
@@ -80,7 +80,7 @@ GENERATE TREEVIEW ＝ ALL</li>
 
 <blockquote><p>$ doxygen    your-cfg-filename</p></blockquote>
 
-<p>your-cfg-filename 是  Doxygen 配置文件名，如果是使用 &ldquo;doxygen -g&rdquo; 生成的配置文件——Doxyfile，那么可以在终端里仅键入 &ldquo;doxygen&rdquo; 命令即可生成程序文档。
+<p>your-cfg-filename 是  Doxygen 配置文件名，如果是使用 &ldquo;doxygen -g&rdquo; 生成的配置文件——Doxyfile，那么可以在终端里仅键入 &ldquo;doxygen&rdquo; 命令即可生成程序文档。<br/>
 生成的文档位于 test/doc/html 目录中，使用浏览器打开该目录中的 index.html 文件，即可看到自己的工作成果。</p>
 ]]></content>
   </entry>
