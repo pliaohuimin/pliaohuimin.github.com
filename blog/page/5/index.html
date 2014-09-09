@@ -9,7 +9,7 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Jan 6th, 2013 Travelling Comments 2012-12-29&#8211;2013-01-03广州，凤凰，张家界游玩路线及交通费用 关于路线和交通### 广州-&gt;吉首火车硬卧（费用每人200）2012-12-2914：00 广州火车站&nbsp;2012-12- &hellip;">
+	<meta name="description" content="Jan 7th, 2013 Comments 算法技巧 随机排列在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,41 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-07T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jan 7<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/172#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/172" itemprop="url">算法技巧</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		
+	<ol>
+		<li>随机排列<div><span>在第i次循环，从数组A[i..n] 里随机选取一个元素作为第i个位置上的元素，而原来处于第i个位置上的元素则被调换到刚才选出的元素所在位置。由于循环变量单向递增的特性，一个元素一旦选出放入位置i，它所在的位置将不再变化。这样在算法循环n次后，所有n个位置上的元素都被重新安排了。也就是说，该算法产生了一个新的排列。</span></div><div><span></span>&nbsp;</div><div><span>伪代码如下：</span></div><div><span><ol>  <li><span><span><span class="caps">RANDOM</span>-<acronym title="A,&amp;nbsp;n"><span class="caps">PERMUTATION</span></acronym>&nbsp;&nbsp;&nbsp;&nbsp;//A[1..n]是一个包含n个元素的数组   &nbsp;</span></span></li>  <li><span>for&nbsp;</span><span>i</span><span>&nbsp;=&nbsp;</span><span>1</span><span>&nbsp;to&nbsp;n&nbsp;do&nbsp;   &nbsp;</span></li>  <li><span>swap   A[i]&nbsp;&nbsp;A[<acronym title="i,n"><span class="caps">RANDOM</span></acronym>]&nbsp;&nbsp;&nbsp;&nbsp;//<acronym title="i,n"><span class="caps">RANDOM</span></acronym>产生一个介于i和n之间的随机数&nbsp;</span></li></ol></span></div><br /><br /><div><a title="为知笔记" href="http://www.wiz.cn/">通过 为知笔记 发布</a></div><br /><br /></li>
+	</ol>
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -429,38 +464,6 @@
 	<h1 class="title" itemprop="name"><a href="/blogs/128" itemprop="url">Configure: Error: Cannot Find MySQL Header Files Under Yes.</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>直接安装mysql-devel</p>
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-30T00:00:00+08:00" data-updated="true" itemprop="datePublished">Nov 30<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-</div>
-		
-			<span class="comments"><a href="/blogs/126#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/126" itemprop="url">x86_64下编译php出现错误(Try Adding &#8211;with-zlib-)解决(转）</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>下面文字转自：<a title="http://blog.chinaunix.net/uid-6984-id-2071531.html" href="http://blog.chinaunix.net/uid-6984-id-2071531.html">http://blog.chinaunix.net/uid-6984-id-2071531.html</a></p> <p>&nbsp;</p> <p>config.log中同时有/usr/bin/ld: cannot find <del>lmysqlclient错误 <p>系统版本如下<br>[root@opencms php-5.2.6]# uname -a<br>Linux opencms 2.6.18-92.el5 #1 <span class="caps">SMP</span> Tue Apr 29 13:16:15 <span class="caps">EDT</span> 2008 x86_64 x86_64 x86_64 <span class="caps">GNU</span>/Linux <p>安装php-5.2.6的时候，编译选项如下：<br>[root@opencms php-5.2.6]#./configure &quot;</del>-prefix=/usr/local/php&quot; &#8220;&#8212;with-apxs2=/usr/local/apache/bin/apxs&#8221; &#8220;&#8212;with-config-file-path=/usr/local/php/etc&#8221; &#8220;&#8212;with-mysql&#8221; <p>报以下错误 <p>configure: error: Try adding &#8212;with-zlib-dir=  <dir>. Please check config.log for more information.</dir> <p>查看config.log，发现里面有下面提示： <p>configure:60044: gcc -o conftest -I/usr/include -g -O2 -Wl,-rpath,/usr/lib/mysql -L/usr/lib/mysql -L/usr/lib conftest.c -lmysqlclient -lz -l resolv -lm -ldl -lnsl -lxml2 -lz -lm -lxml2 -lz -lm 1&gt;&amp;5 /usr/bin/ld: cannot find -lmysqlclient collect2: ld returned 1 exit status configure: failed program was: #line 60033 &#8220;configure&#8221; #include &#8220;confdefs.h&#8221; /* Override any gcc2 internal prototype to avoid an error. <strong>/ /</strong> We use char because int might match the return type of a gcc2 builtin and then its argument prototype would still apply. <strong>/ char mysql_errno(); int main() { mysql_errno() ; return 0; } <p>由于本系统时x86_64的，在/usr下有lib和lib64两个目录，现在提示是在/usr/lib/mysql下找mysql</strong>文件，感觉不太对劲，于是<br>[root@opencms php-5.2.6]# cd /usr/lib<br>[root@opencms lib]# mv mysql/ mysql.bak/<br>[root@opencms lib]# ln -s /usr/lib64/mysql /usr/lib/mysql<br>重新编译php，一些正常。 <p>不知道为什么会在两个目录下都出现mysql目录，用以下命令查看的时候发现了问题所在<br>[root@opencms lib]# rpm -qa | grep mysql<br>mysql-5.0.45-7.el5<br>libdbi-dbd-mysql-0.8.1a-1.2.2<br>mysql-devel-5.0.45-7.el5<br>mysql-5.0.45-7.el5<br>mysql-server-5.0.45-7.el5<br>mysql-connector-odbc-3.51.12-2.2<br>原来是同一个package出现了两次，版本也都是一样的，我估计是安装系统的人把32位和64位的mysql都安装了一遍。。。 <p>于是执行卸载<br>[root@opencms lib]# rpm -e mysql<br>error: &#8220;mysql&#8221; specifies multiple packages<br>卸载不掉 <p>通过rpm &#8212;help发现–allmatches应该可以解决这个问题：<br>–allmatches<br>Remove all versions of the package which match PACKAGE_NAME. Normally an error is issued if PACKAGE_NAME matches<br>multiple packages.<br>rpm -e &#8212;allmatches mysql-5.0.45-7.el5<br>卸载的时候又出现包依赖，最后使用<br>rpm -e -nodeps &#8212;allmatches mysql-5.0.45-7.el5<br>全部卸载完毕后重新安装x86_64的mysql，就只在/usr/lib64下出现mysql目录了。<br>可这时问题又出现了，报以下错误：<br>configure: error: Cannot find libmysqlclient under /usr.<br>Note that the MySQL client library is not bundled anymore!<br>应该还是php编译的时候默认去找/usr/lib/mysql这个目录，重复刚才的步骤：<br>[root@opencms lib]# ln -s /usr/lib64/mysql /usr/lib/mysql<br>重新编译php，问题解决！</p>
 		
 		
 	</div>

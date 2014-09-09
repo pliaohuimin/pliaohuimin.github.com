@@ -9,7 +9,7 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Sep 4th, 2014 Travelling Comments 2014云南之旅&#8211;出发 关于这趟旅行 这完全是一次意外之旅。由于上层领导与股东的问题，公司在五月初宣布解散。在打包东西回住处的路上，同事问我有什么打算。突然心血来潮地决定出去旅游。刚好前阵子和还在说想自己出去走走， &hellip;">
+	<meta name="description" content="Sep 9th, 2014 IT Comments 使用Doxygen生成文档 在写代码时，使用doxygen vim插件生成特定格式的说明。 进入项目目录（test为例说明） cd test/ 生成配置文件 Doxygen –g note: 默认生成的配置文件名为 &ldquo; &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,106 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T14:20:00+08:00" data-updated="true" itemprop="datePublished">Sep 9<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/it/'>IT</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20140909/use-doxygen/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20140909/use-doxygen/" itemprop="url">使用Doxygen生成文档</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h4>在写代码时，使用doxygen vim插件生成特定格式的说明。</h4>
+
+<h4>进入项目目录（test为例说明） cd test/</h4>
+
+<h4>生成配置文件                          Doxygen –g</h4>
+
+<p>note: 默认生成的配置文件名为 &ldquo;Doxyfile&#8221;，也可以采用 &#8220;doxygen -g your-cfg-filename&rdquo; 命令格式指定所生成的配置文件名。如无特殊需要，采用默认的配置文件名即可。</p>
+
+<h4>配置文件的相应设置 ，这里已经有个模板Doxyfile(test文件夹下)，可以根据需要更改相应设置</h4>
+
+<ul>
+<li>项目名称，将作为于所生成的程序文档首页标题
+PROJECT_NAME           = Test</li>
+<li>文档版本号，可对应于项目版本号，譬如 svn、cvs 所生成的项目版本号
+PROJECT_NUMBER       = 1.0.0</li>
+<li>程序文档输出目录
+OUTPUT_DIRECTORY    =  doc/</li>
+<li>程序文档语言环境
+OUTPUT_LANGUAGE    = Chinese</li>
+<li>如果是制作 C 程序文档，该选项必须设为 YES，否则默认生成 C++ 文档格式
+OPTIMIZE_OUTPUT_FOR_C  = YES</li>
+<li>对于使用 typedef 定义的结构体、枚举、联合等数据类型，只按照 typedef 定义的类型名进行文档化
+TYPEDEF_HIDES_STRUCT   = YES</li>
+<li>在 C++ 程序文档中，该值可以设置为 NO，而在 C 程序文档中，由于 C 语言没有所谓的域/名字空间这样的概念，所以此处设置为 YES
+HIDE_SCOPE_NAMES        = YES</li>
+<li>让 doxygen 静悄悄地为你生成文档，只有出现警告或错误时，才在终端输出提示信息
+QUIET   = YES</li>
+<li>只对头文件中的文档化信息生成程序文档
+FILE_PATTERNS          = *.h</li>
+<li>递归遍历当前目录的子目录，寻找被文档化的程序源文件
+RECURSIVE              = YES</li>
+<li>示例程序目录
+EXAMPLE_PATH           = example/</li>
+<li>示例程序的头文档 (.h 文件) 与实现文档 (.c 文件) 都作为程序文档化对象
+EXAMPLE_PATTERNS       = <em>.c </em>.h</li>
+<li>递归遍历示例程序目录的子目录，寻找被文档化的程序源文件
+EXAMPLE_RECURSIVE      = YES</li>
+<li>允许程序文档中显示本文档化的函数相互调用关系
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES</li>
+<li>不生成 latex 格式的程序文档
+GENERATE_LATEX         = NO</li>
+<li>在程序文档中允许以图例形式显示函数调用关系，前提是你已经安装了 graphviz 软件包
+HAVE_DOT               = YES
+CALL_GRAPH            = YES
+CALLER_GRAPH        = YES</li>
+<li>让doxygen从配置文件所在的文件夹开始，递归地搜索所有的子目录及源文件
+RECURSIVE = YES</li>
+<li>在最后生成的文档中，把所有的源代码包含在其中
+SOURCE BROWSER = YES</li>
+<li>这会在HTML文档中，添加一个侧边栏，并以树状结构显示包、类、接口等的关系
+GENERATE TREEVIEW ＝ ALL</li>
+</ul>
+
+
+<h4>程序文档生成</h4>
+
+<p>现在开始生成程序文档，将终端的工作目录定位在 test 目录，然后键入：</p>
+
+<blockquote><p>$ doxygen    your-cfg-filename</p></blockquote>
+
+<p>your-cfg-filename 是  Doxygen 配置文件名，如果是使用 &ldquo;doxygen -g&rdquo; 生成的配置文件——Doxyfile，那么可以在终端里仅键入 &ldquo;doxygen&rdquo; 命令即可生成程序文档。
+生成的文档位于 test/doc/html 目录中，使用浏览器打开该目录中的 index.html 文件，即可看到自己的工作成果。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -645,38 +745,6 @@ st目录，将该目录下的所有文件拷贝到source/_post目录下即可。
 	<h1 class="title" itemprop="name"><a href="/blogs/583" itemprop="url">初识REDIS</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<div>上一个游戏项目使用了MEMCACHED作缓存和MYSQL作持久化的数据结构。</div><div>早在上个项目后期，主线就一直想把MEMCACHED替换成REDIS，至于是出于什么样子的考虑，由于个人层次原因，不是很明白。后来由于时间的关系，这件事情也就不了了之了。</div><div>到了这个项目，新的游戏也接近上线，主程还是对这个REDIS念念不忘。这个替换的任务落到了我头上，也刚好让我对REDIS有点皮毛的认识。下面先说说为什么要替换掉MEMCACHED：</div><div>首先，REDIS提供多种数据结构，大部份与STL接口，如SET，STRING，LIST等。这次项目的使用到的HASH结构。&nbsp;&nbsp;&nbsp;</div><div>使用这种结构，可以解决上个项目中，对于每个玩家只有一行记录的表，无法一次性整表读取的问题。使用REDIS 的HASH结构，将数据库名称与表名作为KEY，玩家唯一标识字段设定为FIELD，再将玩家数据作为VALUE存入。通过HVALS即可获取整表记录。</div><div>另外，之前使用MEMCACHED，还得自己维护多一个元数据在缓存中，以使业务获取KEY的信息。而通过REDIS的HASH，简单的HVALS即可达到目的。</div><div>以上就是本人对REDIS皮毛上的认识。本质上更多的区别，还有待深入了解。</div><div>再说说这几天使用的情况：</div><div>此次服务器版本使用的是v2.6。客户端API采用了HIREDIS的C接口。之前有考虑使用C++接口，给主程否了，说不稳定。作为小白，只有乖乖听话，改用HIREDIS。</div><div>起初的版本比较简单，&nbsp;&nbsp;没有考虑到连接REDIS服务器失败后，后续接口的异常情况。在经过无数次DUMP机之后，发现罪魁祸首就是由于连接服务器失败，redisContext中的o_buf并没有初始化，而在执行redisCommand时，需要用到o_buf，导致内存越界。后来将redisCommand进行封装，每次执行里先检查redisContext指针。问题算是解决了，然后，引入了新的问题。</div><div>对redisCommand进行封装时，使用了va_list来处理变长参数，又直接使用redisCommand来执行，还是DUMP机，看了源代码，发现用错函数了，应该使用redisvCommand，替换后，终于不当机了。</div><div>接着是处理各种断连情况。</div><div>第一种情况是，程序启动时，REDIS服务没有启动，这时连接失败。那么在以后每次执行指令时，对于redisContext指针为空的情况，需要加入重连机制，保证当REDIS服务启动后，程序主动进行连接，避免程序需要重启，REDIS机制才会生效的问题。</div><div>第二种情况是，程序启动时，REDIS服务也启动。但是在运行过程中，REDIS服务关闭了。这时，程序也需要对REDIS服务提供重连机制，同样是为了避免一旦REDIS服务器关闭后再启动，也无法使用的问题。</div><div>经测试，处于第二种情况时，REDIS服务关闭后，连接断开。执行redisCommand会返回空指针，由于，程序在每次执行完后，都会对指针进行判断，一旦为空，就会尝试重连。</div><div>在实际测试中，发现REDIS默认有持久化的机制，基于这个项目，并不需要持久化机制，除了增加开销，还是导致数据异常。尝试将配置文件的save配置都注释了，发现还是会有持久会。如何关闭，还有待观察。</div><div>另外一个问题就是，玩家在线，将REDIS服务器关了再重启，这时REDIS缓存为空。之后如果玩家作了某些操作，在从数据库加载数据到缓存前，触发了HSET操作，会导致之后都不会从数据库中加载数据，同样会造成数据异常。解决方法是，在每次SET之前，都会查询当前缓存中，有没有相应KEY的信息，如果没有，先从数据库加载后再执行SET操作。</div><p><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 16<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-</div>
-		
-			<span class="comments"><a href="/blogs/579#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/579" itemprop="url">2013年8月17日 1:24:24 晴</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<div>今天一觉醒来，已经是九点多。非常不喜欢这种感觉，可这种事情总会时不时地蹦出来，吓你一跳。还好没造成多大的不好影响。去到公司刚好大家在开例会，跟大家道了个歉。</div><div>下班的时候，听同事说起他明天要去西冲玩。突然想起去年五一我们三人去徒步的事情。不知道为什么，明明只是去年的事情，想起来，感觉怎么那么遥远。</div><p><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>
 		
 		
 	</div>
