@@ -4,7 +4,7 @@
   <title><![CDATA[Category: WebBuilding | Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/blog/categories/webbuilding/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-09-29T01:46:20-07:00</updated>
+  <updated>2014-10-24T20:00:39+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[添加博客头像]]></title>
     <link href="http://pliaohuimin.github.io/blog/20140811/add-profilepic/"/>
-    <updated>2014-08-11T15:57:00-07:00</updated>
+    <updated>2014-08-11T15:57:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20140811/add-profilepic</id>
     <content type="html"><![CDATA[<p>新安装了<a href="https://github.com/shashankmehta/greyshade">greyshade</a>主题。</p>
 
@@ -28,7 +28,7 @@
   <entry>
     <title type="html"><![CDATA[申请了新域名]]></title>
     <link href="http://pliaohuimin.github.io/blog/20140808/new-domain/"/>
-    <updated>2014-08-08T14:01:00-07:00</updated>
+    <updated>2014-08-08T14:01:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20140808/new-domain</id>
     <content type="html"><![CDATA[<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a></p>
 
@@ -40,7 +40,7 @@
   <entry>
     <title type="html"><![CDATA[在新机器上使用octopress写文章]]></title>
     <link href="http://pliaohuimin.github.io/blog/20140805/new-machine-to-octopress/"/>
-    <updated>2014-08-05T18:57:00-07:00</updated>
+    <updated>2014-08-05T18:57:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20140805/new-machine-to-octopress</id>
     <content type="html"><![CDATA[<p><a href="http://www.cnblogs.com/oec2003/archive/2013/05/27/3100896.html">主要参考来源</a></p>
 
@@ -168,7 +168,7 @@ Liquid Exception: incompatible character encodings: UTF-8 and GBK in index.html<
   <entry>
     <title type="html"><![CDATA[octopress小工具]]></title>
     <link href="http://pliaohuimin.github.io/blog/20130902/add-share/"/>
-    <updated>2013-09-02T21:00:00-07:00</updated>
+    <updated>2013-09-02T21:00:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20130902/add-share</id>
     <content type="html"><![CDATA[<h3>添加一键共享</h3>
 
@@ -194,7 +194,7 @@ disqus_show_comment_count: true
   <entry>
     <title type="html"><![CDATA[赞一个OCTOPRESS的ARCHIVE展示]]></title>
     <link href="http://pliaohuimin.github.io/blog/20130902/octopress-archive/"/>
-    <updated>2013-09-02T16:05:00-07:00</updated>
+    <updated>2013-09-02T16:05:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20130902/octopress-archive</id>
     <content type="html"><![CDATA[<p>感觉挺好的，对于之前发布过的文章，简洁，一目了然。<br/>
 之前还在琢磨着要不要给这些文章分目录，现在看来要重新考虑一下分目录的必要性。</p>
