@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-10-28T19:50:38+08:00</updated>
+  <updated>2014-10-28T19:51:42+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -31,7 +31,7 @@
 <p>这样一来，createInvestment的调用者在使用完该函数提供的对象指针后，需要负责把它delete掉。</p>
 
 <p>考虑以下的使用场景：
-`<br/>
+`
  void f()
  {</p>
 
