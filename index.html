@@ -9,9 +9,8 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Oct 28th, 2014 effective_c++ Comments Effective_c++:item14 认真考虑资源管理类的拷贝行为 有时，我们需要创建自己的资源管理类。
-例如，你希望通过C API来操作锁对象的加锁和解锁功能。 void lock(Mutex pm);
-void &hellip;">
+	<meta name="description" content="Oct 28th, 2014 effective_c++ Comments Effective_c++:item17 考虑一下代码： int priority();
+void processWidget( std::tr1::shared_ptr&lt;Widget&gt; pw, int &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +91,202 @@ void &hellip;">
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-28T20:03:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item17/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item17/" itemprop="url">Effective_c++:item17</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>考虑一下代码：</p>
+
+<blockquote><pre><code>int priority();
+void processWidget( std::tr1::shared_ptr&lt;Widget&gt; pw, int priority );
+processWidget(std::tr1::shared_ptr&lt;Widget&gt;(new Widget), priority());
+</code></pre></blockquote>
+
+<p>在调用processWidget之前，编译器必须生成代码来完成下面三个事情：
+&ndash; 调用priority
+&ndash; 执行new Widget
+&ndash; 调用 tr1::shared_ptr 构造函数</p>
+
+<p>我们只能确保&#8221;new Widget&#8221;会在调用tr1::shared_ptr构造函数前被调用，但priority的调用会在第一，第二还是第三，我们是无法确定的。如果priority的调用是在第二，即：
+&ndash; 执行new Widget
+&ndash; 调用priority
+&ndash; 调用 tr1::shared_ptr 构造函数</p>
+
+<p>请考虑一下在调用priority时抛出异常，会出现什么情况。这种情况下，依旧会出现资源泄露。</p>
+
+<p>想避免类似问题，方法也很简单：使用独立的语句来创建Widget并将它保存在智能指针中。然后再把智能指针传递给processWidget:</p>
+
+<blockquote><pre><code>std::tr1::shared_ptr&lt;Widget&gt; pw( new Widget);
+processWidget(pw,priority());
+</code></pre></blockquote>
+
+<h3>Things to Remember</h3>
+
+<ul>
+<li>在独立语句中，将new出来的对象保存在智能指针中。不这么做的话，一旦有异常抛出，可能会导致资源泄露。</li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-28T20:03:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item16/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item16/" itemprop="url">Effective_c++:item16</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>当你使用new时，会发生两件事情，一个是分配内存，另一个是调用一个或者多个的构造函数。当你使用delete时，会发现另外两件事情，一个或者多个析构函数被调用，然后是内存空间的释放。这个涉及到一个问题，该删除多少个对象，这问题会决定多少个析构函数被调用。</p>
+
+<p>实际上，这问题很简单：删除时指定是删除单个对象或者是一个数组。这个问题很重要，因为单对象的内存布局和数组对象的内存布局是不一样的。</p>
+
+<p>规则很简单：如果你在new表达式中使用了[]，必须在delete中也使用[]。如果你在new中没使用[]，那么在delete中也不要使用[]。</p>
+
+<p>在使用typedef时，需要特别注意，因为它意味着typedef的作者必须明文说明使用哪个形式的delete。来看看下面的例子：</p>
+
+<blockquote><pre><code>typedef std::string AddressLines[4];
+std::string *pal = newAddressLines;
+</code></pre></blockquote>
+
+<p>这时，必须使用数组形式的delete：</p>
+
+<blockquote><pre><code>delete pal; //undefined
+delete [] pal; //fine
+</code></pre></blockquote>
+
+<p>避免这个问题也很简单，方法就是使用C++库的string和vector。</p>
+
+<h3>Things to Remember</h3>
+
+<ul>
+<li>如果你在new表达式中使用了[]，必须在delete中也使用[]。如果你在new中没使用[]，那么在delete中也不要使用[]。</li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-28T20:02:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item15/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item15/" itemprop="url">Effective_c++:item15</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>很多时候，APIs要求原资源作为参数，这时，你需要一种能将RAII类转换成原资源的途径。一般有两种方法：显性转换和隐性转换。</p>
+
+<p>tr1::shared_ptr和auto_ptr都提供了一个get的成员方法来实现转换，返回智能指针指向对象的祼指针：</p>
+
+<blockquote><p>int days = daysHeld(pInv.get());</p></blockquote>
+
+<p>一般智能指针中都重载了->和*操作，这允许了隐性转换。</p>
+
+<p>采用显性转换时（如get()），有时用户觉得使用起来不方便，就懒得使用资源管理类。使用隐性转换（如重载()操作符）会使API的调用看起来比较简单和自然。</p>
+
+<p>但这会增加犯错的机会。</p>
+
+<blockquote><pre><code>FontHandle getFont();
+Font f1(getFont());
+...
+FontHandle f2 = f1; // meant to copy a Font object, but insterad implicitly converted f1 into its underlying FontHandle,then copy that
+</code></pre></blockquote>
+
+<p>现在一个FontHandle被f1管理着，但同时FontHandle也被f2使用。这几乎从来都不是什么好兆头。例如，当f1销毁时，资源会被释放，而f2则悬挂着，指向非法空间。</p>
+
+<p>使用显性还是隐性转换，取决于具体的使用场景。一般来说，显性转换更好些，因为它能尽可能地减少在你不想转换时被转换的机会。</p>
+
+<p>RAII类返回原资源是对封装的破坏，但可能并不是设计上的灾难。RAII类不是用来封装某些东西的。它们的存在是为了确保一个特定的行为（如资源释放）的发生。像大部分设计得好的类，它隐藏了用户不需要看到的部分，但也提供给用户对需要存取的数据的接口。</p>
+
+<h3>Things to Remember</h3>
+
+<ul>
+<li>APIs经常要求原资源，所以每个RAII类都必须提供一个获取它管理的原资源的方法。</li>
+<li>存取方法可以通过显性或者隐性的转换。一般来说，显性更安全些，但隐性对用户来说更加方便。</li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -723,207 +918,6 @@ Liquid Exception: incompatible character encodings: UTF-8 and GBK in index.html<
 
 <pre><code>&gt;rake generate
 </code></pre>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-02T21:00:00+08:00" data-updated="true" itemprop="datePublished">Sep 2<span>nd</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/20130902/add-share/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20130902/add-share/" itemprop="url">Octopress小工具</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h3>添加一键共享</h3>
-
-<p>我目前使用的是bshare。<br/>
-在<em>config.yml中增加bshare: true。在“source/</em>includes/post”下的sharing.html中增加如下代码：</p>
-
-<pre><code>&lt;a class="bshareDiv" href="http://www.bshare.cn/share"&gt;Sharing&lt;/a&gt;&lt;script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&amp;style=999&amp;img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&amp;w=147&amp;h=21"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>上述的代码由bshare产生，可以自己选择所需的外观。这样，在每一篇文章的最下方会出现一个分享的小工具。</p>
-
-<h3>添加DISQUC评论</h3>
-
-<p>首先需要在Disqus注册一个账号，登录后添加站点信息，将填写的short_name写到<em>config.yml中，并将</em>config.yml中的disqus_show_comment_count设置为true.如下：</p>
-
-<pre><code># Disqus Comments
-disqus_short_name: liao   # liao为添加站点信息时的Site Shortname
-disqus_show_comment_count: true
-</code></pre>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-02T16:05:00+08:00" data-updated="true" itemprop="datePublished">Sep 2<span>nd</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/20130902/octopress-archive/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20130902/octopress-archive/" itemprop="url">赞一个OCTOPRESS的ARCHIVE展示</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>感觉挺好的，对于之前发布过的文章，简洁，一目了然。<br/>
-之前还在琢磨着要不要给这些文章分目录，现在看来要重新考虑一下分目录的必要性。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-01T03:54:00+08:00" data-updated="true" itemprop="datePublished">Sep 1<span>st</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/20130901/from-wp2octopress/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20130901/from-wp2octopress/" itemprop="url">从wordpress迁移到octopress</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h2>为什么要迁移：</h2>
-
-<blockquote><p>并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。</p></blockquote>
-
-<h2>迁移步骤：</h2>
-
-<h3>准备工作</h3>
-
-<ul>
-<li>step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户</li>
-<li>step 2:在LINUX上安装好GIT</li>
-<li>step 3:在LINUX上安装好ruby
-curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
-source /home/liao/.rvm/scripts/rvm
-如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</li>
-</ul>
-
-
-<h3>安装好OCTOPRESS</h3>
-
-<ul>
-<li>step 4:克隆octopress项目
-git clone git://github.com/imathis/octopress.git</li>
-<li>step 5:安装OCTOPRESS
-gem install bundler
-bundle install</li>
-<li>step 6:安装主题
-rake install</li>
-</ul>
-
-
-<h3>部署到GITHUB</h3>
-
-<ul>
-<li>step 7:rake setup_github_pages
-期间会要求你输入项目地址，请输入:git@github.com:username.github.com
-期中username为你在github的用户名。</li>
-<li>step 8:生成代码
-rake generate</li>
-<li>step 9:部署到github上
-rake deploy
-期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy</li>
-<li>step 10:备份相关文件到source分支
-git add
-git commit -m &lsquo;your message
-git push origin source
-如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
-git branch source
-git checkout source</li>
-</ul>
-
-
-<h3>关于域名的绑定</h3>
-
-<p>如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk<br/>
-然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
-
-<h3>关于文章的迁移</h3>
-
-<p>使用wordpress后台管理工具，将数据导出成xml格式
-安装必要工具：
-gem install hpricot
-gem install ya2yaml
-使用XDITE提供的工具
-<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a></p>
-
-<p>执行直接執行 ruby xxx.rb xxx.xml 名
-st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
-
-<h3>关于文章中图片的迁移</h3>
-
-<p>将wp-content/uploads目录下载，上传到source目录即可。
-图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
 
 		
 		

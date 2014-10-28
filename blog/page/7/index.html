@@ -9,7 +9,7 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Aug 13th, 2012 Comments 认识和弦以及右手的练习 参考网站：http://v.youku.com/v_show/id_XMzE0NjUzNjAw.html C和弦与Am和弦的指法： C和弦与Am和弦的切换：只有中指在换弦。 P：大拇指 I：食指 M：中指 A：无名指 &hellip;">
+	<meta name="description" content="Aug 21st, 2012 Comments Vim缩进设置 参考网站：http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE常用设置缩进设置最常用的是：: &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,112 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 21<span>st</span>, 2012</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/92#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/92" itemprop="url">Vim缩进设置</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>参考网站：<a href="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE" title="http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE">http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE</a></p><p>常用设置</p><p>缩进设置最常用的是：</p><p>:filetype indent on</p><p>它将开启针对文件具体类型的缩进。</p><p>下面的选项需要在命令模式下用set设置的选项的含义。使用方法如：</p><p>set ci # 开启cindent</p><p>set noet # 关闭expandtab</p><p>set sw=4 # shiftwidth=4</p><p>上述设置可以写到~/.vimrc中：</p><p>filetype indent on</p><p>set ci</p><p>set noet</p><p>set sw=4</p><p></p>
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-20T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 20<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/90#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/90" itemprop="url">去掉SHELL的提示音和VI的提示音</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>SHELL：</p>
+<p>用root用户打开/etc/inputrc，将下面的一行注释：</p>
+<p>#set bell-style none</p>
+<p>在下面添加多一行：<br />
+set bell-style off</p>
+<p>重新打开终端，即可生效。</p>
+<p>&nbsp;</p>
+<p>VI：</p>
+<p>打开~/.vimrc（如果打不到该文件，可以自己创建一个），往里面添加多一行：</p>
+<p>set vb t_vb=<br />
+下次使用vi时即可生效。</p>
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-14T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 14<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/87#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/87" itemprop="url">(转）linux下多线程 之 Pthread_detach(pthread_self())</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><a href="http://blog.csdn.net/Lethe1989/article/details/5191165">转自：http://blog.csdn.net/Lethe1989/article/details/5191165</a></p> <p>多线程稍微看了下还能接受没想象中的难，写了个示例程序运行修改运行修改几遍后也大致明白了。<br>写个碰到的问题，记录下自己的技术之路点滴<br>pthread_detach(pthread_self())<br>linux线程执行和windows不同，pthread有两种状态joinable状态和unjoinable状态，<br>如果线程是joinable状态，当线程函数自己返回退出时或pthread_exit时都不会释放线程所占用堆栈和线程描述符（总计8K多）。只有当你调用了pthread_join之后这些资源才会被释放。<br>若是unjoinable状态的线程，这些资源在线程函数退出时或pthread_exit时自动会被释放。<br>unjoinable属性可以在pthread_create时指定，或在线程创建后在线程中pthread_detach自己, 如：pthread_detach(pthread_self())，将状态改为unjoinable状态，确保资源的释放。或者将线程置为 joinable,然后适时调用pthread_join.<br>摘自&nbsp; http://kb.cnblogs.com/a/1285801/ <p>其实简单的说就是在线程函数头加上 pthread_detach(pthread_self())的话，线程状态改变，在函数尾部直接 pthread_exit线程就会自动退出。省去了给线程擦屁股的麻烦</p>
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -309,106 +415,6 @@
 	<h1 class="title" itemprop="name"><a href="/blogs/67" itemprop="url">头文件中循环引用</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		<p>转自网站：<a href="http://hi.baidu.com/shilyx/blog/item/c1e3f7f277e29811b17ec5f2.html">http://hi.baidu.com/shilyx/blog/item/c1e3f7f277e29811b17ec5f2.html</a></p> <p><strong>一、类嵌套的疑问</strong> <p>C++头文件重复包含实在是一个令人头痛的问题，前一段时间在做一个简单的数据结构演示程序的时候，不只一次的遇到这种问题。假设我们有两个类A和B，分别定义在各自的有文件A.h和B.h中，但是在A中要用到B，B中也要用到A，但是这样的写法当然是错误的：<br>class B; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B b;<br>}; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A a;<br>};<br>因为在A对象中要开辟一块属于B的空间，而B中又有A的空间，是一个逻辑错误，无法实现的。在这里我们只需要把其中的一个A类中的B类型成员改成指针形式就可以避免这个无限延伸的怪圈了。为什么要更改A而不是B？因为就算你在B中做了类似的动作，也仍然会编译错误，表面上这仅仅上一个先后顺序的问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为什么会这样呢？因为C++编译器自上而下编译源文件的时候，对每一个数据的定义，总是需要知道定义的数据的类型的大小。在预先声明语句class B;之后，编译器已经知道B是一个类，但是其中的数据却是未知的，因此B类型的大小也不知道。这样就造成了编译失败，VC++6.0下会得到如下编译错误：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error C2079: &#8216;b&#8217; uses undefined class &#8216;B&#8217;<br>将A中的b更改为B指针类型之后，由于在特定的平台上，指针所占的空间是一定的（在Win32平台上是4字节），这样可以通过编译。 <p><strong>二、不同头文件中的类的嵌套</strong> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在实际编程中，不同的类一般是放在不同的相互独立的头文件中的，这样两个类在相互引用时又会有不一样的问题。重复编译是问题出现的根本原因。为了保证头文件仅被编译一次，在C++中常用的办法是使用条件编译命令。在头文件中我们常常会看到以下语句段（以VC++6.0自动生成的头文件为例）： <p>#if !defined(AFX_STACK_H__1F725F28_AF9E_4BEB_8560_67813900AE6B__INCLUDED_)<br>#define AFX_STACK_H__1F725F28_AF9E_4BEB_8560_67813900AE6B__INCLUDED_<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //很多语句……<br>#endif <p>其中首句#if !defined也经常做#ifndef，作用相同。意思是如果没有定义过这个宏，那么就定义它，然后执行直到#endif的所有语句。如果下次在与要这段代码，由于已经定义了那个宏，因此重复的代码不会被再次执行。这实在是一个巧妙而高效的办法。在高版本的VC++上，还可以使用这个命令来代替以上的所有：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #pragma once<br>它的意思是，本文件内的代码只被使用一次。 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 但是不要以为使用了这种机制就全部搞定了，比如在以下的代码中： <p>//文件A.h中的代码<br>#pragma once <p>#include &#8220;B.h&#8221; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B* b;<br>}; <p>//文件B.h中的代码<br>#pragma once <p>#include &#8220;A.h&#8221; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A* a;<br>}; <p>这里两者都使用了指针成员，因此嵌套本身不会有什么问题，在主函数前面使用#include &#8220;A.h&#8221;之后，主要编译错误如下：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error C2501: &#8216;A&#8217; : missing storage-class or type specifiers<br>仍然是类型不能找到的错误。其实这里仍然需要前置声明。分别添加前置声明之后，可以成功编译了。代码形式如下： <p>//文件A.h中的代码<br>#pragma once <p>#include &#8220;B.h&#8221; <p>class B; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B* b;<br>}; <p>//文件B.h中的代码<br>#pragma once <p>#include &#8220;A.h&#8221; <p>class B; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A* a;<br>}; <p>这样至少可以说明，头文件包含代替不了前置声明。有的时候只能依靠前置声明来解决问题。我们还要思考一下，有了前置声明的时候头文件包含还是必要的吗？我们尝试去掉A.h和B.h中的#include行，发现没有出现新的错误。那么究竟什么时候需要前置声明，什么时候需要头文件包含呢？ <p><strong>三、两点原则</strong> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 头文件包含其实是一想很烦琐的工作，不但我们看着累，编译器编译的时候也很累，再加上头文件中常常出现的宏定义。感觉各种宏定义的展开是非常耗时间的，远不如自定义函数来得速度。我仅就不同头文件、源文件间的句则结构问题提出两点原则，仅供参考： <p>第一个原则应该是，如果可以不包含头文件，那就不要包含了。这时候前置声明可以解决问题。如果使用的仅仅是一个类的指针，没有使用这个类的具体对象（非指针），也没有访问到类的具体成员，那么前置声明就可以了。因为指针这一数据类型的大小是特定的，编译器可以获知。 <p>第二个原则应该是，尽量在CPP文件中包含头文件，而非在头文件中。假设类A的一个成员是是一个指向类B的指针，在类A的头文件中使用了类B的前置声明并便宜成功，那么在A的实现中我们需要访问B的具体成员，因此需要包含头文件，那么我们应该在类A的实现部分（CPP文件）包含类B的头文件而非声明部分(H文件)。</p>
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-10T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 10<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blogs/49#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/49" itemprop="url">WORDPRESS网站流量统计</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>参考网站：</p> <p><a href="http://www.luyouqiwo.com/110/2012/0705/8871.html">http://www.luyouqiwo.com/110/2012/0705/8871.html</a></p> <p><a href="http://www.x-berry.com/traffic-statistics">http://www.x-berry.com/traffic-statistics</a></p> <p>在<a href="http://cnzz.com/">http://cnzz.com/</a>上注册账号，填写个人网站信息。将产生一些脚本，选择你喜欢的类型，拷贝相关代码。</p> <p>登录到你的WORDPRESS后台，选择APPERENCE-&gt;<span class="caps">EDITOR</span>-&gt;<span class="caps">FOOTER</span>.PHP，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb.png" width="181" height="211"></a></p> <p>将拷贝的脚本粘贴到&lt;/body&gt;之前，保存即可。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image1.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb1.png" width="236" height="98"></a></p> <p>如果找不到保存按键</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image2.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb2.png" width="244" height="67"></a></p> <p>而是没有修改权限的提示</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image3.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb3.png" width="244" height="38"></a>，</p> <p>可直接在你发布代码的主机上修改相关文件的代码也是可行的，或者修改相关文件的权限。</p> <p>再次登录你的网站，可发现在页面最下面出现你添加的统计字样，</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image4.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb4.png" width="139" height="48"></a></p> <p>点击它可查看统计数据。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image5.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb5.png" width="244" height="56"></a></p> <p>查看统计数据输入的密码可在cnzz账户上设置。</p> <p><a href="http://www.minlh.tk/uploads/2012/08/image6.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.minlh.tk/uploads/2012/08/image_thumb6.png" width="244" height="109"></a></p>
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-04T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 4<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-</div>
-		
-			<span class="comments"><a href="/blogs/46#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/46" itemprop="url">左手练习</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<blockquote> <p>url:<a href="http://my.ku6.com/watch?v=bmEAvrzqmMrg6Gwb#share">http://my.ku6.com/watch?v=bmEAvrzqmMrg6Gwb#share</a></p><p></blockquote> <p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4</p> <p>食指 中指 无名指 小指</p> <p>手指垂直指板,靠近品丝,大拇指在琴劲后面的正中间,大拇指与中指相对,手腕向前推,成90度.大拇指不要太用劲。</p> <p>按下去了就不要再动。</p></p>
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-04T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 4<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-</div>
-		
-			<span class="comments"><a href="/blogs/43#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/43" itemprop="url">基本乐理知识</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>url:<a href="http://my.ku6.com/watch?v=NbK3FrboMm5Vj33W#share">http://my.ku6.com/watch?v=NbK3FrboMm5Vj33W#share</a></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i</p> <p>唱名：do（全） re（全） mi（半） fa（全）  sou（全）  la（全）  si（半）do</p> <p>音名：CDEFGABC</p> <p>同一根弦，相邻为半，相隔为全</p> <p>各空弦发音：从第一弦到第六弦分别为：E（mi)B(do)G(sou)D(re)A(la)E(mi)</p>
 		
 		
 	</div>

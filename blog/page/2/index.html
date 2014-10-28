@@ -9,7 +9,8 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Aug 30th, 2013 WebBuilding Comments 开始OCTOPRESS Aug 20th, 2013 Comments 初识REDIS 上一个游戏项目使用了MEMCACHED作缓存和MYSQL作持久化的数据结构。早在上个项目后期， &hellip;">
+	<meta name="description" content="Sep 2nd, 2013 WebBuilding Comments Octopress小工具 添加一键共享 我目前使用的是bshare。
+在config.yml中增加bshare: true。在“source/includes/post”下的sharing.html中增加如下代码： &lt;a &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +91,207 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-02T21:00:00+08:00" data-updated="true" itemprop="datePublished">Sep 2<span>nd</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20130902/add-share/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130902/add-share/" itemprop="url">Octopress小工具</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h3>添加一键共享</h3>
+
+<p>我目前使用的是bshare。<br/>
+在<em>config.yml中增加bshare: true。在“source/</em>includes/post”下的sharing.html中增加如下代码：</p>
+
+<pre><code>&lt;a class="bshareDiv" href="http://www.bshare.cn/share"&gt;Sharing&lt;/a&gt;&lt;script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&amp;style=999&amp;img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&amp;w=147&amp;h=21"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>上述的代码由bshare产生，可以自己选择所需的外观。这样，在每一篇文章的最下方会出现一个分享的小工具。</p>
+
+<h3>添加DISQUC评论</h3>
+
+<p>首先需要在Disqus注册一个账号，登录后添加站点信息，将填写的short_name写到<em>config.yml中，并将</em>config.yml中的disqus_show_comment_count设置为true.如下：</p>
+
+<pre><code># Disqus Comments
+disqus_short_name: liao   # liao为添加站点信息时的Site Shortname
+disqus_show_comment_count: true
+</code></pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-02T16:05:00+08:00" data-updated="true" itemprop="datePublished">Sep 2<span>nd</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20130902/octopress-archive/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130902/octopress-archive/" itemprop="url">赞一个OCTOPRESS的ARCHIVE展示</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>感觉挺好的，对于之前发布过的文章，简洁，一目了然。<br/>
+之前还在琢磨着要不要给这些文章分目录，现在看来要重新考虑一下分目录的必要性。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-01T03:54:00+08:00" data-updated="true" itemprop="datePublished">Sep 1<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/20130901/from-wp2octopress/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130901/from-wp2octopress/" itemprop="url">从wordpress迁移到octopress</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>为什么要迁移：</h2>
+
+<blockquote><p>并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。</p></blockquote>
+
+<h2>迁移步骤：</h2>
+
+<h3>准备工作</h3>
+
+<ul>
+<li>step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户</li>
+<li>step 2:在LINUX上安装好GIT</li>
+<li>step 3:在LINUX上安装好ruby
+curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
+source /home/liao/.rvm/scripts/rvm
+如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</li>
+</ul>
+
+
+<h3>安装好OCTOPRESS</h3>
+
+<ul>
+<li>step 4:克隆octopress项目
+git clone git://github.com/imathis/octopress.git</li>
+<li>step 5:安装OCTOPRESS
+gem install bundler
+bundle install</li>
+<li>step 6:安装主题
+rake install</li>
+</ul>
+
+
+<h3>部署到GITHUB</h3>
+
+<ul>
+<li>step 7:rake setup_github_pages
+期间会要求你输入项目地址，请输入:git@github.com:username.github.com
+期中username为你在github的用户名。</li>
+<li>step 8:生成代码
+rake generate</li>
+<li>step 9:部署到github上
+rake deploy
+期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy</li>
+<li>step 10:备份相关文件到source分支
+git add
+git commit -m &lsquo;your message
+git push origin source
+如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
+git branch source
+git checkout source</li>
+</ul>
+
+
+<h3>关于域名的绑定</h3>
+
+<p>如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk<br/>
+然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
+
+<h3>关于文章的迁移</h3>
+
+<p>使用wordpress后台管理工具，将数据导出成xml格式
+安装必要工具：
+gem install hpricot
+gem install ya2yaml
+使用XDITE提供的工具
+<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a></p>
+
+<p>执行直接執行 ruby xxx.rb xxx.xml 名
+st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
+
+<h3>关于文章中图片的迁移</h3>
+
+<p>将wp-content/uploads目录下载，上传到source目录即可。
+图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -336,116 +538,6 @@
 			<li>2013/04/04<div>早上起来根据昨晚在游记上看到的推荐，在考山路东面的BURGER KING旁边巷子里找到一天140BAHT的单间。环境是差了一点，不过也不怎么在里面呆，考虑在钱的份上，忍了。</div><div>今天纯粹是为了逛街而逛街。我决定尝试坐公车去CENTRAL WORLD。根据网上的信息，我可以做2号公车过去。可是问了一妹子，本来只是想问方向对不对，谁知道她告诉我只能做811路。好吧，听你的。好不容易等来公车，还是空调的，其实我是想做非空调的。空调的要17BAHT，非空调的估计只是7BAHT。折算过来，在曼谷坐公车也不便宜，空调车要接近4块钱RMB。曼谷的公车没报站，站台上也没有写站名，所以在哪下车，你只能靠猜了，或者指望售票员能友善地提醒。看着汽车停了一站又一站，心里完全没底，还好，旁边一泰国人看我手拿着KINDLE东张西望的，问我是不是中国人，原来他是泰籍华裔，有说普通话。他告诉我这辆车没经过CENTRAL WORLD（我猜是快线车吧），只经过水门市场，在那下之后，向前走，在天桥下右转就到了CENTRAL WORLD。谢天谢地，还好碰到好心人，要不要都不知道会搭到哪去。</div>
 		
 		<a href="/blogs/566" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-21T00:00:00+08:00" data-updated="true" itemprop="datePublished">Apr 21<span>st</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blogs/564#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/564" itemprop="url">进军泰国</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		
-		<ol>
-			<li>2013/04/03<div>说好了7点来接，现在都快7点半了，车还没来。昨晚订的是今天8点的汽车，接送的车再不来，怕是要错过班车了。连忙让老板帮忙打个电话问一下情况，是找不着路还是咋的。在订票的时候可是再三确认我客栈的名称并跟我保证说知道在哪。</div><div>过了一会，来了一辆TUTU车，又去附近接了其他乘客一起到上车地点。结果汽车一来我就傻眼了，说好的豪华沙发座位，无线WIFI都不见了，取代它是一辆破烂的中巴，如果你指望在这里面能上WIFI，那就太天真了。就连行李都没地方放，只能堆在座位上。开了两三个钟后，来到了关口。全部人下车，每天发一张金色贴纸，作为身份标识，这，这也太儿戏了吧。自己去窗口办理离境好续，再到泰国境内办理入境手续。然后再往前走，走到哪心里也没底，只能东张西望，看能不能碰上同一辆车的乘客。大中午的顶着太阳走了十几二十分钟，终于跟大队伍碰上。继续等，其它人都上了MINI VAN走了，我们是最后一批。等到一点多才上汽车，午餐都没得吃。泰国的路挺好走的，以为三四点就能到曼谷。走到一半，汽车去加油，附近有个7-11，赶快进去找吃的。身上没有泰铢，还好能用美元，不过汇率有点低，1：27。</div>
-		
-		<a href="/blogs/564" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-19T00:00:00+08:00" data-updated="true" itemprop="datePublished">Apr 19<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blogs/561#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/561" itemprop="url">每天尝试一些新的东西，生活才不会那么无趣</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<div>2013/04/19</div><div>早上是给热醒的。这种小茅屋，这种温度，热醒是在所难免的。昨晚睡得比较晚，今天也没什么特别安排，所以一切都顺其自然。该醒的时候自然会醒的。</div><div>起床之后又躺上外面的吊床上继续上网听音乐，除了热了一点，其它一切都挺好的。</div><div>十二点多才懒懒地出去找吃的。走过每天必经的木桥，就来到饭馆酒吧云集的地方了。不管你愿不愿意，每天都得在这里走一走。因为这座城市的中心，就是由两条东西走向的街道和几条南北走向的街道纵横交错组成的。虽然天气很热，但是要找到一家有空调的饭馆难度是相当大，临街找了一个人气还算不错的店，点了一份鸡肉炒饭，可乐，芒果SHAKE。之所以点两份饮料，是因为我知道这里上菜的速度不会很快，为了不给渴死，点瓶可乐应应急是必须的。果不其然，我把可乐喝完了，饭还没上呢。饭上来的时候，看到了喜欢的芥蓝，也看到了不喜欢的肉饼。这还是我一路吃过来的炒饭中第一次出现肉饼，之前一直都是新鲜的肉。算是比较完美地解决它。</div><p>
-		
-		<a href="/blogs/561" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-14T00:00:00+08:00" data-updated="true" itemprop="datePublished">Apr 14<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blogs/558#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/558" itemprop="url">柬埔寨：暹粒</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<div>2013/03/29</div><div>事实证明，我想多了，第二天一大早我就到了暹粒。汽车停在一个停车场，之前没做好功课，也不知道身在何处。一下车就碰到一大堆拉客的司机。我有一个毛病，一看到拉客的司机，心理上就会很排斥。快速逃离停车场后，发现自己找不着东西南北了。硬着头皮走到大路，看样子就是NATIONAL 6 ROAD，这条路是东西走向的，可现在的我是在旧市场的东边还是西边呢，再一次怪自己猪头，订车票的时候没有问清楚车停的位置。事到如今也没有办法，二选一。运气真差，我选错了。走了一段路发现苗头不对，其实走到一半的时候已经有个TUTU司机告诉我走错了，由于有利益关系，所以没有相信他。事实证明世上还是好人比较多。往回走到开始的路口，再往前走一点，就看到了暹粒市区的路标。</div><p>
-		
-		<a href="/blogs/558" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
