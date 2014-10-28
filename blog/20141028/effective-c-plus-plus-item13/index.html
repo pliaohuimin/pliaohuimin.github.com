@@ -1,0 +1,264 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>effective_c++_item13 - Min's Lounger</title>
+	<meta name="author" content="Mr.Liao">
+
+	
+	<meta name="description" content="Effective_c++_item13 问题 有一个基类： class Investment {&hellip;}; 通过工厂函数来提供Investment实例： Investment* createInvestment(); 这样一来， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Min's Lounger" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item13/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("pliaohuimin@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<h1><a href="/">Min's Lounger</a></h1>
+<p class="subtitle">All Life Sucks,all we can do is let it suck less</p>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/blog/categories/travelling">Travelling</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:pliaohuimin@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Effective_c++_item13</h1>
+	<div class="entry-content" itemprop="articleBody"><h2>问题</h2>
+
+<p>有一个基类：</p>
+
+<blockquote><p>class Investment {&hellip;};</p></blockquote>
+
+<p>通过工厂函数来提供Investment实例：</p>
+
+<blockquote><p>Investment* createInvestment();</p></blockquote>
+
+<p>这样一来，createInvestment的调用者在使用完该函数提供的对象指针后，需要负责把它delete掉。</p>
+
+<p>考虑以下的使用场景：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>Investment* pInv = createInvestment();
+....  // some code
+delete pInv;
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>以下场景会导致删除pInv失败：
+&ndash; f函数在&hellip;中返回
+&ndash; f函数在&hellip;中抛出异常</p>
+
+<p>当然，细心地编程能够避免以上错误的发生。但代码在经过几次的修改后呢？在软件的维护过程中，有人可能会在中间添加新的return或者continue而没有很好地处理资源问题。更糟糕的是，在&hellip;部分以前可能没有使用异常机制，突然有人觉得应该加入以提高性能。简单地依赖于人员记得去删除资源是不可行的。</p>
+
+<h3>解决方案一</h3>
+
+<p>为了确定获得createInvestment返回的资源总能被释放，我们需要把资源放进一个对象中，该对象的析构函数总能自动地释放该资源。</p>
+
+<p>很多用堆动态分配出来的资源，只用于一个特定的代码块中，当控制流离开代码块或者函数时，需要被释放。标准库的<em>auto_ptr</em>就是为这种场景量身定制的。<em>auto_ptr</em>是一个类指针对象，它的析构函数会自动删除它指向的资源。下面是如何使用<em>auto_ptr</em>来避免f函数潜在的内存泄露问题：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::auto_ptr&lt;Investment&gt; pInv(createInvestment());
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>这个简单的例子展示了用对象来管理资源中两个关键概念：</p>
+
+<p>资源总是在获取时立即放进资源管理对象中。上面例子中，资源中由<em>createInvestment()返回时，被用来初始化管理它的</em>auto_ptr*对象。这种方法叫做资源获得即初始化（RAII），因为在获得一个资源的同时，又初始化了资源管理的对象。有时资源是通过赋值传给资源管理对象。</p>
+
+<p>由于<em>auto_ptr</em>对象析构时总会删除它指向的对象，很重要的一点就是需要保证不能有多于1个的<em>auto_ptr</em>指向同一个对象。不然，对象就会被删除超过一次。为了防止类似问题，<em>auto_ptr</em>有一个特性：对资源管理对象进行拷贝操作时，会把原来的管理对象设置为null的，也就是说，资源管理对象从原来对象转移到新的资源管理对象。</p>
+
+<blockquote><p>std::autoptr<Investment> pInv1(createInvestment());  //pInv1 points to the objct return from createInvestment</p>
+
+<pre><code>std::autoptr&lt;Investment&gt; pInv2(pInv1); //pInv2 now points to the object;pInv1 is now null
+pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null
+</code></pre></blockquote>
+
+<p>这种拷贝特性意味着<em>auto_ptr</em>没法很好地管理所有的动态分配资源。例如STL容器要求它们的内容必须有正常的拷贝行为表现。</p>
+
+<h3>解决方案二</h3>
+
+<p>另外一个替换方案就是reference-counting smart pointer(RCSP)。然而<em>RSCP</em>无法处理循环引用 的问题（例如，两个没用的对象互相指向对方）。</p>
+
+<p>TR1的tr1::shared_ptr就是一个RCSP。所以你可以这样写：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv(createInvestment());
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>代码看起来和使用<em>auto_ptr</em>一样，但拷贝<em>shared_ptr</em>的行为看起来自然一些：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv1(createInvestment()); //pInv1 points to the objct return from createInvestment
+std::tr1::shared_ptr&lt;Investment&gt; pInv2(pInv1);  //both pInv1 and pInv2 now point to the object
+pInv1 = pInv2;  // nothing changed
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>由于<em>shraed_ptr</em>工作起来与STD容器所期望的一致，它能在STL容器中使用。</p>
+
+<p><em>auto_ptr</em>和<em>tr1::shared_ptr</em>都在析构函数中使用了<em>delete</em>而不是<em>delete []</em>，这意味着无法使用它们来释放数组资源。</p>
+
+<p>如果你想处理数组对象，你可以使用<em>boost::scoped_array</em>和<em>boost:shared_array</em>。</p>
+
+<h3>Thigns to Remember</h3>
+
+<ul>
+<li>以防止资源泄露，在RAII对象构造函数中来获取资源，在它的析构函数中来释放资源。</li>
+<li>两个有用的RAII类是TR1::shared_ptr和auto_ptr，通常来说，需要拷贝时，TR1::shared_ptr是更好的选择。拷贝auto_ptr会把原来的设置为null。</li>
+</ul>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Mr.Liao
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'minlh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item13/';
+        var disqus_url = 'http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item13/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

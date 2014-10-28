@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-10-24T20:00:39+08:00</updated>
+  <updated>2014-10-28T19:36:44+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -12,6 +12,114 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[effective_c++_item13]]></title>
+    <link href="http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item13/"/>
+    <updated>2014-10-28T19:35:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item13</id>
+    <content type="html"><![CDATA[<h2>问题</h2>
+
+<p>有一个基类：</p>
+
+<blockquote><p>class Investment {&hellip;};</p></blockquote>
+
+<p>通过工厂函数来提供Investment实例：</p>
+
+<blockquote><p>Investment* createInvestment();</p></blockquote>
+
+<p>这样一来，createInvestment的调用者在使用完该函数提供的对象指针后，需要负责把它delete掉。</p>
+
+<p>考虑以下的使用场景：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>Investment* pInv = createInvestment();
+....  // some code
+delete pInv;
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>以下场景会导致删除pInv失败：
+&ndash; f函数在&hellip;中返回
+&ndash; f函数在&hellip;中抛出异常</p>
+
+<p>当然，细心地编程能够避免以上错误的发生。但代码在经过几次的修改后呢？在软件的维护过程中，有人可能会在中间添加新的return或者continue而没有很好地处理资源问题。更糟糕的是，在&hellip;部分以前可能没有使用异常机制，突然有人觉得应该加入以提高性能。简单地依赖于人员记得去删除资源是不可行的。</p>
+
+<h3>解决方案一</h3>
+
+<p>为了确定获得createInvestment返回的资源总能被释放，我们需要把资源放进一个对象中，该对象的析构函数总能自动地释放该资源。</p>
+
+<p>很多用堆动态分配出来的资源，只用于一个特定的代码块中，当控制流离开代码块或者函数时，需要被释放。标准库的<em>auto_ptr</em>就是为这种场景量身定制的。<em>auto_ptr</em>是一个类指针对象，它的析构函数会自动删除它指向的资源。下面是如何使用<em>auto_ptr</em>来避免f函数潜在的内存泄露问题：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::auto_ptr&lt;Investment&gt; pInv(createInvestment());
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>这个简单的例子展示了用对象来管理资源中两个关键概念：</p>
+
+<p>资源总是在获取时立即放进资源管理对象中。上面例子中，资源中由<em>createInvestment()返回时，被用来初始化管理它的</em>auto_ptr*对象。这种方法叫做资源获得即初始化（RAII），因为在获得一个资源的同时，又初始化了资源管理的对象。有时资源是通过赋值传给资源管理对象。</p>
+
+<p>由于<em>auto_ptr</em>对象析构时总会删除它指向的对象，很重要的一点就是需要保证不能有多于1个的<em>auto_ptr</em>指向同一个对象。不然，对象就会被删除超过一次。为了防止类似问题，<em>auto_ptr</em>有一个特性：对资源管理对象进行拷贝操作时，会把原来的管理对象设置为null的，也就是说，资源管理对象从原来对象转移到新的资源管理对象。</p>
+
+<blockquote><p>std::autoptr<Investment> pInv1(createInvestment());  //pInv1 points to the objct return from createInvestment</p>
+
+<pre><code>std::autoptr&lt;Investment&gt; pInv2(pInv1); //pInv2 now points to the object;pInv1 is now null
+pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null
+</code></pre></blockquote>
+
+<p>这种拷贝特性意味着<em>auto_ptr</em>没法很好地管理所有的动态分配资源。例如STL容器要求它们的内容必须有正常的拷贝行为表现。</p>
+
+<h3>解决方案二</h3>
+
+<p>另外一个替换方案就是reference-counting smart pointer(RCSP)。然而<em>RSCP</em>无法处理循环引用 的问题（例如，两个没用的对象互相指向对方）。</p>
+
+<p>TR1的tr1::shared_ptr就是一个RCSP。所以你可以这样写：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv(createInvestment());
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>代码看起来和使用<em>auto_ptr</em>一样，但拷贝<em>shared_ptr</em>的行为看起来自然一些：</p>
+
+<blockquote><p>void f()
+{</p>
+
+<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv1(createInvestment()); //pInv1 points to the objct return from createInvestment
+std::tr1::shared_ptr&lt;Investment&gt; pInv2(pInv1);  //both pInv1 and pInv2 now point to the object
+pInv1 = pInv2;  // nothing changed
+...
+</code></pre>
+
+<p>}</p></blockquote>
+
+<p>由于<em>shraed_ptr</em>工作起来与STD容器所期望的一致，它能在STL容器中使用。</p>
+
+<p><em>auto_ptr</em>和<em>tr1::shared_ptr</em>都在析构函数中使用了<em>delete</em>而不是<em>delete []</em>，这意味着无法使用它们来释放数组资源。</p>
+
+<p>如果你想处理数组对象，你可以使用<em>boost::scoped_array</em>和<em>boost:shared_array</em>。</p>
+
+<h3>Thigns to Remember</h3>
+
+<ul>
+<li>以防止资源泄露，在RAII对象构造函数中来获取资源，在它的析构函数中来释放资源。</li>
+<li>两个有用的RAII类是TR1::shared_ptr和auto_ptr，通常来说，需要拷贝时，TR1::shared_ptr是更好的选择。拷贝auto_ptr会把原来的设置为null。</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用Doxygen生成文档]]></title>
@@ -495,14 +603,6 @@ st目录，将该目录下的所有文件拷贝到source/_post目录下即可。
     <updated>2013-04-07T00:00:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blogs/421</id>
     <content type="html"><![CDATA[<div>2013/03/24</div><div>汽车在三点多到达金边，司机问我要去哪。之前小某介绍了一家旅社，跟司机说了名字。汽车走了一小会，突然司机说要收三刀车费。我一听不干，要求下车，刚开始司机不肯停，到后来停了，要我给1刀路费，懒得跟他扯，给了他一刀走人。其实这个时候，我的钱包里只剩下一刀了。</div><div>刚刚在车上留意到不远处有个ATM，连忙走过去取款，谁知道这家银行不支持银联卡。没办法只有继续找，可是我顶着烈日背着行李在街头暴走了一个多小时，找了大概有5，6家银行的ATM，它们都不支持银联。这下我急了。都怪我之前功课没做详细，只知道柬埔寨用银联卡没问题，还以为跟越南一样，到处都可以用，谁知道根本不是。想上网找信息，偏偏这边的WIFI都需要密码。只好硬着头皮继续找，终于在一座百货公司外面看到了大大的银联标志，走进去找到了加华银行（<span><span class="caps">CANADIA</span> <span class="caps">BANK</span> PLC）ATM上帖着UNIPAY的标签时，如释重负，果断提了200$。顺便在里面逛了一下超市，这家超市名字叫LUCKY <span class="caps">MART</span>,算是柬埔寨最大型的连锁超市。在这座百货一楼的一个角落，有一个摊子在卖在碟片，放的歌曲居然都是中文歌，听到了“因为爱情”，还好没听到&quot;最炫民族风“。</span></div><p><!--more--><div><span>放中文歌的CD店</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5576224.jpg"></span></div><div>&nbsp;</div><div>走出百货公司不远处，就是中央市场，纯属路过，没进去看</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5697640.jpg"></div><div>&nbsp;</div><div>提完钱之后，继续找住的，挑了154街上一家叫ROYAL HOTEL的店，LP上也有介绍，刚开始问时价格还是比较高的，要10刀，当我要转身走人时，老板又问我预算是多少，我说5，6美金吧，她是这边最低只能给到7美金，这个时候已经没什么心思去好好找，想着先住下，第二天再慢慢找。</div><div>接下来就是处理泰国签证的事情。因为泰国的落地签需要出示离境机票，而且只有15天的时间。想着交给旅行社处理好了，省得心烦。在144街问了一家旅行社，43美金，另外需要一张照片，4天后取，三个月份入境，可在境内呆两个月。之后又对比了几家，觉得还是这家价格比较便宜。</div><div>基本上每一个像样点的城市都会有一条河，金边也不例外。傍晚来到洞里萨河边，吹吹风，逛逛周末夜市。</div><div>&nbsp;</div><div>类似于珠江夜游的东西</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5539813.jpg"></div><div>&nbsp;</div><div>夜市</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5507521.jpg"></div><div>&nbsp;</div><div>夜市</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5588954.jpg"></div><div>&nbsp;</div><div>这就是他们的美食广场了，很多烧烤档，大家席地而坐</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_5638188.jpg"></div><div>&nbsp;</div><div>河边雕塑</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_7269459.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>2013/03/25</div><div>第二天睡到十点自然醒。根据LP上提供的地址找HAPPY HOUSE。走了一个来钟都没找到。放弃。想尝试问一下ROYAL HOTEL的老板，如果住多晚的话能不能便宜点。得到的答复是已经最低价了。决定再在这里住多一晚。还要三天才能拿到护照，金边也没有什么特别想去的地方，其实昨晚处理完签证的事之后，就后悔了，不应该在金边办签证的，在暹粒等久一点还没关系，反正有吴哥窟可以逛，可是在金边，没什么好逛的，消费又高，环境不好，天气又很热。由于时间很多，在附近吃个午饭之后，直接回旅社休息，顺便看了一部跟红色高棉相关的电影，名字叫《战火屠城》，看完之后突然有冲动要去监狱博物馆看看，找地图看了方位，在独立纪念碑的西南面，地方不大好找，不过按着地图的街道号找过去，还是可以找到的。</div><div>&nbsp;</div><div>路边的树</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1433227.jpg"></div><div>&nbsp;</div><div>独立纪念碑</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1499185.jpg"></div><div>&nbsp;</div><div>金边的中国气息还是挺浓的</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1554674.jpg"></div><div>&nbsp;</div><div>监狱博物馆，以前是学校，红色高棉时期被用来做监狱了</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1618401.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1636949.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1651754.jpg"></div><div>&nbsp;</div><div>“犯人”住的地方</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1677868.jpg"></div><div>&nbsp;</div><div>在拍这张照的时候，还碰到昨天一起从越南过来的菲律宾哥们</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1809471.jpg"></div><div>&nbsp;</div><div>晚上的独立纪念碑还是挺好看的</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1760549.jpg"></div><div>&nbsp;</div><div>洞里萨河边的亭子</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1891324.jpg"></div><div>&nbsp;</div><div>晚上的皇宫，没有双脚架，真不好拍夜景</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1944100.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div>在路上还买了烤香蕉和甜品，不对口味。特别是甜品，果然对得起它的名字，甜到不得了，我吃了两口就直接买单了。正式的晚餐是烤牛肉。肉很韧很难嚼，份量还很多，不吃完总觉得有罪恶感。还好这边吃牛肉都会配一盘生的青菜拼盘，蘸点酱料，跟牛肉一起吃，还比较好入口，不会那么快就有腻。刚开始上一盘青菜时，我还在纳闷这该怎么吃呢，还好有服务员看到了，过来问我是不是中国人，说很多中国人都不知道怎么吃。接着他就很热情地教我.</div><div>&nbsp;</div><div>2013/03/26</div><div>想着早点起来看看清晨的皇宫，谁知道要八点才开门。要等的时候，就碰到了两个中国旅行团，在东南亚，真的到处都有中国人。</div><div>&nbsp;</div><div>皇宫外围</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_511121.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_644642.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_557079.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_576345.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_677293.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_696981.jpg"></div><div>&nbsp;</div><div>皇宫内部</div><div>&nbsp;</div><div>很奇怪的花</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_762064.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_844230.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_936848.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_955428.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_973539.jpg"></div><div>&nbsp;</div><div>在回旅馆的路上，找到了一家4$的旅社，虽然环境比较差，但想着在里面呆的时间不会很多，就住下了。下午休息后四点多出发去塔山转转，反正闲着也是闲着。</div><div>&nbsp;</div><div>这个大时钟还是中国云南一家公司赠的</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1136982.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1151895.jpg"></div><div>&nbsp;</div><div>老外的人力车队</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-5e1dd1a4052863eec93be250fdfdec5e_1186262.jpg"></div><div>&nbsp;</div><div>外面吃的东西口味太不见惯，从塔山回来的路上，看到了一家挂名潮洲的饭店，点了个海鲜粥，味道还算可以。店老板应该是柬籍华裔，一个女儿会讲简单的普通话，另外一个已经完全不会讲了，听都听不懂。</div><div>&nbsp;</div><div>2013/03/27，2013/03/28</div><div>这两天的生活很简单，找个有空调的地方喝饮料上网。护照要28号晚上6点后才能拿到，本来打算29号再去暹粒，在金边呆了这么多久，让我有种迫不及待想逃离的冲动。拿到护照后，立马订了晚上1点半的车去暹粒了。</div><div>能是在越南坐习惯了新咖啡的SLEEPING BUS，一对比，才知道这边的SLEEPING BUS有多差，躺在局促的座位上，我居然第一次想到了车祸，担心自己会发生意外。</div><div>&nbsp;</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[安帕瓦]]></title>
-    <link href="http://pliaohuimin.github.io/blogs/386"/>
-    <updated>2013-04-05T00:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blogs/386</id>
-    <content type="html"><![CDATA[<div>一般来说，来安帕瓦的人往往带着三个目的，第一个是见识一下传说中美功的铁道市场，不知道？上网搜搜视频吧，第二是安帕瓦的水上市场，第三是安帕瓦的萤火虫。</div><div>但是如果你真的抱着上面列举的目的来到这个地方，我想你会失望的。美功的铁道市场确实存在，跟想像中的也没什么多大的出入，只是想像中火车通过的速度会比较快，而实际上，火车到了美功就是终点站了，根据个人目测，火车的速度不会大于二十公里每小时；我到达的时候是周五的下午，水上市场没有想像中的热闹，只是河边上零零散散地停靠着几艘做生意的船只，倒是旁边的一条小巷子更热闹一些；60泰株的萤火虫之行，跟想像中的出入也是非常大的，只能在偶尔一两颗树上隐隐约约地看到扎堆的萤火虫，这是非常奇怪的，难道是萤火虫的天性让它们扎堆？网上有人说看到的其实不是萤火虫，而是发光二极管，个人觉得可能性不大，不过60泰株带着你在河道上兜一个来小时，总体来说还是值得的，只要你不想着你是来看萤火虫。</div><p><!--more--><div><div>有人说这里像中国的乌镇，虽然我没去过乌镇，但我想，这里的人流量跟乌镇不会在同一个数量级上。而比起中国所谓的古镇，少了那些酒吧一条街，这里也安静多了。多些随性，带着放松的心情，安帕瓦还是不错的。</div><div>&nbsp;</div><div>铁道市场</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3210141.jpg"></div><div><strong></strong>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3431865.jpg"></div><div><strong></strong>&nbsp;</div><div><strong></strong>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3493065.jpg"></div><div><strong></strong>&nbsp;</div><div><strong></strong>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3516168.jpg"></div><div><strong></strong>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3578350.jpg"></div><div><strong></strong>&nbsp;</div><div><strong></strong>&nbsp;</div><div>水上市场</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_2942366.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3017917.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/04/wpid-57cac9e6936155f122889f194488f330_3053251.jpg"></div><div>&nbsp;</div><div>&nbsp;</div></div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
   </entry>
   
 </feed>

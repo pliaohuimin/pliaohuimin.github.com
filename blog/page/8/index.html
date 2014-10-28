@@ -9,8 +9,8 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Jul 23rd, 2012 Travelling Comments 转&#8211;陈婉婷的中印火车对比报告 原文地址：http://www.zhihu.com/question/20318236/answer/14739823
-大家好，本人第一次用知乎发东西，居然是发了那么长的东西。 &hellip;">
+	<meta name="description" content="Jul 28th, 2012 Comments Accustoming Yourself to C++ item01:view c++ as a federation of languages.
+c++并不是一个带有一组守则的一体语言px是从四个次语言（C,Object-Oriented C &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,62 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 28<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/35#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/35" itemprop="url">Accustoming Yourself to C++</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2><strong>item01:view c++ as a federation of languages.</strong></h2>
+<p>c++并不是一个带有一组守则的一体语言px是从四个次语言（C,Object-Oriented C++, Template C++,STL）组成的联邦政府，每个次语言都有自己的规约。当你从某个次语言切换到哪一个，遵循那语言的编程守则和策略。</p>
+
+	<ol>
+		<li>item02:Prefer consts,enums, and inlines to #defines.<br />
+<p>这个条款或许改为”宁可以编译器替换预处理器“比较好。因为或许#define 不被视为语言的一部份。那正是它的问题所在。</p><br />
+<p><strong>const:</strong>使用#define定义的常量不在记号表(symbol table)内，出问题时会让你很难追踪排查，包括编译对错误的排查和在调试阶段对问题的排查。</p><br />
+<p>此外，使用const代码#define定义常量，能减少目标码（object code），因为预处理器会盲目地将宏名称替换。</p><br />
+<p>另外，const比#define多了两个用途：</p><br />
+<p>第一是定义常量指针。如:const char* const authorName = “SCOTT MEYERS”。这里值得提醒你的是，string对像通常比其前辈char*-based合宜，所以上述的authorName往往定义成这样更好些：</p><br />
+<p>const std::string authorName(”SCOTT MEYERS”);</p><br />
+<p>第二是class专属常量。#define不重视作用域，也不能提供任何封装性。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>enum hack</strong>：一个属于枚举类型(enumerated type)的数值可权充ints被使用。取一个enum的地址是不合法的。如果你不想让别人获得一个pointer或reference指向你的某个整数常量，enum可以帮助你实现这个约束。</p><br />
+<p>&nbsp;</p><br />
+<p><strong>template inline:</strong>使用它来替换宏定义的函数，可以获得宏带来的效率以及一般函数的所有可预料行为和类型安全性(type safety)。</p><br />
+<p>&nbsp;</p></li>
+		<li>item03:Use const whenever possible<br />
+<p>bitwise constness &amp;&amp; logical constness</p><br />
+<p>mutable</p><br />
+<p>在const和non-const成员函数中避免重复：令non-const调用其const是一个避免代码重复的安全做法。反向做法&#8212;令const版本调用non-const版本以避免重复是不可取的。</p><br />
+<p>将某些东西声明为const可帮助编译器侦测出错误用法。const可被施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。</p><br />
+<p>编译器强制实施bitwise constness，但你编写程序时应该使用&quot;概念上的常量性(conceptual constness)“。</p><br />
+<p>当const 和non-const成员函数有着实质等价的实现时，令non-const版本调用const版本可避免代码重复。</p></li>
+	</ol>
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
