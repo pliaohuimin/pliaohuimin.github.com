@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>effective_c++_item13 - Min's Lounger</title>
+	<title>effective_c++:item13 使用对象来管理资源 - Min's Lounger</title>
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Effective_c++_item13 问题 有一个基类： class Investment {&hellip;}; 通过工厂函数来提供Investment实例： Investment* createInvestment(); 这样一来， &hellip;">
+	<meta name="description" content="Effective_c++:item13 使用对象来管理资源 问题 有一个基类： class Investment {&hellip;}; 通过工厂函数来提供Investment实例： Investment* createInvestment(); 这样一来， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,7 +89,7 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Effective_c++_item13</h1>
+	<h1 class="title" itemprop="name">Effective_c++:item13 使用对象来管理资源</h1>
 	<div class="entry-content" itemprop="articleBody"><h2>问题</h2>
 
 <p>有一个基类：</p>
@@ -105,14 +105,11 @@
 <p>考虑以下的使用场景：</p>
 
 <blockquote><p>void f()
-{</p>
-
-<pre><code>Investment* pInv = createInvestment();
-....  // some code
-delete pInv;
-</code></pre>
-
-<p>}</p></blockquote>
+{
+   Investment* pInv = createInvestment();
+   &hellip;.  // some code
+   delete pInv;
+}</p></blockquote>
 
 <p>以下场景会导致删除pInv失败：
 &ndash; f函数在&hellip;中返回
@@ -127,13 +124,10 @@ delete pInv;
 <p>很多用堆动态分配出来的资源，只用于一个特定的代码块中，当控制流离开代码块或者函数时，需要被释放。标准库的<em>auto_ptr</em>就是为这种场景量身定制的。<em>auto_ptr</em>是一个类指针对象，它的析构函数会自动删除它指向的资源。下面是如何使用<em>auto_ptr</em>来避免f函数潜在的内存泄露问题：</p>
 
 <blockquote><p>void f()
-{</p>
-
-<pre><code>std::auto_ptr&lt;Investment&gt; pInv(createInvestment());
-...
-</code></pre>
-
-<p>}</p></blockquote>
+{
+   std::auto_ptr<Investment> pInv(createInvestment());
+   &hellip;
+}</p></blockquote>
 
 <p>这个简单的例子展示了用对象来管理资源中两个关键概念：</p>
 
@@ -141,11 +135,9 @@ delete pInv;
 
 <p>由于<em>auto_ptr</em>对象析构时总会删除它指向的对象，很重要的一点就是需要保证不能有多于1个的<em>auto_ptr</em>指向同一个对象。不然，对象就会被删除超过一次。为了防止类似问题，<em>auto_ptr</em>有一个特性：对资源管理对象进行拷贝操作时，会把原来的管理对象设置为null的，也就是说，资源管理对象从原来对象转移到新的资源管理对象。</p>
 
-<blockquote><p>std::autoptr<Investment> pInv1(createInvestment());  //pInv1 points to the objct return from createInvestment</p>
-
-<pre><code>std::autoptr&lt;Investment&gt; pInv2(pInv1); //pInv2 now points to the object;pInv1 is now null
-pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null
-</code></pre></blockquote>
+<blockquote><p>std::autoptr<Investment> pInv1(createInvestment());  //pInv1 points to the objct return from createInvestment
+   std::autoptr<Investment> pInv2(pInv1); //pInv2 now points to the object;pInv1 is now null
+   pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null</p></blockquote>
 
 <p>这种拷贝特性意味着<em>auto_ptr</em>没法很好地管理所有的动态分配资源。例如STL容器要求它们的内容必须有正常的拷贝行为表现。</p>
 
@@ -156,26 +148,20 @@ pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null
 <p>TR1的tr1::shared_ptr就是一个RCSP。所以你可以这样写：</p>
 
 <blockquote><p>void f()
-{</p>
-
-<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv(createInvestment());
-...
-</code></pre>
-
-<p>}</p></blockquote>
+{
+   std::tr1::shared_ptr<Investment> pInv(createInvestment());
+   &hellip;
+}</p></blockquote>
 
 <p>代码看起来和使用<em>auto_ptr</em>一样，但拷贝<em>shared_ptr</em>的行为看起来自然一些：</p>
 
 <blockquote><p>void f()
-{</p>
-
-<pre><code>std::tr1::shared_ptr&lt;Investment&gt; pInv1(createInvestment()); //pInv1 points to the objct return from createInvestment
-std::tr1::shared_ptr&lt;Investment&gt; pInv2(pInv1);  //both pInv1 and pInv2 now point to the object
-pInv1 = pInv2;  // nothing changed
-...
-</code></pre>
-
-<p>}</p></blockquote>
+{
+   std::tr1::shared_ptr<Investment> pInv1(createInvestment()); //pInv1 points to the objct return from createInvestment
+   std::tr1::shared_ptr<Investment> pInv2(pInv1);  //both pInv1 and pInv2 now point to the object
+   pInv1 = pInv2;  // nothing changed
+   &hellip;
+}</p></blockquote>
 
 <p>由于<em>shraed_ptr</em>工作起来与STD容器所期望的一致，它能在STL容器中使用。</p>
 
