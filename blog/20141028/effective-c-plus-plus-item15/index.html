@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>effective_c++:item15 - Min's Lounger</title>
+	<title>effective_c++:item15 在资源管理类中提供原资源的存取接口 - Min's Lounger</title>
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Effective_c++:item15 很多时候，APIs要求原资源作为参数，这时，你需要一种能将RAII类转换成原资源的途径。一般有两种方法：显性转换和隐性转换。 tr1::shared_ptr和auto_ptr都提供了一个get的成员方法来实现转换，返回智能指针指向对象的祼指针： int &hellip;">
+	<meta name="description" content="Effective_c++:item15 在资源管理类中提供原资源的存取接口 很多时候，APIs要求原资源作为参数，这时，你需要一种能将RAII类转换成原资源的途径。一般有两种方法：显性转换和隐性转换。 tr1::shared_ptr和auto_ptr都提供了一个get的成员方法来实现转换， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,7 +89,7 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Effective_c++:item15</h1>
+	<h1 class="title" itemprop="name">Effective_c++:item15 在资源管理类中提供原资源的存取接口</h1>
 	<div class="entry-content" itemprop="articleBody"><p>很多时候，APIs要求原资源作为参数，这时，你需要一种能将RAII类转换成原资源的途径。一般有两种方法：显性转换和隐性转换。</p>
 
 <p>tr1::shared_ptr和auto_ptr都提供了一个get的成员方法来实现转换，返回智能指针指向对象的祼指针：</p>

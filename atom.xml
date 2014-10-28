@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-10-28T20:04:22+08:00</updated>
+  <updated>2014-10-28T20:06:19+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[effective_c++:item17]]></title>
+    <title type="html"><![CDATA[effective_c++:item17 在独立语句中将new出来的对象存放在智能指针中]]></title>
     <link href="http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item17/"/>
     <updated>2014-10-28T20:03:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item17</id>
@@ -53,7 +53,7 @@ processWidget(pw,priority());
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[effective_c++:item16]]></title>
+    <title type="html"><![CDATA[effective_c++:item16 使用new和delete时应保持用法一致]]></title>
     <link href="http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item16/"/>
     <updated>2014-10-28T20:03:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item16</id>
@@ -87,7 +87,7 @@ delete [] pal; //fine
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[effective_c++:item15]]></title>
+    <title type="html"><![CDATA[effective_c++:item15 在资源管理类中提供原资源的存取接口]]></title>
     <link href="http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item15/"/>
     <updated>2014-10-28T20:02:00+08:00</updated>
     <id>http://pliaohuimin.github.io/blog/20141028/effective-c-plus-plus-item15</id>
