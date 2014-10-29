@@ -5,12 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Min's Lounger</title>
+	<title>Blog Archives - Min's Lounger</title>
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Oct 28th, 2014 effective_c++ Comments Effective_c++:item17 在独立语句中将new出来的对象存放在智能指针中 考虑一下代码： int priority();
-void processWidget( std::tr1::shared_ptr& &hellip;">
+	<meta name="description" content="2014 Oct 28 effective_c++ Comments effective_c++:item17 在独立语句中将new出来的对象存放在智能指针中 Oct 28 effective_c++ Comments effective_c++:item16 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -51,8 +50,8 @@ void processWidget( std::tr1::shared_ptr& &hellip;">
 <p class="subtitle">All Life Sucks,all we can do is let it suck less</p>
 
 <nav id="main-nav"><ul class="main">
-    <li><a href="/blog/categories/travelling">Travelling</a></li>
     <li><a href="/">Blog</a></li>
+    <li><a href="/blog/categories/travelling">Travelling</a></li>
     <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
@@ -89,851 +88,1590 @@ void processWidget( std::tr1::shared_ptr& &hellip;">
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
+				<div id="content" class="inner"><div itemscope itemtype="http://schema.org/Blog">
+
+	
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	
+	
+	<section class="archives"><h1 class="year">2014</h1>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T20:03:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-10-28T20:03:00+08:00" itemprop="datePublished">Oct 28</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item17/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item17/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item17/" itemprop="url">Effective_c++:item17 在独立语句中将new出来的对象存放在智能指针中</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>考虑一下代码：</p>
-
-<blockquote><pre><code>int priority();
-void processWidget( std::tr1::shared_ptr&lt;Widget&gt; pw, int priority );
-processWidget(std::tr1::shared_ptr&lt;Widget&gt;(new Widget), priority());
-</code></pre></blockquote>
-
-<p>在调用processWidget之前，编译器必须生成代码来完成下面三个事情：
-&ndash; 调用priority
-&ndash; 执行new Widget
-&ndash; 调用 tr1::shared_ptr 构造函数</p>
-
-<p>我们只能确保&#8221;new Widget&#8221;会在调用tr1::shared_ptr构造函数前被调用，但priority的调用会在第一，第二还是第三，我们是无法确定的。如果priority的调用是在第二，即：
-&ndash; 执行new Widget
-&ndash; 调用priority
-&ndash; 调用 tr1::shared_ptr 构造函数</p>
-
-<p>请考虑一下在调用priority时抛出异常，会出现什么情况。这种情况下，依旧会出现资源泄露。</p>
-
-<p>想避免类似问题，方法也很简单：使用独立的语句来创建Widget并将它保存在智能指针中。然后再把智能指针传递给processWidget:</p>
-
-<blockquote><pre><code>std::tr1::shared_ptr&lt;Widget&gt; pw( new Widget);
-processWidget(pw,priority());
-</code></pre></blockquote>
-
-<h3>Things to Remember</h3>
-
-<ul>
-<li>在独立语句中，将new出来的对象保存在智能指针中。不这么做的话，一旦有异常抛出，可能会导致资源泄露。</li>
-</ul>
-
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item17/">effective_c++:item17 在独立语句中将new出来的对象存放在智能指针中</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T20:03:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-10-28T20:03:00+08:00" itemprop="datePublished">Oct 28</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item16/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item16/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item16/" itemprop="url">Effective_c++:item16 使用new和delete时应保持用法一致</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>当你使用new时，会发生两件事情，一个是分配内存，另一个是调用一个或者多个的构造函数。当你使用delete时，会发现另外两件事情，一个或者多个析构函数被调用，然后是内存空间的释放。这个涉及到一个问题，该删除多少个对象，这问题会决定多少个析构函数被调用。</p>
-
-<p>实际上，这问题很简单：删除时指定是删除单个对象或者是一个数组。这个问题很重要，因为单对象的内存布局和数组对象的内存布局是不一样的。</p>
-
-<p>规则很简单：如果你在new表达式中使用了[]，必须在delete中也使用[]。如果你在new中没使用[]，那么在delete中也不要使用[]。</p>
-
-<p>在使用typedef时，需要特别注意，因为它意味着typedef的作者必须明文说明使用哪个形式的delete。来看看下面的例子：</p>
-
-<blockquote><pre><code>typedef std::string AddressLines[4];
-std::string *pal = newAddressLines;
-</code></pre></blockquote>
-
-<p>这时，必须使用数组形式的delete：</p>
-
-<blockquote><pre><code>delete pal; //undefined
-delete [] pal; //fine
-</code></pre></blockquote>
-
-<p>避免这个问题也很简单，方法就是使用C++库的string和vector。</p>
-
-<h3>Things to Remember</h3>
-
-<ul>
-<li>如果你在new表达式中使用了[]，必须在delete中也使用[]。如果你在new中没使用[]，那么在delete中也不要使用[]。</li>
-</ul>
-
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item16/">effective_c++:item16 使用new和delete时应保持用法一致</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T20:02:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-10-28T20:02:00+08:00" itemprop="datePublished">Oct 28</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item15/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item15/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item15/" itemprop="url">Effective_c++:item15 在资源管理类中提供原资源的存取接口</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>很多时候，APIs要求原资源作为参数，这时，你需要一种能将RAII类转换成原资源的途径。一般有两种方法：显性转换和隐性转换。</p>
-
-<p>tr1::shared_ptr和auto_ptr都提供了一个get的成员方法来实现转换，返回智能指针指向对象的祼指针：</p>
-
-<blockquote><p>int days = daysHeld(pInv.get());</p></blockquote>
-
-<p>一般智能指针中都重载了->和*操作，这允许了隐性转换。</p>
-
-<p>采用显性转换时（如get()），有时用户觉得使用起来不方便，就懒得使用资源管理类。使用隐性转换（如重载()操作符）会使API的调用看起来比较简单和自然。</p>
-
-<p>但这会增加犯错的机会。</p>
-
-<blockquote><pre><code>FontHandle getFont();
-Font f1(getFont());
-...
-FontHandle f2 = f1; // meant to copy a Font object, but insterad implicitly converted f1 into its underlying FontHandle,then copy that
-</code></pre></blockquote>
-
-<p>现在一个FontHandle被f1管理着，但同时FontHandle也被f2使用。这几乎从来都不是什么好兆头。例如，当f1销毁时，资源会被释放，而f2则悬挂着，指向非法空间。</p>
-
-<p>使用显性还是隐性转换，取决于具体的使用场景。一般来说，显性转换更好些，因为它能尽可能地减少在你不想转换时被转换的机会。</p>
-
-<p>RAII类返回原资源是对封装的破坏，但可能并不是设计上的灾难。RAII类不是用来封装某些东西的。它们的存在是为了确保一个特定的行为（如资源释放）的发生。像大部分设计得好的类，它隐藏了用户不需要看到的部分，但也提供给用户对需要存取的数据的接口。</p>
-
-<h3>Things to Remember</h3>
-
-<ul>
-<li>APIs经常要求原资源，所以每个RAII类都必须提供一个获取它管理的原资源的方法。</li>
-<li>存取方法可以通过显性或者隐性的转换。一般来说，显性更安全些，但隐性对用户来说更加方便。</li>
-</ul>
-
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item15/">effective_c++:item15 在资源管理类中提供原资源的存取接口</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T20:01:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-10-28T20:01:00+08:00" itemprop="datePublished">Oct 28</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item14/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item14/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item14/" itemprop="url">Effective_c++:item14 认真考虑资源管理类的拷贝行为</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>有时，我们需要创建自己的资源管理类。
-例如，你希望通过C API来操作锁对象的加锁和解锁功能。</p>
-
-<blockquote><p>void lock(Mutex<em> pm);
-void unlock(Mutex</em> pm);</p></blockquote>
-
-<p>为了确保你不会忘记对已经加锁的对象解锁，你想创建一个类来管理锁。基本需求就是在该类的构造函数中加锁，在析构函数中解锁：</p>
-
-<blockquote><pre><code>class Lock {
-    public:
-        explicit Lock(Mutex* pm): mutexPtr(pm)
-        {
-            lock(mutexPtr);
-        }
-        ~Lock() { unlock(mutexPtr); }
-    private:
-        Mutex* mutexPtr;
-};
-</code></pre></blockquote>
-
-<p>用户使用RAII风格来使用Lock：</p>
-
-<blockquote><pre><code>Mutex m;
-{
-    Lock ml(&amp;m);
-    ...
-}
-</code></pre></blockquote>
-
-<p>这运行得很好，但是当锁被拷贝时呢？</p>
-
-<blockquote><pre><code>Lock ml1(&amp;m);
-Lock ml2(ml1);
-</code></pre></blockquote>
-
-<p>这是类的编写者需要考虑的问题：当一个RAII对象被拷贝时，应该如何处理？大部分情况下，你会选用以下几个方式的一个来处理：
-&ndash; 禁止拷贝。如果RAII对象拷贝没有意义时，你应该这么做。
-&ndash; 记录资源引用数，当最后一个引用对象析构时才释放资源。</p>
-
-<p>tr1::shared_ptr允许指定一个&#8221;deleter&#8221;&mdash;当引用数量为0时，调用指定函数或者函数对象。</p>
-
-<blockquote><pre><code>class Lock{
-public:
-    explict Lock(Mutex* pm):mutexPtr(pm,unlock)
-    {
-        lock(mutexPtr.get());
-    }
-private:
-    std::tr1::shared_ptr&lt;Mutex&gt; mutexPtr;
-};
-</code></pre></blockquote>
-
-<ul>
-<li><p>对资源进行深拷贝。当你想拥有多个资源的拷贝，采用资源管理类只是为了确保每个资源都会被释放时，可以对管理的资源对象进行深拷贝。</p></li>
-<li><p>移交控制权。如<em>auto_ptr</em>，拷贝方法（构造函数或者拷贝赋值操作）可能由编译器生成，如果这不是你想要的版本，你需要重写它们。</p></li>
-</ul>
-
-
-<h3>Things toRemember</h3>
-
-<ul>
-<li>资源的拷贝行为决定了RAII对象的拷贝行为</li>
-<li>常见的RAII类拷贝行为为不允许拷贝和使用引用计数的方式，但也有一些其它的选择。</li>
-</ul>
-
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item14/">effective_c++:item14 认真考虑资源管理类的拷贝行为</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T19:35:00+08:00" data-updated="true" itemprop="datePublished">Oct 28<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-10-28T19:35:00+08:00" itemprop="datePublished">Oct 28</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/effective-c-plus-plus/'>effective_c++</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item13/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20141028/effective-c-plus-plus-item13/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item13/" itemprop="url">Effective_c++:item13 使用对象来管理资源</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h2>问题</h2>
-
-<p>有一个基类：</p>
-
-<blockquote><p>class Investment {&hellip;};</p></blockquote>
-
-<p>通过工厂函数来提供Investment实例：</p>
-
-<blockquote><p>Investment* createInvestment();</p></blockquote>
-
-<p>这样一来，createInvestment的调用者在使用完该函数提供的对象指针后，需要负责把它delete掉。</p>
-
-<p>考虑以下的使用场景：</p>
-
-<blockquote><pre><code>void f()
-{
-    Investment* pInv = createInvestment();
-    ....  // some code
-    delete pInv;
-}
-</code></pre></blockquote>
-
-<p>以下场景会导致删除pInv失败：
-&ndash; f函数在&hellip;中返回
-&ndash; f函数在&hellip;中抛出异常</p>
-
-<p>当然，细心地编程能够避免以上错误的发生。但代码在经过几次的修改后呢？在软件的维护过程中，有人可能会在中间添加新的return或者continue而没有很好地处理资源问题。更糟糕的是，在&hellip;部分以前可能没有使用异常机制，突然有人觉得应该加入以提高性能。简单地依赖于人员记得去删除资源是不可行的。</p>
-
-<h3>解决方案一</h3>
-
-<p>为了确定获得createInvestment返回的资源总能被释放，我们需要把资源放进一个对象中，该对象的析构函数总能自动地释放该资源。</p>
-
-<p>很多用堆动态分配出来的资源，只用于一个特定的代码块中，当控制流离开代码块或者函数时，需要被释放。标准库的<em>auto_ptr</em>就是为这种场景量身定制的。<em>auto_ptr</em>是一个类指针对象，它的析构函数会自动删除它指向的资源。下面是如何使用<em>auto_ptr</em>来避免f函数潜在的内存泄露问题：</p>
-
-<blockquote><pre><code>void f()
-{
-    std::auto_ptr&lt;Investment&gt; pInv(createInvestment());
-...
-}
-</code></pre></blockquote>
-
-<p>这个简单的例子展示了用对象来管理资源中两个关键概念：</p>
-
-<p>资源总是在获取时立即放进资源管理对象中。上面例子中，资源中由<em>createInvestment()返回时，被用来初始化管理它的</em>auto_ptr*对象。这种方法叫做资源获得即初始化（RAII），因为在获得一个资源的同时，又初始化了资源管理的对象。有时资源是通过赋值传给资源管理对象。</p>
-
-<p>由于<em>auto_ptr</em>对象析构时总会删除它指向的对象，很重要的一点就是需要保证不能有多于1个的<em>auto_ptr</em>指向同一个对象。不然，对象就会被删除超过一次。为了防止类似问题，<em>auto_ptr</em>有一个特性：对资源管理对象进行拷贝操作时，会把原来的管理对象设置为null的，也就是说，资源管理对象从原来对象转移到新的资源管理对象。</p>
-
-<blockquote><pre><code>std::autoptr&lt;Investment&gt; pInv1(createInvestment());  //pInv1 points to the objct return from createInvestment
-std::autoptr&lt;Investment&gt; pInv2(pInv1); //pInv2 now points to the object;pInv1 is now null
-pInv2 = pInv2; //now pInv1 points to the object,and pInv2 is null
-</code></pre></blockquote>
-
-<p>这种拷贝特性意味着<em>auto_ptr</em>没法很好地管理所有的动态分配资源。例如STL容器要求它们的内容必须有正常的拷贝行为表现。</p>
-
-<h3>解决方案二</h3>
-
-<p>另外一个替换方案就是reference-counting smart pointer(RCSP)。然而<em>RSCP</em>无法处理循环引用 的问题（例如，两个没用的对象互相指向对方）。</p>
-
-<p>TR1的tr1::shared_ptr就是一个RCSP。所以你可以这样写：</p>
-
-<blockquote><pre><code>void f()
-{
-    std::tr1::shared_ptr&lt;Investment&gt; pInv(createInvestment());
-    ...
-}
-</code></pre></blockquote>
-
-<p>代码看起来和使用<em>auto_ptr</em>一样，但拷贝<em>shared_ptr</em>的行为看起来自然一些：</p>
-
-<blockquote><pre><code>void f()
-{
-    std::tr1::shared_ptr&lt;Investment&gt; pInv1(createInvestment()); //pInv1 points to the objct return from createInvestment
-    std::tr1::shared_ptr&lt;Investment&gt; pInv2(pInv1);  //both pInv1 and pInv2 now point to the object
-    pInv1 = pInv2;  // nothing changed
-    ...
-}
-</code></pre></blockquote>
-
-<p>由于<em>shraed_ptr</em>工作起来与STD容器所期望的一致，它能在STL容器中使用。</p>
-
-<p><em>auto_ptr</em>和<em>tr1::shared_ptr</em>都在析构函数中使用了<em>delete</em>而不是<em>delete []</em>，这意味着无法使用它们来释放数组资源。</p>
-
-<p>如果你想处理数组对象，你可以使用<em>boost::scoped_array</em>和<em>boost:shared_array</em>。</p>
-
-<h3>Thigns to Remember</h3>
-
-<ul>
-<li>以防止资源泄露，在RAII对象构造函数中来获取资源，在它的析构函数中来释放资源。</li>
-<li>两个有用的RAII类是TR1::shared_ptr和auto_ptr，通常来说，需要拷贝时，TR1::shared_ptr是更好的选择。拷贝auto_ptr会把原来的设置为null。</li>
-</ul>
-
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20141028/effective-c-plus-plus-item13/">effective_c++:item13 使用对象来管理资源</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-09T14:20:00+08:00" data-updated="true" itemprop="datePublished">Sep 9<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-09-09T14:20:00+08:00" itemprop="datePublished">Sep  9</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/it/'>IT</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20140909/use-doxygen/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20140909/use-doxygen/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140909/use-doxygen/" itemprop="url">使用Doxygen生成文档</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h4>在写代码时，使用doxygen vim插件生成特定格式的说明。</h4>
-
-<h4>进入项目目录（test为例说明） cd test/</h4>
-
-<h4>生成配置文件                          Doxygen –g</h4>
-
-<p>note: 默认生成的配置文件名为 &ldquo;Doxyfile&#8221;，也可以采用 &#8220;doxygen -g your-cfg-filename&rdquo; 命令格式指定所生成的配置文件名。如无特殊需要，采用默认的配置文件名即可。</p>
-
-<h4>配置文件的相应设置 ，这里已经有个模板Doxyfile(test文件夹下)，可以根据需要更改相应设置</h4>
-
-<ul>
-<li><p>项目名称，将作为于所生成的程序文档首页标题</p>
-
-<blockquote><p>PROJECT_NAME           = Test</p></blockquote></li>
-<li><p>文档版本号，可对应于项目版本号，譬如 svn、cvs 所生成的项目版本号</p>
-
-<blockquote><p>PROJECT_NUMBER       = 1.0.0</p></blockquote></li>
-<li><p>程序文档输出目录</p>
-
-<blockquote><p>OUTPUT_DIRECTORY    =  doc/</p></blockquote></li>
-<li><p>程序文档语言环境</p>
-
-<blockquote><p>OUTPUT_LANGUAGE    = Chinese</p></blockquote></li>
-<li><p>如果是制作 C 程序文档，该选项必须设为 YES，否则默认生成 C++ 文档格式</p>
-
-<blockquote><p>OPTIMIZE_OUTPUT_FOR_C  = YES</p></blockquote></li>
-<li><p>对于使用 typedef 定义的结构体、枚举、联合等数据类型，只按照 typedef 定义的类型名进行文档化</p>
-
-<blockquote><p>TYPEDEF_HIDES_STRUCT   = YES</p></blockquote></li>
-<li><p>在 C++ 程序文档中，该值可以设置为 NO，而在 C 程序文档中，由于 C 语言没有所谓的域/名字空间这样的概念，所以此处设置为 YES</p>
-
-<blockquote><p>HIDE_SCOPE_NAMES        = YES</p></blockquote></li>
-<li><p>让 doxygen 静悄悄地为你生成文档，只有出现警告或错误时，才在终端输出提示信息</p>
-
-<blockquote><p>QUIET   = YES</p></blockquote></li>
-<li><p>只对头文件中的文档化信息生成程序文档</p>
-
-<blockquote><p>FILE_PATTERNS          = *.h</p></blockquote></li>
-<li><p>递归遍历当前目录的子目录，寻找被文档化的程序源文件</p>
-
-<blockquote><p>RECURSIVE              = YES</p></blockquote></li>
-<li><p>示例程序目录</p>
-
-<blockquote><p>EXAMPLE_PATH           = example/</p></blockquote></li>
-<li><p>示例程序的头文档 (.h 文件) 与实现文档 (.c 文件) 都作为程序文档化对象</p>
-
-<blockquote><p>EXAMPLE_PATTERNS       = <em>.c </em>.h</p></blockquote></li>
-<li><p>递归遍历示例程序目录的子目录，寻找被文档化的程序源文件</p>
-
-<blockquote><p>EXAMPLE_RECURSIVE      = YES</p></blockquote></li>
-<li><p>允许程序文档中显示本文档化的函数相互调用关系</p>
-
-<blockquote><p>REFERENCED_BY_RELATION = YES
-REFERENCES_RELATION    = YES
-REFERENCES_LINK_SOURCE = YES</p></blockquote></li>
-<li><p>不生成 latex 格式的程序文档</p>
-
-<blockquote><p>GENERATE_LATEX         = NO</p></blockquote></li>
-<li><p>在程序文档中允许以图例形式显示函数调用关系，前提是你已经安装了 graphviz 软件包</p>
-
-<blockquote><p>HAVE_DOT               = YES
-CALL_GRAPH            = YES
-CALLER_GRAPH        = YES</p></blockquote></li>
-<li><p>让doxygen从配置文件所在的文件夹开始，递归地搜索所有的子目录及源文件</p>
-
-<blockquote><p>RECURSIVE = YES</p></blockquote></li>
-<li><p>在最后生成的文档中，把所有的源代码包含在其中</p>
-
-<blockquote><p>SOURCE BROWSER = YES</p></blockquote></li>
-<li><p>这会在HTML文档中，添加一个侧边栏，并以树状结构显示包、类、接口等的关系</p>
-
-<blockquote><p>GENERATE TREEVIEW ＝ ALL</p></blockquote></li>
-</ul>
-
-
-<h4>程序文档生成</h4>
-
-<p>现在开始生成程序文档，将终端的工作目录定位在 test 目录，然后键入：</p>
-
-<blockquote><p>$ doxygen    your-cfg-filename</p></blockquote>
-
-<p>your-cfg-filename 是  Doxygen 配置文件名，如果是使用 &ldquo;doxygen -g&rdquo; 生成的配置文件——Doxyfile，那么可以在终端里仅键入 &ldquo;doxygen&rdquo; 命令即可生成程序文档。<br/>
-生成的文档位于 test/doc/html 目录中，使用浏览器打开该目录中的 index.html 文件，即可看到自己的工作成果。</p>
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20140909/use-doxygen/">使用Doxygen生成文档</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-04T16:59:00+08:00" data-updated="true" itemprop="datePublished">Sep 4<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-09-04T16:59:00+08:00" itemprop="datePublished">Sep  4</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20140904/20140514-chufa/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20140904/20140514-chufa/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140904/20140514-chufa/" itemprop="url">2014云南之旅&#8211;出发</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h4>关于这趟旅行</h4>
-
-<p>这完全是一次意外之旅。由于上层领导与股东的问题，公司在五月初宣布解散。在打包东西回住处的路上，同事问我有什么打算。突然心血来潮地决定出去旅游。刚好前阵子和还在说想自己出去走走，趁着回家休息，跟他提起想去云南旅游。三天的时间，决定一起出行。在网上定好机票，规划了整体路线，回广州办理一些工作上的手续就出发。</p>
-
-<h4>必带物品</h4>
-
-<p>防晒霜<br/>
-保湿用品<br/>
-防晒帽子<br/>
-外套（昼夜温差大）<br/>
-身份证<br/>
-学生证（有的话）</p>
-
-<h4>20140514</h4>
-
-<p>早上回公司办理完手续，回去打包。在网上订的云南版LP刚好拿到手。这次旅行来得比较突然，没有做什么功课，全程就只靠这本书了。<br/>
-下午五点五十分就从火车东站出发，六点半左右到达机场南站，到深航M窗口办理登机手续，队伍不是很长，十多分钟就办理完。不过这次电脑办不了托运，只能带着包登机，打火机过不了安检，洗发水居然没事。七点十来分到达登记窗口却被告知飞机晚点，九点二十分才登机，汗。登记后，又继续在飞机上发霉，十点出头才真正起飞 。<br/>
-十二点左右才到达昆明长水机场。比较顺利地搭上了的，打表96元到达中凰酒店附近舍友的住处。一切打点完毕，已是凌晨两点。明天去东川，得早起，OMG。</p>
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20140904/20140514-chufa/">2014云南之旅&#8211;出发</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-11T15:57:00+08:00" data-updated="true" itemprop="datePublished">Aug 11<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-08-11T15:57:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20140811/add-profilepic/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20140811/add-profilepic/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140811/add-profilepic/" itemprop="url">添加博客头像</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>新安装了<a href="https://github.com/shashankmehta/greyshade">greyshade</a>主题。</p>
-
-<p>好奇于其他使用这个主题的其它博客，有头像的展示。一直找不到在哪设置。
-原来还有<a href="http://en.gravatar.com/">gravatar</a>这种东西，通过邮箱来显示头像。只要设置好邮箱，并在gravatar服务上注册相应邮箱，上传头像就可以了。</p>
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20140811/add-profilepic/">添加博客头像</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-08T14:01:00+08:00" data-updated="true" itemprop="datePublished">Aug 8<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-08-08T14:01:00+08:00" itemprop="datePublished">Aug  8</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20140808/new-domain/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20140808/new-domain/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140808/new-domain/" itemprop="url">申请了新域名</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a></p>
-
-<p>之前用的是.tk免费域名，但总觉得打开页面很卡，不知道跟域名是否有关,还是使用github的原因。
-可是打开github时也不觉得特别卡，考虑一下，觉得还是买个.com的域名比较靠谱些，反正也不算太贵。</p>
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20140808/new-domain/">申请了新域名</a></h1>
 </article>
 
+	
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-05T18:57:00+08:00" data-updated="true" itemprop="datePublished">Aug 5<span>th</span>, 2014</time></div>
-		<div class="tags">
+		<span class="date"><time datetime="2014-08-05T18:57:00+08:00" itemprop="datePublished">Aug  5</time></span>
+		<br>
+		<span class="tags">
 
 
 	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
 
 
-</div>
-		
-			<span class="comments"><a href="/blog/20140805/new-machine-to-octopress/#disqus_thread">Comments</a></span>
-		
+</span>
+	    
+	    <span class="comments"><a href="/blog/20140805/new-machine-to-octopress/#disqus_thread">Comments</a></span>
+	    
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140805/new-machine-to-octopress/" itemprop="url">在新机器上使用octopress写文章</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><a href="http://www.cnblogs.com/oec2003/archive/2013/05/27/3100896.html">主要参考来源</a></p>
-
-<ol>
-<li><p>安装git</p></li>
-<li><p>从github上面克隆代码到本机特定目录。</p>
-
-<blockquote><p>git clone -b source git@github.com:pliaohuimin/pliaohuimin.github.com.git</p></blockquote></li>
-<li><p>安装<a href="http://rubyinstaller.org/downloads/">RUBY</a> 1.9.3。记得勾选“Add Ruby executables to your PATH”，将Ruby的执行路径加入到环境变量中，如果忘记勾选，也可以手动设置</p></li>
-<li><p>安装<a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a>，将其解压到D:/DevKit，有两点需要注意：</p>
-
-<p>  解压目录中没有有中文和空格；</p>
-
-<p>  必须先安装Ruby，而且Ruby需要是RubyInstallser安装。</p>
-
-<p>  解压DevKit后，在命令行输入以下命令来进行安装：</p>
-
-<blockquote><p>d:</p>
-
-<p>cd DevKit</p>
-
-<p>ruby dk.rb init</p>
-
-<p>ruby dk.rb install</p></blockquote></li>
-<li><p>安装Python</p></li>
-<li><p>安装<a href="https://pypi.python.org/pypi/setuptools">easy_install</a>,</p>
-
-<p> For Windows 7 and earlier, download ez_setup.py using your favorite web browser or other technique and &ldquo;run&rdquo; that file.</p></li>
-<li><p>安装pygments</p>
-
-<p> easy_install会安装在Python安装目录的Scripts目录中，例如我的Python目录是C:\Python27，所以需要将C:\Python27\Scripts目录加入到环境变量中才能在命令提示符中使用easy_install命令。</p>
-
-<p> 在命令提示符中输入如下命令就可以安装Pygments了。</p>
-
-<blockquote><p>easy_install pygments</p></blockquote></li>
-<li><p>然后需要安装Octopress的依赖项，安装依赖项需要用到Ruby的gem，使用下面的命令可以更换gem的更新源，使用国内的淘宝镜像速度相对快点。</p>
-
-<blockquote><p>gem sources -a <a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
-
-<p>gem sources -r <a href="http://rubygems.org/">http://rubygems.org/</a></p>
-
-<p>gem sources -l</p></blockquote>
-
-<p> 修改Octopress目录下的Gemfile文件，将第一行的<a href="http://rubygems.org/">http://rubygems.org/</a> 修改为<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
-
-<p> 在命令提示符中进入到Octopress目录，输入下面命令进行依赖项的安装</p>
-
-<blockquote><p>gem install bundler</p>
-
-<p>bundle install</p></blockquote></li>
-<li><p>在Octopress中添加文章
- 使用下面命令可以在Octopress中添加文章</p>
-
-<blockquote><p>rake new_post[&lsquo;post name&rsquo;]</p></blockquote>
-
-<p> 注意，rake new_post[&lsquo;my first octopress blog&rsquo;]中的my first octopress blog 并不是博客标题，而是和生成的文件名以及url地址有关，该名称不支持中文。博客标题可以在生成的markdown文件中修改。生成的markdown文件在octopress/source/_posts目录中。</p>
-
-<p> 编辑markdown文件，将标题可以修改为中文标题，还可以设置分类等信息以及编写正文部分</p>
-
-<p> 每次执行了添加博客的命令，或是修改了现有博客的内容后，都要执行下面命令进行重新生成静态网页</p>
-
-<blockquote><p>rake generate</p></blockquote></li>
-<li><p>发布到外网
-创建<em>deploy目录,将上一层的.git目录拷贝到</em>deploy下。将主干checkout出来。只需要操作一下，以后可以直接部署。</p>
-
-<blockquote><p>git checkout master</p></blockquote>
-
-下面指令帮你把生成的静态网页更新到主干master上去。
-
-<blockquote><p>rake deploy</p></blockquote></li>
-</ol>
-
-
-<p>done
-输入rake preview，可以直接localhost:4000来进行预览</p>
-
-<h2>问题：</h2>
-
-<p>1.执行rake generate时，报错
-YAML Exception reading 2012-07-21-8.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-22-13.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-23-20.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-28-35.textile: invalid byte sequence in GBK</p>
-
-<p><a href="http://changfengmingzhi.blog.163.com/blog/static/16710528820131013103511364/">1解决方法</a>：
-找到你的Ruby安装目录，如我的是：D:\Ruby193, 在里面找到文件D:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.12.0\lib\jekyll\convertible.rb
-在该文件中找到下面句子：</p>
-
-<blockquote><p>   def read_yaml(base, name)</p>
-
-<pre><code> self.content = File.read(File.join(base, name))
-</code></pre></blockquote>
-
-<p>将它修改为：</p>
-
-<blockquote><p>   def read_yaml(base, name)</p>
-
-<pre><code> self.content = File.read(File.join(base, name),:encoding=&gt;"utf-8")
-</code></pre></blockquote>
-
-<p>然后确保所有带中文字符的markdown文件是无BOM的UTF-8格式即可。</p>
-
-<p>2.解决问题1后，执行rake generate时，继续报错
-Liquid Exception: incompatible character encodings: UTF-8 and GBK in index.html</p>
-
-<p>将</p>
-
-<pre><code>&gt;export LC_ALL=zh_CN.UTF-8 
-&gt;export LANG=zh_CN.UTF-8
-</code></pre>
-
-<p>放到~/.bash_profile中，并执行：</p>
-
-<pre><code>&gt;source ~/.bash_profile
-</code></pre>
-
-<p>在cmd窗口执行，chcp 65001
-然后继续在cmd窗口执行(不可以在bash窗口执行，估计只对当前窗口有效,而bash窗口又无法执行chcp命令）：</p>
-
-<pre><code>&gt;rake generate
-</code></pre>
-
-		
-		
-	</div>
-
+	<h1 class="title" itemprop="name"><a href="/blog/20140805/new-machine-to-octopress/">在新机器上使用octopress写文章</a></h1>
 </article>
 
-</div>
-<nav id="pagenavi">
-    
-    
-        <a href="/blog/page/2/" class="next">Next</a>
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-</div>
+	
+
+
+	
+	
+		</section>
+	
+	<section class="archives"><h1 class="year">2013</h1>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-09-02T21:00:00+08:00" itemprop="datePublished">Sep  2</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/20130902/add-share/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130902/add-share/">octopress小工具</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-09-02T16:05:00+08:00" itemprop="datePublished">Sep  2</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/20130902/octopress-archive/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130902/octopress-archive/">赞一个OCTOPRESS的ARCHIVE展示</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-09-01T03:54:00+08:00" itemprop="datePublished">Sep  1</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/20130901/from-wp2octopress/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130901/from-wp2octopress/">从wordpress迁移到octopress</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-08-30T17:28:00+08:00" itemprop="datePublished">Aug 30</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/20130830/kai-shi-octopress/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20130830/kai-shi-octopress/">开始OCTOPRESS</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-08-20T00:00:00+08:00" itemprop="datePublished">Aug 20</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/583#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/583">初识REDIS</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-08-16T00:00:00+08:00" itemprop="datePublished">Aug 16</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/579#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/579">2013年8月17日 1:24:24     晴</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-07-03T00:00:00+08:00" itemprop="datePublished">Jul  3</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/574#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/574">素可泰</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-06-02T00:00:00+08:00" itemprop="datePublished">Jun  2</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/570#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/570">曼谷北站的等车生活</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-26T00:00:00+08:00" itemprop="datePublished">Apr 26</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/568#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/568">美功铁道市场和安帕瓦</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-21T00:00:00+08:00" itemprop="datePublished">Apr 21</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/566#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/566">曼谷逛街</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-21T00:00:00+08:00" itemprop="datePublished">Apr 21</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/564#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/564">进军泰国</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-19T00:00:00+08:00" itemprop="datePublished">Apr 19</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/561#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/561">每天尝试一些新的东西，生活才不会那么无趣</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-14T00:00:00+08:00" itemprop="datePublished">Apr 14</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/558#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/558">柬埔寨：暹粒</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-07T00:00:00+08:00" itemprop="datePublished">Apr  7</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/421#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/421">柬埔寨：金边</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-05T00:00:00+08:00" itemprop="datePublished">Apr  5</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/386#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/386">安帕瓦</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-04-01T00:00:00+08:00" itemprop="datePublished">Apr  1</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/375#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/375">湄公河三日游</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-29T00:00:00+08:00" itemprop="datePublished">Mar 29</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/346#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/346">西贡</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-29T00:00:00+08:00" itemprop="datePublished">Mar 29</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/331#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/331">柬埔寨和泰国签证</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-27T00:00:00+08:00" itemprop="datePublished">Mar 27</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/329#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/329">适合发呆的城市&#8211;美奈</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-23T00:00:00+08:00" itemprop="datePublished">Mar 23</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/283#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/283">法国风情城市一日游</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-19T00:00:00+08:00" itemprop="datePublished">Mar 19</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/239#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/239">要去大叻也折腾</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-19T00:00:00+08:00" itemprop="datePublished">Mar 19</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/236#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/236">海滨城市&#8211;芽庄</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-16T00:00:00+08:00" itemprop="datePublished">Mar 16</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/230#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/230">越南第二天之顺化</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-15T00:00:00+08:00" itemprop="datePublished">Mar 15</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/225#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/225">会安第二天</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-13T00:00:00+08:00" itemprop="datePublished">Mar 13</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/220#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/220">初到会安</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-11T00:00:00+08:00" itemprop="datePublished">Mar 11</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/216#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/216">抵达越南</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-10T00:00:00+08:00" itemprop="datePublished">Mar 10</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/214#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/214">越南签证篇</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-06T00:00:00+08:00" itemprop="datePublished">Mar  6</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/212#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/212">临出发前的想法</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-03-01T00:00:00+08:00" itemprop="datePublished">Mar  1</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/210#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/210">无业游民</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-02-28T00:00:00+08:00" itemprop="datePublished">Feb 28</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/208#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/208">离职进行时</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-02-25T00:00:00+08:00" itemprop="datePublished">Feb 25</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/204#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/204">只欠东风</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-26T00:00:00+08:00" itemprop="datePublished">Jan 26</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/182#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/182">搅拌乳海</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-26T00:00:00+08:00" itemprop="datePublished">Jan 26</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/180#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/180">什么是OPEN BUS</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-26T00:00:00+08:00" itemprop="datePublished">Jan 26</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/178#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/178">手电筒</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-08T00:00:00+08:00" itemprop="datePublished">Jan  8</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/176#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/176">[转]石英砂岩、丹霞、喀斯特三种地貌的比较</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-07T00:00:00+08:00" itemprop="datePublished">Jan  7</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/172#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/172">算法技巧</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-06T00:00:00+08:00" itemprop="datePublished">Jan  6</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/167#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/167">2012-12-29&#8211;2013-01-03广州，凤凰，张家界游玩路线及交通费用</a></h1>
+</article>
+
+	
+
+
+	
+	
+		</section>
+	
+	<section class="archives"><h1 class="year">2012</h1>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-27T00:00:00+08:00" itemprop="datePublished">Dec 27</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/164#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/164">powerdesigner反向MySQL 5.1数据库生成物理数据模型(PDM)</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-20T00:00:00+08:00" itemprop="datePublished">Dec 20</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/152#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/152">（转）依稀回忆起当年年少时</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-20T00:00:00+08:00" itemprop="datePublished">Dec 20</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/150#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/150">与旅游相关的电影</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-13T00:00:00+08:00" itemprop="datePublished">Dec 13</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/142#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/142">linux下小工具</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-05T00:00:00+08:00" itemprop="datePublished">Dec  5</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/it/'>IT</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/137#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/137">Reactor parttern</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-12-04T00:00:00+08:00" itemprop="datePublished">Dec  4</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/133#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/133">Permission denied (publickey,gssapi-with-mic).</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-11-30T00:00:00+08:00" itemprop="datePublished">Nov 30</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/131#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/131">部署系统参考</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-11-30T00:00:00+08:00" itemprop="datePublished">Nov 30</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/128#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/128">configure: error: Cannot find MySQL header files under yes.</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-11-30T00:00:00+08:00" itemprop="datePublished">Nov 30</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/126#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/126">x86_64下编译php出现错误(Try adding &#8211;with-zlib-)解决(转）</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-11-25T00:00:00+08:00" itemprop="datePublished">Nov 25</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/124#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/124">foobar播放ape格式音乐</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-11-20T00:00:00+08:00" itemprop="datePublished">Nov 20</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/122#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/122">LIST</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-10-25T00:00:00+08:00" itemprop="datePublished">Oct 25</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/113#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/113">旅行摄影（穷游版）</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-09-24T00:00:00+08:00" itemprop="datePublished">Sep 24</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/107#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/107">栈区，堆区，全局区，文字常量区，程序代码区 详解</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-21T00:00:00+08:00" itemprop="datePublished">Aug 21</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/92#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/92">vim缩进设置</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-20T00:00:00+08:00" itemprop="datePublished">Aug 20</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/90#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/90">去掉SHELL的提示音和VI的提示音</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-14T00:00:00+08:00" itemprop="datePublished">Aug 14</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/87#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/87">(转）linux下多线程 之 pthread_detach(pthread_self())</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-13T00:00:00+08:00" itemprop="datePublished">Aug 13</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/85#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/85">认识和弦以及右手的练习</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/79#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/79">（转）腾讯微信技术总监周颢：一亿用户增长背后的架构秘密</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/77#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/77">灰度发布</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/73#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/73">20120811- 腾讯iron敏捷开发讲座</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/71#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/71">typedef struct的前置声明</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/69#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/69">正确使用#include和前置声明(forward declaration)</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-11T00:00:00+08:00" itemprop="datePublished">Aug 11</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/67#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/67">头文件中循环引用</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-10T00:00:00+08:00" itemprop="datePublished">Aug 10</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/49#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/49">WORDPRESS网站流量统计</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-04T00:00:00+08:00" itemprop="datePublished">Aug  4</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/46#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/46">左手练习</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-04T00:00:00+08:00" itemprop="datePublished">Aug  4</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/43#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/43">基本乐理知识</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-04T00:00:00+08:00" itemprop="datePublished">Aug  4</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/41#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/41">吉他类型</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-28T00:00:00+08:00" itemprop="datePublished">Jul 28</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/35#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/35">Accustoming Yourself to C++</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-23T00:00:00+08:00" itemprop="datePublished">Jul 23</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/travelling/'>Travelling</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/20#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/20">转&#8211;陈婉婷的中印火车对比报告</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-22T00:00:00+08:00" itemprop="datePublished">Jul 22</time></span>
+		<br>
+		<span class="tags">
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/15#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/15">植物分类</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-22T00:00:00+08:00" itemprop="datePublished">Jul 22</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/13#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/13">使用WINDOWS LIVE WRITER离线发布测试</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-21T00:00:00+08:00" itemprop="datePublished">Jul 21</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/8#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/8">免费一级域名+免费虚拟空间+WORDPRESS打造全新个人BLOG</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-07-21T00:00:00+08:00" itemprop="datePublished">Jul 21</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blogs/1#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/1">Hello world!</a></h1>
+</article>
+
+  </section>
+</div></div>
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2014
 
