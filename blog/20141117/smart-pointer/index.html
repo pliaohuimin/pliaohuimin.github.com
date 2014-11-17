@@ -218,7 +218,13 @@
 <h3>boost::weak_ptr</h3>
 
 <ul>
-<li>用途：weak_ptr被设计为与shared_ptr共同工作，可以从一个shared_ptr或者另一个weak_ptr对象构造，获得资源的观测权。防止循环引用。</li>
+<li>用途：
+
+<ol>
+<li> weak_ptr被设计为与shared_ptr共同工作，可以从一个shared_ptr或者另一个weak_ptr对象构造，获得资源的观测权。防止循环引用。</li>
+<li> 防止使用boost::shared_ptr时，使对象的生命期被意外延长。</li>
+</ol>
+</li>
 <li>复制行为：weak_ptr没有共享资源，它的构造不会引起指针引用计数的增加。</li>
 <li>weak_ptr是为了配合shared_ptr而引入的一种智能指针，它更像是shared_ptr的一个助手而不是智能指针，因为它不具有普通指针的行为，没有重载operator*和->,它的最大作用在于协助shared_ptr工作，像旁观者那样观测资源的使用情况</li>
 </ul>
