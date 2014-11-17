@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2014-11-17T16:58:51+08:00</updated>
+  <updated>2014-11-17T17:01:11+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -64,8 +64,6 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<hr />
-
 <h3>boost::shared_ptr</h3>
 
 <ul>
@@ -119,16 +117,12 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<hr />
-
 <h3>boost::scoped_ptr</h3>
 
 <ul>
 <li>复制行为：不能拷贝</li>
 </ul>
 
-
-<hr />
 
 <h3>boost::weak_ptr</h3>
 
