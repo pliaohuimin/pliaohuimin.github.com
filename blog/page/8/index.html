@@ -9,7 +9,7 @@
 	<meta name="author" content="Mr.Liao">
 
 	
-	<meta name="description" content="Aug 10th, 2012 WebBuilding Comments WORDPRESS网站流量统计 参考网站： http://www.luyouqiwo.com/110/2012/0705/8871.html http://www.x-berry.com/traffic-statistics &hellip;">
+	<meta name="description" content="Aug 11th, 2012 Comments 头文件中循环引用 转自网站：http://hi.baidu.com/shilyx/blog/item/c1e3f7f277e29811b17ec5f2.html 一、类嵌套的疑问 C++头文件重复包含实在是一个令人头痛的问题， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,38 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-11T00:00:00+08:00" data-updated="true" itemprop="datePublished">Aug 11<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blogs/67#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blogs/67" itemprop="url">头文件中循环引用</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>转自网站：<a href="http://hi.baidu.com/shilyx/blog/item/c1e3f7f277e29811b17ec5f2.html">http://hi.baidu.com/shilyx/blog/item/c1e3f7f277e29811b17ec5f2.html</a></p> <p><strong>一、类嵌套的疑问</strong> <p>C++头文件重复包含实在是一个令人头痛的问题，前一段时间在做一个简单的数据结构演示程序的时候，不只一次的遇到这种问题。假设我们有两个类A和B，分别定义在各自的有文件A.h和B.h中，但是在A中要用到B，B中也要用到A，但是这样的写法当然是错误的：<br>class B; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B b;<br>}; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A a;<br>};<br>因为在A对象中要开辟一块属于B的空间，而B中又有A的空间，是一个逻辑错误，无法实现的。在这里我们只需要把其中的一个A类中的B类型成员改成指针形式就可以避免这个无限延伸的怪圈了。为什么要更改A而不是B？因为就算你在B中做了类似的动作，也仍然会编译错误，表面上这仅仅上一个先后顺序的问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为什么会这样呢？因为C++编译器自上而下编译源文件的时候，对每一个数据的定义，总是需要知道定义的数据的类型的大小。在预先声明语句class B;之后，编译器已经知道B是一个类，但是其中的数据却是未知的，因此B类型的大小也不知道。这样就造成了编译失败，VC++6.0下会得到如下编译错误：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error C2079: &#8216;b&#8217; uses undefined class &#8216;B&#8217;<br>将A中的b更改为B指针类型之后，由于在特定的平台上，指针所占的空间是一定的（在Win32平台上是4字节），这样可以通过编译。 <p><strong>二、不同头文件中的类的嵌套</strong> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在实际编程中，不同的类一般是放在不同的相互独立的头文件中的，这样两个类在相互引用时又会有不一样的问题。重复编译是问题出现的根本原因。为了保证头文件仅被编译一次，在C++中常用的办法是使用条件编译命令。在头文件中我们常常会看到以下语句段（以VC++6.0自动生成的头文件为例）： <p>#if !defined(AFX_STACK_H__1F725F28_AF9E_4BEB_8560_67813900AE6B__INCLUDED_)<br>#define AFX_STACK_H__1F725F28_AF9E_4BEB_8560_67813900AE6B__INCLUDED_<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //很多语句……<br>#endif <p>其中首句#if !defined也经常做#ifndef，作用相同。意思是如果没有定义过这个宏，那么就定义它，然后执行直到#endif的所有语句。如果下次在与要这段代码，由于已经定义了那个宏，因此重复的代码不会被再次执行。这实在是一个巧妙而高效的办法。在高版本的VC++上，还可以使用这个命令来代替以上的所有：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #pragma once<br>它的意思是，本文件内的代码只被使用一次。 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 但是不要以为使用了这种机制就全部搞定了，比如在以下的代码中： <p>//文件A.h中的代码<br>#pragma once <p>#include &#8220;B.h&#8221; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B* b;<br>}; <p>//文件B.h中的代码<br>#pragma once <p>#include &#8220;A.h&#8221; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A* a;<br>}; <p>这里两者都使用了指针成员，因此嵌套本身不会有什么问题，在主函数前面使用#include &#8220;A.h&#8221;之后，主要编译错误如下：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error C2501: &#8216;A&#8217; : missing storage-class or type specifiers<br>仍然是类型不能找到的错误。其实这里仍然需要前置声明。分别添加前置声明之后，可以成功编译了。代码形式如下： <p>//文件A.h中的代码<br>#pragma once <p>#include &#8220;B.h&#8221; <p>class B; <p>class A<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B* b;<br>}; <p>//文件B.h中的代码<br>#pragma once <p>#include &#8220;A.h&#8221; <p>class B; <p>class B<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A* a;<br>}; <p>这样至少可以说明，头文件包含代替不了前置声明。有的时候只能依靠前置声明来解决问题。我们还要思考一下，有了前置声明的时候头文件包含还是必要的吗？我们尝试去掉A.h和B.h中的#include行，发现没有出现新的错误。那么究竟什么时候需要前置声明，什么时候需要头文件包含呢？ <p><strong>三、两点原则</strong> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 头文件包含其实是一想很烦琐的工作，不但我们看着累，编译器编译的时候也很累，再加上头文件中常常出现的宏定义。感觉各种宏定义的展开是非常耗时间的，远不如自定义函数来得速度。我仅就不同头文件、源文件间的句则结构问题提出两点原则，仅供参考： <p>第一个原则应该是，如果可以不包含头文件，那就不要包含了。这时候前置声明可以解决问题。如果使用的仅仅是一个类的指针，没有使用这个类的具体对象（非指针），也没有访问到类的具体成员，那么前置声明就可以了。因为指针这一数据类型的大小是特定的，编译器可以获知。 <p>第二个原则应该是，尽量在CPP文件中包含头文件，而非在头文件中。假设类A的一个成员是是一个指向类B的指针，在类A的头文件中使用了类B的前置声明并便宜成功，那么在A的实现中我们需要访问B的具体成员，因此需要包含头文件，那么我们应该在类A的实现部分（CPP文件）包含类B的头文件而非声明部分(H文件)。</p>
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -614,47 +646,13 @@ AC 级的车厢〈1A.2A.3A〉均为对号座位，非该等级乘客不可随意
 
 </article>
 
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-21T00:00:00+08:00" data-updated="true" itemprop="datePublished">Jul 21<span>st</span>, 2012</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webbuilding/'>WebBuilding</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blogs/1#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blogs/1" itemprop="url">Hello World!</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><span class="caps">HAHA</span>,this is my blog</p>
-		
-		
-	</div>
-
-</article>
-
 </div>
 <nav id="pagenavi">
     
         <a href="/blog/page/7/" class="prev">Prev</a>
     
+    
+        <a href="/blog/page/9/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav>

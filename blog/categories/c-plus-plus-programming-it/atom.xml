@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C++,Programming,IT | Min's Lounger]]></title>
+  <link href="http://pliaohuimin.github.io/blog/categories/c-plus-plus-programming-it/atom.xml" rel="self"/>
+  <link href="http://pliaohuimin.github.io/"/>
+  <updated>2014-11-17T16:58:51+08:00</updated>
+  <id>http://pliaohuimin.github.io/</id>
+  <author>
+    <name><![CDATA[Mr.Liao]]></name>
+    <email><![CDATA[pliaohuimin@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[各智能指针对比]]></title>
+    <link href="http://pliaohuimin.github.io/blog/20141117/smart-pointer/"/>
+    <updated>2014-11-17T16:56:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blog/20141117/smart-pointer</id>
+    <content type="html"><![CDATA[<h3>std::auto_ptr</h3>
+
+<ul>
+<li>复制行为：原来指针变成null,而复制所得的指针将取得资源的唯一拥有权
+```c++
+
+<h1>include &lt;stdio.h></h1>
+
+<h1>include <memory></h1></li>
+</ul>
+
+
+<p>using namespace std;</p>
+
+<p>int main( int argc, char* argv[] )
+{</p>
+
+<pre><code>auto_ptr&lt;int&gt; a (new int);
+*a = 10;
+printf( "a's value:%d\n", *a );
+printf( "a's addr:%p\n", &amp;(*a) );
+
+auto_ptr&lt;int&gt; b = a;
+printf( "b's addr:%d\n", *b );
+printf( "a's addr:%p\n", &amp;(*a) );
+
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<hr />
+
+<h3>boost::shared_ptr</h3>
+
+<ul>
+<li>复制行为：添加引用数</li>
+<li>删除时机：离开作用域时，引用数减一。没人指向它时（即引用数为0时），删除对象
+```c++
+
+<h1>include &lt;stdio.h></h1>
+
+<h1>include &lt;boost/shared_ptr.hpp></h1></li>
+</ul>
+
+
+<p>using namespace std;</p>
+
+<p>int main( int argc, char* argv[] )
+{</p>
+
+<pre><code>boost::shared_ptr&lt;int&gt; a (new int);
+*a = 10;
+printf( "a's value:%d\n", *a );
+printf( "a's addr:%p\n", &amp;(*a) );
+
+printf( "a's use_count:%d\n", a.use_count() );
+boost::shared_ptr&lt;int&gt; b = a;
+printf( "b's addr:%d\n", *b );
+printf( "a's addr:%p\n", &amp;(*a) );
+printf( "a's use_count:%d\n", a.use_count() );
+printf( "b's use_count:%d\n", b.use_count() );                                                                              
+
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<h2>```</h2>
+
+<h3>boost::scoped_ptr</h3>
+
+<ul>
+<li>复制行为：不能拷贝</li>
+</ul>
+
+
+<hr />
+
+<h3>boost::weak_ptr</h3>
+
+<ul>
+<li>用途：weak_ptr被设计为与shared_ptr共同工作，可以从一个shared_ptr或者另一个weak_ptr对象构造，获得资源的观测权。防止循环引用。</li>
+<li>复制行为：weak_ptr没有共享资源，它的构造不会引起指针引用计数的增加。</li>
+<li>weak_ptr是为了配合shared_ptr而引入的一种智能指针，它更像是shared_ptr的一个助手而不是智能指针，因为它不具有普通指针的行为，没有重载operator*和->,它的最大作用在于协助shared_ptr工作，像旁观者那样观测资源的使用情况</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
