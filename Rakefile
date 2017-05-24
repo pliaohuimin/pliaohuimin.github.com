@@ -13,7 +13,7 @@ deploy_default = "push"
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "master"
-deploy_gitcafe_branch  = "gitcafe-pages"
+#deploy_gitcafe_branch  = "gitcafe-pages"
 
 ## -- Misc Configs -- ##
 
@@ -263,7 +263,7 @@ multitask :push do
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
     system "git push origin #{deploy_branch}"
-    system "git push -u gitcafe master:#{deploy_gitcafe_branch}"
+#    system "git push -u gitcafe master:#{deploy_gitcafe_branch}"
     puts "\n## Github Pages deploy complete"
   end
 end
