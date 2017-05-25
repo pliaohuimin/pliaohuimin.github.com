@@ -4,7 +4,7 @@
   <title><![CDATA[Min's Lounger]]></title>
   <link href="http://pliaohuimin.github.io/atom.xml" rel="self"/>
   <link href="http://pliaohuimin.github.io/"/>
-  <updated>2017-05-25T23:30:56+08:00</updated>
+  <updated>2017-05-25T23:35:39+08:00</updated>
   <id>http://pliaohuimin.github.io/</id>
   <author>
     <name><![CDATA[Mr.Liao]]></name>
@@ -46,284 +46,6 @@
 <p>早上回公司办理完手续，回去打包。在网上订的云南版LP刚好拿到手。这次旅行来得比较突然，没有做什么功课，全程就只靠这本书了。<br/>
 下午五点五十分就从火车东站出发，六点半左右到达机场南站，到深航M窗口办理登机手续，队伍不是很长，十多分钟就办理完。不过这次电脑办不了托运，只能带着包登机，打火机过不了安检，洗发水居然没事。七点十来分到达登记窗口却被告知飞机晚点，九点二十分才登机，汗。登记后，又继续在飞机上发霉，十点出头才真正起飞 。<br/>
 十二点左右才到达昆明长水机场。比较顺利地搭上了的，打表96元到达中凰酒店附近舍友的住处。一切打点完毕，已是凌晨两点。明天去东川，得早起，OMG。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[添加博客头像]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20140811/add-profilepic/"/>
-    <updated>2014-08-11T15:57:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20140811/add-profilepic</id>
-    <content type="html"><![CDATA[<p>新安装了<a href="https://github.com/shashankmehta/greyshade">greyshade</a>主题。</p>
-
-<p>好奇于其他使用这个主题的其它博客，有头像的展示。一直找不到在哪设置。
-原来还有<a href="http://en.gravatar.com/">gravatar</a>这种东西，通过邮箱来显示头像。只要设置好邮箱，并在gravatar服务上注册相应邮箱，上传头像就可以了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[申请了新域名]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20140808/new-domain/"/>
-    <updated>2014-08-08T14:01:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20140808/new-domain</id>
-    <content type="html"><![CDATA[<p>今天下定决心买了域名：<a href="http://www.minlh.com/">http://www.minlh.com/</a></p>
-
-<p>之前用的是.tk免费域名，但总觉得打开页面很卡，不知道跟域名是否有关,还是使用github的原因。
-可是打开github时也不觉得特别卡，考虑一下，觉得还是买个.com的域名比较靠谱些，反正也不算太贵。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在新机器上使用octopress写文章]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20140805/new-machine-to-octopress/"/>
-    <updated>2014-08-05T18:57:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20140805/new-machine-to-octopress</id>
-    <content type="html"><![CDATA[<p><a href="http://www.cnblogs.com/oec2003/archive/2013/05/27/3100896.html">主要参考来源</a></p>
-
-<ol>
-<li><p>安装git</p></li>
-<li><p>从github上面克隆代码到本机特定目录。</p>
-
-<blockquote><p>git clone -b source git@github.com:pliaohuimin/pliaohuimin.github.com.git</p></blockquote></li>
-<li><p>安装<a href="http://rubyinstaller.org/downloads/">RUBY</a> 1.9.3。记得勾选“Add Ruby executables to your PATH”，将Ruby的执行路径加入到环境变量中，如果忘记勾选，也可以手动设置</p></li>
-<li><p>安装<a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a>，将其解压到D:/DevKit，有两点需要注意：</p>
-
-<p>  解压目录中没有有中文和空格；</p>
-
-<p>  必须先安装Ruby，而且Ruby需要是RubyInstallser安装。</p>
-
-<p>  解压DevKit后，在命令行输入以下命令来进行安装：</p>
-
-<blockquote><p>d:</p>
-
-<p>cd DevKit</p>
-
-<p>ruby dk.rb init</p>
-
-<p>ruby dk.rb install</p></blockquote></li>
-<li><p>安装Python</p></li>
-<li><p>安装<a href="https://pypi.python.org/pypi/setuptools">easy_install</a>,</p>
-
-<p> For Windows 7 and earlier, download ez_setup.py using your favorite web browser or other technique and &ldquo;run&rdquo; that file.</p></li>
-<li><p>安装pygments</p>
-
-<p> easy_install会安装在Python安装目录的Scripts目录中，例如我的Python目录是C:\Python27，所以需要将C:\Python27\Scripts目录加入到环境变量中才能在命令提示符中使用easy_install命令。</p>
-
-<p> 在命令提示符中输入如下命令就可以安装Pygments了。</p>
-
-<blockquote><p>easy_install pygments</p></blockquote></li>
-<li><p>然后需要安装Octopress的依赖项，安装依赖项需要用到Ruby的gem，使用下面的命令可以更换gem的更新源，使用国内的淘宝镜像速度相对快点。</p>
-
-<blockquote><p>gem sources -a <a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
-
-<p>gem sources -r <a href="http://rubygems.org/">http://rubygems.org/</a></p>
-
-<p>gem sources -l</p></blockquote>
-
-<p> 修改Octopress目录下的Gemfile文件，将第一行的<a href="http://rubygems.org/">http://rubygems.org/</a> 修改为<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
-
-<p> 在命令提示符中进入到Octopress目录，输入下面命令进行依赖项的安装</p>
-
-<blockquote><p>gem install bundler</p>
-
-<p>bundle install</p></blockquote></li>
-<li><p>在Octopress中添加文章
- 使用下面命令可以在Octopress中添加文章</p>
-
-<blockquote><p>rake new_post[&lsquo;post name&rsquo;]</p></blockquote>
-
-<p> 注意，rake new_post[&lsquo;my first octopress blog&rsquo;]中的my first octopress blog 并不是博客标题，而是和生成的文件名以及url地址有关，该名称不支持中文。博客标题可以在生成的markdown文件中修改。生成的markdown文件在octopress/source/_posts目录中。</p>
-
-<p> 编辑markdown文件，将标题可以修改为中文标题，还可以设置分类等信息以及编写正文部分</p>
-
-<p> 每次执行了添加博客的命令，或是修改了现有博客的内容后，都要执行下面命令进行重新生成静态网页</p>
-
-<blockquote><p>rake generate</p></blockquote></li>
-<li><p>发布到外网
-创建<em>deploy目录,将上一层的.git目录拷贝到</em>deploy下。将主干checkout出来。只需要操作一下，以后可以直接部署。</p>
-
-<blockquote><p>git checkout master</p></blockquote>
-
-下面指令帮你把生成的静态网页更新到主干master上去。
-
-<blockquote><p>rake deploy</p></blockquote></li>
-</ol>
-
-
-<p>done
-输入rake preview，可以直接localhost:4000来进行预览</p>
-
-<h2>问题：</h2>
-
-<p>1.执行rake generate时，报错
-YAML Exception reading 2012-07-21-8.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-22-13.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-23-20.textile: invalid byte sequence in GBK
-YAML Exception reading 2012-07-28-35.textile: invalid byte sequence in GBK</p>
-
-<p><a href="http://changfengmingzhi.blog.163.com/blog/static/16710528820131013103511364/">1解决方法</a>：
-找到你的Ruby安装目录，如我的是：D:\Ruby193, 在里面找到文件D:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.12.0\lib\jekyll\convertible.rb
-在该文件中找到下面句子：</p>
-
-<blockquote><p>   def read_yaml(base, name)</p>
-
-<pre><code> self.content = File.read(File.join(base, name))
-</code></pre></blockquote>
-
-<p>将它修改为：</p>
-
-<blockquote><p>   def read_yaml(base, name)</p>
-
-<pre><code> self.content = File.read(File.join(base, name),:encoding=&gt;"utf-8")
-</code></pre></blockquote>
-
-<p>然后确保所有带中文字符的markdown文件是无BOM的UTF-8格式即可。</p>
-
-<p>2.解决问题1后，执行rake generate时，继续报错
-Liquid Exception: incompatible character encodings: UTF-8 and GBK in index.html</p>
-
-<p>将</p>
-
-<pre><code>&gt;export LC_ALL=zh_CN.UTF-8 
-&gt;export LANG=zh_CN.UTF-8
-</code></pre>
-
-<p>放到~/.bash_profile中，并执行：</p>
-
-<pre><code>&gt;source ~/.bash_profile
-</code></pre>
-
-<p>在cmd窗口执行，chcp 65001
-然后继续在cmd窗口执行(不可以在bash窗口执行，估计只对当前窗口有效,而bash窗口又无法执行chcp命令）：</p>
-
-<pre><code>&gt;rake generate
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[octopress小工具]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20130902/add-share/"/>
-    <updated>2013-09-02T21:00:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20130902/add-share</id>
-    <content type="html"><![CDATA[<h3>添加一键共享</h3>
-
-<p>我目前使用的是bshare。<br/>
-在<em>config.yml中增加bshare: true。在“source/</em>includes/post”下的sharing.html中增加如下代码：</p>
-
-<pre><code>&lt;a class="bshareDiv" href="http://www.bshare.cn/share"&gt;Sharing&lt;/a&gt;&lt;script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=25fcdf85-62f9-400e-b053-627f102edf5a&amp;style=999&amp;img=http%3A%2F%2Fstatic.bshare.cn%2Fimages%2Fbuttons%2Fbox-shareTo-zh.gif&amp;w=147&amp;h=21"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>上述的代码由bshare产生，可以自己选择所需的外观。这样，在每一篇文章的最下方会出现一个分享的小工具。</p>
-
-<h3>添加DISQUC评论</h3>
-
-<p>首先需要在Disqus注册一个账号，登录后添加站点信息，将填写的short_name写到<em>config.yml中，并将</em>config.yml中的disqus_show_comment_count设置为true.如下：</p>
-
-<pre><code># Disqus Comments
-disqus_short_name: liao   # liao为添加站点信息时的Site Shortname
-disqus_show_comment_count: true
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[赞一个OCTOPRESS的ARCHIVE展示]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20130902/octopress-archive/"/>
-    <updated>2013-09-02T16:05:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20130902/octopress-archive</id>
-    <content type="html"><![CDATA[<p>感觉挺好的，对于之前发布过的文章，简洁，一目了然。<br/>
-之前还在琢磨着要不要给这些文章分目录，现在看来要重新考虑一下分目录的必要性。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[从wordpress迁移到octopress]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20130901/from-wp2octopress/"/>
-    <updated>2013-09-01T03:54:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20130901/from-wp2octopress</id>
-    <content type="html"><![CDATA[<h2>为什么要迁移：</h2>
-
-<blockquote><p>并不是觉得wordpress不好用，而是由于之前一直在使用的noads.biz服务器开始在我的个人网站上放广告，而我找不到其它更好的劫持php,mysql的免费服务器，所以决定使用octopress，可以直接把内容放在github上。</p></blockquote>
-
-<h2>迁移步骤：</h2>
-
-<h3>准备工作</h3>
-
-<ul>
-<li>step 1:在github上注册一个用户。并用该用户创建一个“username.github.com“的项目库，其中username为你在github注册的用户</li>
-<li>step 2:在LINUX上安装好GIT</li>
-<li>step 3:在LINUX上安装好ruby
-curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
-source /home/liao/.rvm/scripts/rvm
-如果执行下列命令报错，请重新打开终端，并再次执行source /home/liao/.rvm/scripts/rvm</li>
-</ul>
-
-
-<h3>安装好OCTOPRESS</h3>
-
-<ul>
-<li>step 4:克隆octopress项目
-git clone git://github.com/imathis/octopress.git</li>
-<li>step 5:安装OCTOPRESS
-gem install bundler
-bundle install</li>
-<li>step 6:安装主题
-rake install</li>
-</ul>
-
-
-<h3>部署到GITHUB</h3>
-
-<ul>
-<li>step 7:rake setup_github_pages
-期间会要求你输入项目地址，请输入:git@github.com:username.github.com
-期中username为你在github的用户名。</li>
-<li>step 8:生成代码
-rake generate</li>
-<li>step 9:部署到github上
-rake deploy
-期间可能会报错，可以尝试跳转到_deploy目录下，运行git pull origin master。再回到上一层再次执行rake deploy</li>
-<li>step 10:备份相关文件到source分支
-git add
-git commit -m &lsquo;your message
-git push origin source
-如果报错，可以尝试先执行下列命令，再一次执行上面的命令。
-git branch source
-git checkout source</li>
-</ul>
-
-
-<h3>关于域名的绑定</h3>
-
-<p>如果是使用一级域名，在source目录下添加CNAME文件，并在里面添加你的域名，如www.minlh.tk<br/>
-然后在你的域名服务商那里添加一行A RECORD，IP地址为207.97.227.245</p>
-
-<h3>关于文章的迁移</h3>
-
-<p>使用wordpress后台管理工具，将数据导出成xml格式
-安装必要工具：
-gem install hpricot
-gem install ya2yaml
-使用XDITE提供的工具
-<a href="https://gist.github.com/xdite/1273518">https://gist.github.com/xdite/1273518</a></p>
-
-<p>执行直接執行 ruby xxx.rb xxx.xml 名
-st目录，将该目录下的所有文件拷贝到source/_post目录下即可。</p>
-
-<h3>关于文章中图片的迁移</h3>
-
-<p>将wp-content/uploads目录下载，上传到source目录即可。
-图片链接出现时border=0 hspace=0 alt=&ldquo;&rdquo; align=baseline，会导致生成的blogs双引号自动转换成&#8220;字样，需要将这些去掉，图片才能正常显示。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[开始OCTOPRESS]]></title>
-    <link href="http://pliaohuimin.github.io/blog/20130830/kai-shi-octopress/"/>
-    <updated>2013-08-30T17:28:00+08:00</updated>
-    <id>http://pliaohuimin.github.io/blog/20130830/kai-shi-octopress</id>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/minlh/9631485119/" title="hua by liaosihao, on Flickr"><img src="http://farm4.staticflickr.com/3721/9631485119_3edb45c7c5.jpg" width="377" height="500" alt="hua"></a></p>
 ]]></content>
   </entry>
   
@@ -537,6 +259,239 @@ st目录，将该目录下的所有文件拷贝到source/_post目录下即可。
 <div></div><br />
 <div></div></li>
 		</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西贡]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/346"/>
+    <updated>2013-03-29T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/346</id>
+    <content type="html"><![CDATA[<div>2013/03/20</div><div>等我睡醒，已经到了西贡，汽车在一个广场旁边停下。用手机定位了当前位置。刚好跟范五老街隔了个广场。走过去之后我看着包，小某去找住宿。她在堤坦（de tham）路走了一圈，说是最便宜的床位也是4$，还是fan（风扇）的。我建议她在旁边的小巷子找找看，她去了没多久没回来，说不看了，看了第一家，感觉还行，8刀，开空调加两刀。感觉还行，懒得走了。</div><p><!--more--><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_3025358.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div><span class="caps">CHECK</span> IN之后就去找早餐，顺便把第二天的湄公河三日游给定了下来。三日游包一顿午餐，两早餐，50刀。</div><div>接着回旅馆休息。下午三点多才出门，也没什么特别想去的。因为小某第二天要去大学听初级越南语的课程，在去邮局和教堂的路上顺便在公车站看了看她第二天怎么搭车过去。搭几路车是清楚的，不过在方向上就有点了，问了大半天，车站的人也说不清楚。还以为到了西贡人们的英语会好一点，谁知道也是半斤八两。</div><div>本来还想着在西贡寄寄明信片的，谁知道明信片忘记带了。邮局里面的明信片又都很难看。干脆不寄了，小某说她第二天还会来邮寄，就托她寄好了。</div><div>定了湄公河三日游之后，一直惦记着一个问题，因为三日游的第三天是要在柬埔寨关口办理落地签入境。想着柬埔寨的人总不会收越南盾吧，所以还得去找银行换一下美金才行。可走了一路，只在我们住的附近看到一家银行营业厅，还不办理兑换业务。在邮局的时候看到有提供兑换，问了一个汇率，1：230，000，这也太坑了吧，正常是1：210，000。觉得不划算也就没换，反正范五老街那肯定有可以兑换的店。还好在回来的路上，问了一家店，老板还会说普通话。汇率是1：215，000，算是可以了。换了30刀。</div><div>&nbsp;</div><div>西贡街景</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_4446356.jpg"></div><div>&nbsp;</div><div>市场</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4478726.jpg"></div><div>&nbsp;</div><div>公车站</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4521158.jpg"></div><div>&nbsp;</div><div>教堂侧面</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_45893151.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_46085501.jpg"></div><div>&nbsp;</div><div>教堂正面（好像是背光了，亮度不是很理想）</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_46986871.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_47555501.jpg"></div><div>&nbsp;</div><div>邮局</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4781914.jpg"></div><div>&nbsp;</div><div>有人在拍婚纱照</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4815158.jpg"></div><div>&nbsp;</div><div>邮局内部屋顶</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4845874.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>入门右手边是ATM机</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4872862.jpg"></div><div>&nbsp;</div><div>再往里就才是办理业务的窗口</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4899804.jpg"></div><div>&nbsp;</div><div>偷拍邮局旁边卖东西的姑娘</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_4963795.jpg"></div><div>&nbsp;</div><div>越南就是一个摩托车王车</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/4987617.jpg"></div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-85ec7ac818081370c8dcded772c8ca29_5019347.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div>三日游的收据</div><div><img src="ae3ed027-ce9d-4c6a-82e9-099d878dee14_files/5060844.jpg"></div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[柬埔寨和泰国签证]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/331"/>
+    <updated>2013-03-29T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/331</id>
+    <content type="html"><![CDATA[
+	<ol>
+		<li>柬埔寨签证：<div>从西贡坐车（我是坐船），直接在关口落地签即可。费用：25$，由于没有零钱，我给了30$，居然没找零，所以建议事先准备好25$。需要填写出入境表格，在关口会有人指导的。入境时会问到你在柬埔寨的住宿地点，如果没有预定的话，可以在LONELY PLANET或者网上随便找一个地址告诉他就行了。</div><div>&nbsp;</div><div>需要材料：护照，证件照片（我是随便拿了一张红底的照片给他，具体尺寸好像没要求）</div><!--more--><div>方式：直接在关口落地签</div><div>可以在境内呆的时间：一个月</div><div>&nbsp;</div><div>建议：准备刚好的费用。</div>## 泰国签证：<div>我是在金边签证的，43$。4天后可以拿到签证。听说在暹粒输的话，45$。如果情况属实，建议直接在暹粒办理签证，因为金边确实没什么好看的景点，住宿又贵，没必要在那里呆那么多天。</div><div>&nbsp;</div><div>需要材料：护照，证件照片（我是随便拿了一张红底的照片给他，具体尺寸好像没要求），离境机票（办理落地签的话）</div><div>方式：旅行社代办，如果有离境机票可以直接在关口办落地签</div><div><div>可以在境内呆的时间：旅行社代办两个月，如果是办理落地签的话则是15天</div><div>&nbsp;</div><div>建议：最好的方式是在国内办理好签证，三个月内入境即可。</div></div><div>&nbsp;</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></li>
+	</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[适合发呆的城市--美奈]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/329"/>
+    <updated>2013-03-27T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/329</id>
+    <content type="html"><![CDATA[<div>2013/03/17</div>
+<div>早上起来一切相安无事。只是在CHECK OUT的时候，那女孩说她钱不够，让我先给垫着，待会她再去提钱。因为她知道我昨晚取过钱，也就不好意思拒绝，心想着反正一起坐车，逃不掉了。两个人边啃着法棍边去提款机提款。回来之后她把一切给我结算清楚了。看来我之前的担心是多余的，不过一个人在外面多留点心眼总是要的。</div>
+<div>接着就是搭着新咖啡的车去美奈，由于人不多，这次坐的是中巴。传说中去美奈的路不好走，个人倒是没多大感觉，甚至比芽庄来大叻的路还好呢。在汽车快到达美奈的时候，窗外的景色变得很有特色，很像荒漠，可惜坐的位置不好，没有拍照。再然后，看到荒漠的边缘出来大海，那景象很奇妙。接着，汽车沿着海岸线走，最后在新咖啡办公室旁边停下来了。</div>
+<p><!--more--><br />
+<div></div><br />
+<div>下车后，根据之前在微博上看到的消息，面向大海往左手边（东边）走了约200左右，在一家四星级酒店的对面找到了1&amp;10客栈，按床位算，每人70，000VND，这是我这么久以来住过最便宜的。看了环境，除了有点闷（晚上不会），其它的还行，重点它是木屋子，下面是公共活动区，挂着很多吊床。</div><br />
+<div>放下东西后就去填饱肚子。天气是越往南越热，实在不想走远。找了家海边大排档解决。在这里，总算是喝到了粥。</div><br />
+<div>美奈给我的第一印象不错，环境好，住宿也便宜。小某之前一直说我一路走得太匆忙，我想尝试一下慢节奏的旅行方式。吃完饭后了解了一下去西贡的班车时间和费用，报了新咖啡第二天下午的半日游，就回客栈楼下的吊床躺着，上网，睡觉，醒来之后再去海边游泳。其实美奈的海水其实并不干净，特别是近陆地一带。这里没有明显的沙滩，沿海是很多小度假村类型的酒店，部分还带有游泳池，如果预算充足，住在这边，应该是一件很惬意的事情。据说费用也不高，15$开始就有得入住。在大叻碰到的那两个女孩子住了20$的酒店，里面就有游泳池了。</div><br />
+<div></div><br />
+<div>下面放几张海边酒店的图片</div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3619878.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3634058.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3643777.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3656991.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div></div><br />
+<div></div><br />
+<div>虽然这边已经算是南部了，可游起来还是有点冷，特别是身体露出水面的时候。小游一会后我们往东边走，解决晚餐之余也顺带逛逛这个海边小镇。美奈的区域很奇怪，只有一条笔直的公路，所以酒店饭馆都分布在这条路的两边。所以非常适合路痴们，只要认清东西方向就不会迷路了。在路边吃粉的时候碰到一86年东北哥们，刚从柬埔寨那边过来。据说走了两个来月了，才花了4000多块。我们走着走着就聊到了住宿，他住那地儿4$每床位，据说还能看到海，我们都有点好奇，想过去看看什么环境，因为那里目前就住了他一个人，想着如果可以的话也一块搬过去。于是我们又往西边走。本来是一直往东的，往回走到我们住的地方已经花了半个小时，那哥们一直说就在前面不远，又走了一段后小某突然说她走不动了。我还想去看看，让她先回去。结果一走又是半个小时。真得佩服这哥们，这样算起来，他走了这一路，来回得两个小时，看他跟个没事人一样，耐力也太好了吧。到了那一看，其实环境也一般，客栈也是在海的对面，之所以能看到海是因为海边没有建酒店，而是一些大排档。想着要走这么远搬过来，环境也不比我们那好，也就懒得动了。又硬着头皮走了半个小时回去，这样一算，我也走了两个小时了。。。</div><br />
+<div></div><br />
+<div>2013/03/18</div><br />
+<div>昨天走累了，想着今天睡到自然醒。谁知道才九点多就醒了。说实在的，这样的天气睡在木屋子里，确实有点闷。我还是比较喜欢呆着下面的吊床上。一觉醒来立马跑去海边游泳。</div><br />
+<div></div><br />
+<div>美奈海边</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2688380.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div>接着吃完午餐就搭上新咖啡的大巴开始美奈的半日游。下面各位看官还是看图吧。</div><br />
+<div></div></p>
+
+		<ol>
+			<li>渔村<br />
+<div>呃，这景点没什么看头，就是很多的渔船停在海上，空气中伴随着死海鲜的恶臭味，真不明白为什么会被列为一景点。一下车就看到几个小孩子跑过来推销东西，对于这种事情，我的态度都是拒之千里之后，小某倒是和其中一个小孩玩了起来。</div><br />
+<div></div><br />
+<div>渔村</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2733995.jpg" alt="" /></div><br />
+<div></div><br />
+<div>这种船总让我想起少年PI</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2781373.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2806114.jpg" alt="" /></div><br />
+<div></div><br />
+<div>小某和海边卖东西的小男孩</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2842697.jpg" alt="" /></div><br />
+<div></div></li>
+			<li>白沙丘<br />
+<div>这个是本人比较喜欢的一个景点，距离出发地还是挺远的，大概有30多公里。本来还打算第二天骑单车过来看日出，看了这距离就彻底打消了这念头。想不到在这种海滨城市，还存在这种沙漠地貌。事实上，美奈这个城市，一边是海，另一边却是一片荒芜。很神奇吧。</div><br />
+<div></div><br />
+<div>远看白沙丘</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_2991724.jpg" alt="" /></div><br />
+<div></div><br />
+<div>车窗外扬起的尘埃</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3149613.jpg" alt="" /></div><br />
+<div></div><br />
+<div>白沙丘入口处的驼鸟</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3182108.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div>入口处的猴子</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3689735.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3200313.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3242402.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3285817.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3724009.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3749733.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3765957.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3789607.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div></div><br />
+<div>红沙丘</div><br />
+<div>从白沙丘往回走，来到了红沙丘。实际感觉比白沙丘差，不过回头看看照片，好像更好看。</div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3335176.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3351587.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3363163.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3376563.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3388404.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3401851.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div>半日游就包括了上面三个景点，回来后在海边拍的日落，可惜云太多了</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_3553687.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div>决定搭明天晚上1：30AM的汽车去西贡，这样一来可以省一晚的住宿费用。新咖啡这一班车太贵了，要200多K 越南盾，买了另一家的票，7刀。到时车会到我们住的地方去接。</div><br />
+<div>就在我们走在路上找吃的时候，突然前面一个欧美女孩很热情地问我们是不是在找吃的。说她知道一家很好吃的店，要带我们去吃。我还是第一次碰到这么热情的人，有点吓着了，小某倒是不当回事，看来是见多了。于是我们屁颠屁颠地跟了过去，东西确实不错，而且也不贵。那欧美女孩是挪威人，在澳大利亚读书，22岁，好像是素食者，其实她也是住在我们那里，只是我认人的能力比较差，没认出来。一路上就她跟小某在聊着，我在旁边听着。她聊天的时候有个习惯，就是经常会自问自答，说完一句话之后往往会跟着一句&quot;yeah&quot;，&quot;good&quot;，后面小某告诉我，她忍了好久，才没有笑出来。</div><br />
+<div></div><br />
+<div>2013/03/19</div><br />
+<div>早上起来时小某说她想去确认一下车票。因为昨天买票时听到老板有提到SITTING BUS，我们担心是座位的车，不是卧铺。结果老板不在，只剩下一个6岁左右的小女孩，她居然也会讲简单的英语，自愧不如。她打了电话叫她父母过来，我们先去对面吃了早餐，吃完她父母也回来了。我们确认了确实是SLEEPING BUS才放心。接着我们又问了等车的问题，因为是凌晨一点多，我们想问下能不能在这里等车，可老板说这里10点多就关门了，不过我们可以在隔壁等，如果我们在那里吃晚餐的话。</div><br />
+<div></div><br />
+<div>在回客栈的路上，我们买了水果，让老板帮我们切开，吃到肚子撑，午饭都没吃就饱了。</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5547442.jpg" alt="" /></div><br />
+<div></div><br />
+<div>接着回客栈CHECK OUT，问了下老板能不能下午继续在这里呆着，老板说不行，不过可以交多半天的房费，在这里呆到半到半夜。想了想这样也蛮好的，就答应了。</div><br />
+<div>在客栈呆到4点左右才出门，下午的安排是去邮局寄明信片和仙女溪。邮局就在市场的东面，不过很不好找，也没什么门牌指示。</div><br />
+<div>其实这是我第一次寄明信片，连格式都不知道怎么写，还好有小某在旁指导，要不要还想没信心。到了需要写字的时候才发现自己的字真的拿不出手。不清楚寄明信片需要什么样子的地址，是不是跟快递一样写个详细地址就行了，很担心能不能寄到。</div><br />
+<div></div><br />
+<div>美奈的市场</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5240822.jpg" alt="" /></div><br />
+<div></div><br />
+<div>明信片</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5447554.jpg" alt="" /></div><br />
+<div></div><br />
+<div>寄完明信片继续往东边走，路过一个学校，学生正在上课</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5613555.jpg" alt="" /></div><br />
+<div></div><br />
+<div>经过一条桥之后就可以看到fairy stream的入口</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5650574.jpg" alt="" /></div><br />
+<div></div><br />
+<div>一哥们在玩水上滑板</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5723286.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5804313.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div>旁边的沙丘</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5822019.jpg" alt="" /></div><br />
+<div></div><br />
+<div>往上爬</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5841613.jpg" alt="" /></div><br />
+<div></div><br />
+<div>上面风景</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5870988.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5883062.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5898865.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5919457.jpg" alt="" /></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5929894.jpg" alt="" /></div><br />
+<div></div><br />
+<div></div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_5946430.jpg" alt="" /></div><br />
+<div></div><br />
+<div>从仙女溪回来，发现我们两个人身上都没钱了。美奈还真少ATM，这几天我就看到了一下，而且还是需要收取手续费的，建议各位去美奈的要提前备足资金。</div><br />
+<div></div><br />
+<div>晚餐</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6070934.jpg" alt="" /></div><br />
+<div></div><br />
+<div>我们的客栈</div><br />
+<div><img src="http://www.minlh.tk/uploads/2013/03/wpid-240bfc517437543b1577aa0913fc3048_6087283.jpg" alt="" /></div><br />
+<div></div><br />
+<div><br />
+<div>晚上的任务很简单，等着时间到上车。关于上车地点，我们有点纠结了。之前买车票时是说好在客栈上车，后面去确认时老板又说可以在隔壁上车，还打了个电话，不知道跟那边说了什么。我们也没最后确认在哪上车。所以心里也很没底。最后我们决定就在客栈门口等，反正汽车要先经过客栈。结果时间到了还没看到车来，客栈老板也说了可能会晚点，这下心里更没底了。看前面停了一辆大巴，急忙跑过去问。说了去西贡的，两个人。那应该就是我们了。可当我们拿出收据时，他又说不对。我们也搞不清楚情况。想打电话给订票的老板，又觉得有点晚了，还是再等等看吧。我让小某在订票的店门口等着，我回到客栈那边等，这样两边都顾到了。我还没回到客栈，就接到小某的电话，说刚才那个人又过来找了，想再看看收据。又得跑回去，结果一看，叫我们上车了。这下我们也不理是什么原因了，就算是坐错车也不理了，只要能去西贡就行。</div><br />
+</div><br />
+<div></div><br />
+<div></div><br />
+<div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div></li>
+		</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[法国风情城市一日游]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/283"/>
+    <updated>2013-03-23T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/283</id>
+    <content type="html"><![CDATA[
+	<ol>
+		<li>大叻，早安<div>大叻六点的早晨天色已经亮了起来，由于地处山区，感觉还是有点凉飕飕的，又换上了长裤和羽绒马夹。洗漱完毕后下楼CHECK OUT，再到新咖啡CHECK IN今天的一日游，顺便把包寄存在那里，打算下午回来再重新找住宿的地方。其实昨天的地方还算不错，但是热水不给力，还有就是价格还是太高了，老超预算，看能不能找到价格低一点的。</div><div><span class="caps">CHECK</span> IN完后从新咖啡出来寻找早餐，在不远处摊子买了个法棍，又在对面叫了杯滴漏咖啡。就着咖啡吃面包，阳光晒在身上暖暖的，很舒服。</div><!--more--><div>&nbsp;</div><div>滴漏咖啡</div><div>&nbsp;</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_DSC_0661.jpg"></div><div>&nbsp;</div><div>&nbsp;</div><div>吃完早餐回新咖啡消磨时间，买明天到美奈的车票。买完票出来时刚好听到坐在对面的一男一女在用普通话聊天，跟他们找个招呼，顺便聊了几句，得知那个男的要去西贡，女的本来想买车票去美奈，不料新咖啡每天只有一班，而且是早上7：30的车，今天是赶不上了。那女的听说我今天也在大叻呆，而且重新换酒店，便建议我搬过她那住，那边7刀。我关心热水问题，她说很给力，那就答应了，省得操心。最后约定，她去买火车票（据我所知，没有大叻到美奈的车票，她还是执意要去看看），没买到票的话今晚就大家一起拼房。留了她的手机号码，叫某小某（当然，这不是真名了），约好了一日游回来再跟她联系，看看具体什么情况。</div><div>&nbsp;</div><div>&nbsp;</div>## 一日游<div>&nbsp;</div>### 保大夏宫<div>新咖啡大叻城市一日游的第一景点是去保大夏宫。这个保大呢，据说<span>是</span>越南<span>历史上最后一个王朝</span>阮朝<span>第13任、也是末代</span>君主<span>，称号先后为</span>安南<span>国王（1926年–1945年）、</span>越南<span>皇帝（1945年）以及</span>南越<span>国家元首（1949年-1955年），年号</span>保大<span>。保大夏宫就是他夏天的避暑山庄了。其实说白了也就一个房子。</span></div><div><span></span>&nbsp;</div><div><span><div><span></span>&nbsp;</div><div><span>门口停车场</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_8967436.jpg"></span></div></span></div><div><span></span>&nbsp;</div><div><span>这个是房子的入口，进去要戴鞋套。</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_8623017.jpg"></span></div><div><span></span>&nbsp;</div><div><span></span>&nbsp;</div><div><span>客厅</span></div><div><span></span>&nbsp;</div><div><span></span>&nbsp;</div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_8871324.jpg"></span></div><div><span></span>&nbsp;</div>### <span class="caps">CRAZY</span> <span class="caps">HOUSE</span><div>第二个景点是CRAZY HOUSE，CRAZY<span><span>&nbsp;</span></span><span class="caps">HOUSE</span><span>本是</span>大叻<span>的一个旅店,<span>房子的</span>设计<span>师NGA是前越南共和国总统TRUONG CHINH的女儿。</span>因为其设计地非常怪异而闻名,所以慕名而来的人大多为参观的游客,现在倒是住店的少,拍照的多了。后天听早上遇到的那个女孩子说，她们去问了，现在还可以入住，但是在要下午6点半之后才能CHECK IN，第二天6点半之前CHECK OUT，而且价格不低。下面看图。</span></div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9333851.jpg"></span></div><div><span></span>&nbsp;</div><div><span>奇怪的楼梯，感觉很不安全</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9360902.jpg"></span></div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9391977.jpg"></span></div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9402507.jpg"></span></div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9423084.jpg"></span></div><div><span></span>&nbsp;</div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9440431.jpg"></span></div><div><span></span>&nbsp;</div><div><span>内部楼梯</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9466655.jpg"></span></div><div><span></span>&nbsp;</div><div><span>建设还没完成，部分施工中</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9497184.jpg"></span></div><div><span></span>&nbsp;</div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9511443.jpg"></span></div><div><span></span>&nbsp;</div><div><span>这样的房间，你们敢住吗？</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9548883.jpg"></span></div><div><span></span>&nbsp;</div><h3><span>大叻大教堂</span></h3><div><span>参观完CRAZY HOUSE就到了大叻大教堂。那天刚好是星期天，很多学生在那里做礼拜，好像还有老师带队</span></div><div><span></span>&nbsp;</div><div><span>侧面仰望</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9681188.jpg"></span></div><div><span></span>&nbsp;</div><div><span>内部环境</span></div><div><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9709611.jpg"></span></div><div>&nbsp;</div><div>墙上的画</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9781153.jpg"></div><div>&nbsp;</div><div>学生在做礼拜</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9836424.jpg"></div><div>&nbsp;</div><div>教学后面的住宅区</div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_9889433.jpg"></div><div>&nbsp;</div>### 大叻火车站<div><span><span>大叻的老火车站是法国人修建的，主体建筑有着橘红色的主色调、三个尖尖的屋顶和彩色玻璃，被誉为越南最美丽的火车站。</span><span>目前火车站已经停止了客运功能，但里面还保留了几节复古的车厢和车头，并修复了一段约8公里长的铁路作为旅游观光项目，终点是一个叫Trai&nbsp;</span><wbr><span>Mat的小村子，火车每天往返5班次，须足够人数才发车。而乘坐这列老式火车，行进在半个世纪前的齿轨上，观赏沿途的风光，正是此行的一个目标。\</span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>主体建筑</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10066307.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>火车班次</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10080160.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>售票窗口</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10102312.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>展示火车头</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10144433.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10164635.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10190094.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10221388.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><h3><span><span>情人谷</span></span></h3><div><span><span>根据导游的解释，这个地方根本就跟爱情无关，就是以前法国人休闲捕猎的地方。</span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>里面的凳子都是这个造型</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10611297.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10625118.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10638909.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10674680.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10692386.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_10713306.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>看完上面的景点就回新咖啡吃午饭，12点41分又开始出发去看瀑布。由于早上遇到的两个北京女生想骑大象，我也没骑过，就跟她们一起报名参加。整车人就我们三个参加了这个自费项目。刚好三个人骑一头大象。300，000VND，平均下来每人大约30块钱。</span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>大象</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11042546.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>下河</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11063138.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>看到满地黄金了吗？</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11103371.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span>景区内的吊桥</span></span></div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11131778.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><h3><span><span>竹林禅院</span></span></h3><div><span><span>这个景点真没什么，特别对中国人来讲，就一个普通寺庙。</span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11206472.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11215847.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11235457.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11249965.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11261509.jpg"></span></span></div><div><span><span></span></span>&nbsp;</div><h3><span><span>观景台</span></span></h3><div><span><span></span></span>&nbsp;</div><div><span><span>最后一个景点是观景台，也就是在山顶看大叻城区</span></span></div><div><span><span></span></span>&nbsp;</div><div><span><span><img src="http://www.minlh.tk/uploads/2013/03/wpid-91e0c679b48aeb70a7915002e4686e8f_11288247.jpg"></span></span></div><h3><span><span></span></span>&nbsp;</h3>## 顾忌<div>一日游结束之后，跟早上那个女孩联系。她也买了明天去美奈的车票。我们两个决定一起拼房。背着行李到她住的地方去，老板让押护照，我心里有点害怕。因为那女孩告诉我，之前是用那男的护照抽押的，那男的走了之后，相当于没有护照押在那。这时候如果我把护照押在那，那女孩直接走人的话，那之前的房费就得我来付了，要不然护照拿不回来。那女孩看出了我的犹豫，问了一句“怎么了，你不想把护照给老板吗？”，这让我心里更没底。最后还是决定相信她，反正也就十几美元的事。其实我更担心的是，她会趁我不注意，把我的东西偷走。进了房间后跟她聊了起来，感觉她还是比较靠谱的，也有意识地引导她把护照拿出来给我看，看完护照就比较放心了，毕竟那么多国家的签证假不了。不过我还是不放心，连洗澡都不踏实，怕她直接带着东西走人。还好洗完出来时，她在，东西也还在。睡觉前，我把贵重的东西收拾好，放到自己床头内侧，不怕一万，就怕万一。</div><div>&nbsp;</div><div>&nbsp;</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></li>
+	</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[要去大叻也折腾]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/239"/>
+    <updated>2013-03-19T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/239</id>
+    <content type="html"><![CDATA[<div>2013/03/15</div>
+	<ol>
+		<li>不愉快的开始<div>糟糕，8：40分。睡过头了。明明开了6：20分的闹钟，怎么没有听到。也不知道是闹钟没响还是睡得太沉了，总之，我又一次悲剧了。</div><div>牙也没刷，脸也没洗的冲去sinh tourist看看有没有什么补救的方法。得到的结论是，重新买票，可以订其它班次的车，也可以让SINH TOURIST帮忙订其它公司早上的票。OMG，白花花的银子又不见了。一个人在外，哪怕是一点点的过错，也得实实在在地付出代价，没有人会帮你分担，也没有人会去体谅，不管你是在路上游荡还是在城市里奔走。心想着，竟然已经决定走了，那就不要再犹豫。让SINH TOURIST订了PUTA公司早上10：00的车票，135，000VND。回HOTEL收拾东西，顺便买个法棍当早餐，边啃着边等车。</div><!--more--><div>接近10：00的时候，PUTA接送的车到SINH TOURIST门口接我，SINH TOURIST放我上车，我问她拿TICKET，她说不需要，既然这么说，那就算了吧。面包车又兜到其它地方接了几个乘客，就开往旅游大巴停放的停车场。到了停车场看到每个人手里都拿着车票，我一下子心虚了。上车问了乘车员，她让我去BOOKING OFFICE问问，去了她也不清楚状况，连打了几个电话，好像都打错号码。这下我也急了，离10：00发车的时间也不远了。最后乘车员走进来，跟那员工说了几句就让我上车了。我还真搞不懂怎么回事。估计是他们对SINH TOURIST这个称呼不熟悉，都管新咖啡叫SINH CAFE。所以之前以为我是在其它公司订的票。</div><div>这个早上还真是折腾，总算是搭上了去大叻的大巴。</div><div>&nbsp;</div>## 收获越南美食SUP <span class="caps">CUA</span><div><span>海拔高度为1500米，<span>以空气清新著名，以湖泊、瀑布、松林众多闻名。这里风光明媚，四季如春，百花盛开时，如诗如画。法国<span>殖民地时期，</span>法国人就把大叻当作周末度假的胜地。由于海拔比较高，</span></span>去往大叻的路并不好走。开出芽庄没多久，汽车就盘旋在无尽的盘山路上。午餐时间在一个加油站附近休息了半个小时后，又继续往上爬。大概下午三点钟的时候到达大叻。由于这次不是坐新咖啡的车，停车的地点是一个停车站，离主要的游客集中地有点距离，一看地图还真有远，这钱没法省。问了个摩托，开价要80，000VND。尼玛，哥可是有GOOGLE地图导航的。果断打的。扫遍整个停车场，没看到MIN LINH的车。只好打别外一个公司的的士。在越南打的我还是迷信美林公司的车，毕竟在网上是好评一片。还好这次打的比较靠谱，52，000VND就到了春香湖附近的新咖啡。春香湖是一个<span>人工开挖的5平方公里的湖，也算是大叻市一个标志性的景点。</span>在附近找了家叫THUY <span class="caps">TRAN</span> HOTEL的店，进去一问，单人间10刀。有点超出接受范围，不过还是想着看看房先。一看，环境还可以，还有个小阳台。我又妥协了，还价到9刀后，果断CHECK IN。在越南住HOTEL，入住是不需要先付款的，只要把护照交给老板就行了。到了CHECK OUT的时候把账给结清了，老板就会把护照还给你。如果是一些有提供餐饮服务的，也是先记着账，在CHECK OUT的时候一起结账就行了。</div><div>解决住宿问题后，接下来就是肚子问题了。从早上吃了个法棍到现在下午三点多还没吃饭呢。在附近找了家快餐店，实在是太难吃了，菜都是凉的，连一半都没吃完就买单走人。用11路车粗略地逛了大叻的几条街道，对整个市中心有个大概的了解。最后又绕回来春香湖，坐在岸边发了会呆就回去，经过新咖啡顺便报了个明天的大叻的1 <span class="caps">DAY</span> <span class="caps">CITY</span> TOUR，14美金，包含了保大夏宫，CRAZY HOUSE，大叻火车站，情人谷等经典景点。上网了解到大叻市场夜市很热闹，决定晚上出去看看，顺便把晚餐给解决了。</div><div>大叻的夜市确z很繁华，人头涌涌。不过最多的收获不是见识了大叻的夜市，而是吃到了在越南最对自己口味的食物SUP CUA。看样子像是由蟹肉，淀粉做成的汤，粘稠状的。好味又便宜，15，000VND。</div><div>在逛市场时候看到很多人在卖草莓，问了价格，50，000VND/KG，还行，15块钱一公斤。想着买500g回去吃，谁知道老板还不给，说一定要一公斤，刚好装满一盒子。买完草莓往回走。又看到别一家在卖SUP CUA，这一家明码标价，才10，000VND，还放了点新鲜辣椒做成的酱料，实在是太对我胃口了。又打包一碗回客栈吃，一如即往的美味，不过草莓就不怎么给力。回客栈看了会电视，其实也就是不停地换台，发现越南的电视剧很少有字幕的，而且大部分都是从中国和韩国引进来的，再进行越南语配音。接着上网做功课，睡觉。这回我可设置了三个闹钟，生怕错过第二天的一日游。祝我好运吧，14美金可不能再浪费了。</div><div>&nbsp;</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></li>
+	</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[海滨城市--芽庄]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/236"/>
+    <updated>2013-03-19T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/236</id>
+    <content type="html"><![CDATA[<div>2013/03/14</div><div>在车上勉强度过了一夜。一觉醒来从车窗外望去可以看到蓝蓝的海岸线，心情还是不错的。</div><div><div>吸取了上次的教训，这次做了比较充分的功课，知道新咖啡附近就有很多旅馆，在附近找了一个200，000VND的HOTEL住下了。环境是不错，阳台,热水器，电视，空调都配齐了。这一路下来，每一天都在超预算。住宿这一块是占了大头。</div><div>听说芽庄是一个比较适合骑摩托车的地方。就在酒店对面租了辆摩托车，有点小贵，7刀呢，再加上3L油，又花去了215，000VND。骑上摩托车没多远，就看到有一家卖粉的店，进去把早餐解决了。虽然越南的粉不是很合个人口味，但胜在价格不高。大部分吃的时候，都还会配上一小盘青菜，蘸着酱料吃，不过味道就不敢恭唯了，只会意思意思地吃上一两份，后来听说里面主要的配菜是鱼腥草。</div><p><!--more--><div>&nbsp;</div><div>下图是早餐和我租的摩托车</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_a2280113c452821f38f7a140c21d20c0.jpg"></div></div><div>&nbsp;</div><div>吃完早餐就骑车到处兜风，反正时间有的是。沿着海边大道走了一大段。</div><div>&nbsp;</div><div>这是在海边看到的一个小公园</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_49b30a25874af5e897ade1137a93e7b9.jpg"></div></div><div>&nbsp;</div><div>在海边呆了一小会，想着去婆加那寺去看看，谁知道走远了。问了一个大叔才知道得往回走。那大叔还问我是哪里人，我说CHINA，说了几遍大叔才听懂。在往回走的路上我就在想，我发音是不是发错了，后面的音到底是发a还是e啊？好吧，我英语确实不行，这是真心话。</div><div>后来手机地图上发现了那个地方，到了才发现，原来这地方很好找，过完桥就可以看到。可是之前走是的另一条桥，所以没看到，错过了。</div><div>花了21，000VND的门票和2，000VND的停车费，上去看看。那些古老建筑就算了，不懂欣赏。当作休息和看看江边的景色还不错。之前听说附近有海鲜一条街，不过到的时候还不知道，没有去逛。下次有机会一定要去吃上一餐才行。</div><div>看完PO <span class="caps">NAGRA</span> <span class="caps">CHAM</span> TEMPLE，快到中午了。想着吃个午餐再去逛龙山寺吧。在路边找了家饮料店坐下，吃了杯15，000的饮料，用手机上微信问问附近的人有没有什么好介绍。结果被告知可以去NHA <span class="caps">TRANG</span> CENTER吃KFC的大鸡腿，还让我去看越南字幕，汉语版的西游。好吧，就去KFC，顺便参观他们的购物中心，电影还是免了，这电影之前都已经看过了，话说如果不是看过了，还真想去试试。吃完大鸡腿，也困了，回旅馆休息，一觉醒来已经快四点了，骑着摩托车去看看龙山寺，坑点的景点不收费，停车居然被收了10，000VND。</div><div>回程时路过芽庄的教堂，之前微信上联系的人建议我去看看，不过找不到停车的地，在外面拍了张照也走了。看着摩托车油还多着呢，又沿着海岸线往南边走去，在路边看到路边摊有人在卖着螺，一问价钱，15，000有七八个，觉得还行。叫了一份尝尝。味道还不错。回程走到一半时，又意犹未尽地到另一摊子叫了一份，这回按个算，一个2，000VND，还算便宜。</div><div>&nbsp;</div><div>路边摊</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_752da1147bb6f79dc7a9b66d7b579af2.jpg"></div></div><div>&nbsp;</div><div>&nbsp;</div><div>螺肉</div><div><div><img src="http://www.minlh.tk/uploads/2013/03/wpid-ee9526f73b88031ccb416df9170d3b37_bc410bec8a35ebbf87bfdb365dde367c.jpg"></div></div><div>&nbsp;</div><div>&nbsp;</div><div>吃完东西顺便去SINH TOURIST看看车票情况。本打算订后天的车，明天在海边走走，谁知道一到那看到有中午的车，就想着，早上在海边玩玩，中午去大叻也不错。一问，下午的没票了，只有早上的。也不知咋地，头脑一热，居然就订了早上的票，结果第二天就悲催了，这个后面再说。回去把摩托车给还了。把押在那身份证要回来。老板还很认真地叫我教他念上面的字“居民居住证&quot;，真是好学啊。看来是学着以后好跟国人沟通。</div><div>还完摩托车回对面HOTEL休息。呆到晚上8点多才出去找吃的，本想着海边应该有很多海鲜大排档，谁知道一家都没找着。在一条购物街随便吃了几个菜，又花了170，000VND，唉，每次都想省，可是一出门就花很多。</div><div>吃完散步回去，上上网，收拾东西。一弄又是一点多。睡觉，明天早上是8点的车呢，希望能早起。</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[越南第二天之顺化]]></title>
+    <link href="http://pliaohuimin.github.io/blogs/230"/>
+    <updated>2013-03-16T00:00:00+08:00</updated>
+    <id>http://pliaohuimin.github.io/blogs/230</id>
+    <content type="html"><![CDATA[<div>2013/03/12 上午</div><div>&nbsp;</div><div>早上7点多的时候到的顺化。</div><div>一下车，感觉比河内好多了，至少没有河内那么多摩托车，人也比较少。</div><div>一到顺化马上在SINH TOURIST买了中午一点到岘港的车票。顺化也没安排什么行程，就是去附近的旧皇宫看看。</div><div>在SINH TOURIST隔壁吃早餐的时候顺便向老板问路。沿着老板指的方向往北走，经过一座桥再往左手边走，就可以看到皇宫的路标了。我在看到第一个路标后就拐进去了，后来发现其实应该再往前走的。前面才是正门，在这里拐弯虽然进了城门，但根本就看不到皇宫。自从拐弯以后，就一直有个当地的人力车司机跟着，缠着让我坐他的车。2个小时100，000VND，带着我到皇宫周边转，但不包进皇宫。在表明了想自己走路后，他还不死心地跟了老远，有够烦人的，弄得都没什么心思认路。结果皇宫是在进城门后的左边，我走到右边去了。后来发现不大对劲，才开始往左边走。终于看到皇宫的外墙了。这时刚好经过一家小店，店门口坐着一个老人，很热情地叫我过去。刚好也走累了，便过去叫了杯咖啡喝，跟老人用简单的英语聊着。接着那老头又从店里拿出两块糖，说是只有顺化才有的特产，一看，很普通的糖，而且是我不怎么喜欢吃的那种，勉强吃了一块。看时间也差不多了，买单走人。喝了一杯咖啡和一块糖，老板收30，000VND，其实也不能算贵。可是当我拿出50，000VND给老板时，老板他不找钱了，直接拿出一袋东西，里面装了6小块刚才那种糖，说是当20，000VND抵了。算了，看他年纪也大了，就不跟他计较。不过心里感觉还是不怎么好。</div><p><!--more--><div>绕到正门买门票进去皇宫，这80，000VND的门票还真不怎么值。特别是对生活在中国的人来说，这些建筑都是中国建筑的缩小版，没什么看头，而且很多建筑都已经倒了，正长着荒草呢。意思意思地瞄了一下就走人了。</div><div>回到SINH TOURIST才十一点多，继续在隔壁吃个午餐，顺便给电脑手机充充电。慢慢等着一点钟的车。经过第一天的迷路事件，这下我可不敢再算好时间再过去搭车了。</div><br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/f962040b">来自为知笔记(Wiz)</a></div><br /><br /></p>]]></content>
   </entry>
   
 </feed>

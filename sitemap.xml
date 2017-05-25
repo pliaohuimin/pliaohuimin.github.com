@@ -1,18 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://pliaohuimin.github.io/blogs/1</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blogs/8</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blogs/13</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
         <loc>http://pliaohuimin.github.io/blogs/15</loc>
         <lastmod>2016-02-03T22:10:11+08:00</lastmod>
     </url>
@@ -34,10 +22,6 @@
     </url>
     <url>
         <loc>http://pliaohuimin.github.io/blogs/46</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blogs/49</loc>
         <lastmod>2016-02-03T22:10:11+08:00</lastmod>
     </url>
     <url>
@@ -254,34 +238,6 @@
     </url>
     <url>
         <loc>http://pliaohuimin.github.io/blogs/579</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20130830/kai-shi-octopress/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20130901/from-wp2octopress/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20130902/octopress-archive/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20130902/add-share/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20140805/new-machine-to-octopress/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20140808/new-domain/</loc>
-        <lastmod>2016-02-03T22:10:11+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pliaohuimin.github.io/blog/20140811/add-profilepic/</loc>
         <lastmod>2016-02-03T22:10:11+08:00</lastmod>
     </url>
     <url>
